@@ -1,14 +1,14 @@
 ---
 title: Running Ghost on Kubernetes on Azure
 date: 2019-01-16
+cover_img: running-ghost-on-kubernetes-on-azure/Jenkin-blog-image-2.png
+feature_img: Jenkin-blog-image-2.png
 tags: 
 - ghost 
 - kubernetes 
 - azure
 ---
 In my [previous post](/creating-a-blog-with-ghost/), I was looking into a few options for running my blog. I think at this time, I'm going to keep it on Azure because I can run it for free. I suspect I would make a different choice if not for my bonus credits. I will need some benchmark figures to choose a provider, however kubernetes should give me the platform I need to change in the future if necessary.
-
-<!-- more -->
 
 I have a basic level of understanding of how kubernetes hangs together and would love to hear your feedback if you would do things differently. The basic idea is to run a ghost container and provide persistent storage for the content. In the future, I would like to use nginx to reverse proxy incoming traffic and to provide HTTPS for my site.
 

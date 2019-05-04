@@ -5,11 +5,11 @@
 # Site
 title: Anthony Ison
 subtitle: Software development and DevOps. Bringing solutions to life.
-description:
-keywords:
+description: My meandering thoughts on development, devops and technology
+keywords: software development,devops,azure,kubernetes,angular,serverless,docker
 author: Anthony Ison
-language:
-timezone:
+language: en
+timezone: Australia/Brisbane
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -85,3 +85,15 @@ deploy:
 # Google Analytics Tracking ID
 google_analytics: UA-131919757-1
 disqus_shortname: anthonyison
+
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+

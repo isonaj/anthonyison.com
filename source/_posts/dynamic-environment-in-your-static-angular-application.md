@@ -1,13 +1,13 @@
 ---
 title: Dynamic environment in your static Angular application
 date: 2019-04-25
+cover_img: dynamic-environment-in-your-static-angular-application/dynamic.jpg
+feature_img: dynamic.jpg
 tags: 
 - dotnet 
 - angular
 ---
 I keep hitting the same problem when building Angular applications. Environment settings! They are easy to set up in development, but as you target different environments, the old "one file per environment" really doesn't cut it. I don't want to rebuild my application just to deploy to production and if it's in a container? Pfft, good luck! I've solved this problem a few different ways in the past and I've just solved it again. But this time, it didn't feel quite so hacky, so I thought I'd post about it.
-
-<!-- more -->
 
 ## Problem
 Angular CLI provides an `environment.ts` for storing your global settings and you can select which environment file to use when you build. I want to build my application once and then deploy to different environments without rebuilding, however I can't change my environment settings on deploy or through environment variables. There are a few reasons I don't want to rebuild.
