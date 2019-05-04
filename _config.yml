@@ -97,3 +97,13 @@ feed:
   order_by: -date
   icon: icon.png
 
+# hexo-filter-responsive-images
+responsive_images:
+  pattern: '**/*.+(png|jpg|jpeg)'
+  sizes:
+    small:
+      width: 800
+      withoutEnlargement: true
+    large:
+      width: 2000
+      withoutEnlargement: true

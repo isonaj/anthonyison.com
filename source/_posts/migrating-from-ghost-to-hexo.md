@@ -4,9 +4,9 @@ tags:
   - ghost
   - hexo
   - blogging
-cover_img: migrating-from-ghost-to-hexo/harshil-gudka-556417-unsplash.jpg
+cover_img: migrating-from-ghost-to-hexo/small_harshil-gudka-556417-unsplash.jpg
 feature_img: harshil-gudka-556417-unsplash.jpg
-date: 2019-05-03 21:27:56
+date: 2019-05-04 23:12:56
 description:
 keywords:
 ---
@@ -79,6 +79,32 @@ This got a little closer, and actually pulled content across, but now I'm out of
 
 ## 5. Reattach the post images
 Many of the migration tools will bring content across without images. So afterwards, you will need to copy the images in and link them to posts manually.
+
+Also, it's worth configuring an image optimizer, using:
+```
+$ npm i hexo-filter-responsive-images --save
+```
+
+Then add to the _config.yaml:
+```yaml
+# hexo-filter-responsive-images
+responsive_images:
+  pattern: '**/*.+(png|jpg|jpeg)'
+  sizes:
+    small:
+      width: 800
+      withoutEnlargement: true
+    large:
+      width: 2000
+      withoutEnlargement: true
+```
+
+To each of the blog post headers, add:
+```yaml
+cover_img: my-blog-post/small_cover.jpg
+feature_img: large_cover.jpg
+```
+where cover.jpg is the original image for the post cover.
 
 ## 6. Configure RSS
 ```

@@ -1,7 +1,7 @@
 ---
 title: Dynamic environment in your static Angular application
 date: 2019-04-25
-cover_img: dynamic-environment-in-your-static-angular-application/dynamic.jpg
+cover_img: dynamic-environment-in-your-static-angular-application/small_dynamic.jpg
 feature_img: dynamic.jpg
 tags: 
 - dotnet 
