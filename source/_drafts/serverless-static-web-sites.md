@@ -4,8 +4,6 @@ tags:
 ---
 Serverless seems to be all the rage lately and for good reason. When hosting a web site with rapidly changing traffic, you will either be in a situation where your resources are not being fully utilised (too much cloud) or are failing to meet the demand (not enough cloud). Serverless changes all of that. Instead of paying for hosting, with serverless options you are paying per execution. 
 
-<!-- more -->
-
 In this post, I'm going to host a static web page in Azure with serverless technologies. Let's go!
 First, I need a new application. I'm just going to use the Tour of Heroes tutorial application from here. I'll build that with:
 

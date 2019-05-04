@@ -1,0 +1,84 @@
+# Config
+rss: /atom.xml           # link
+favicon: /images/Anthony-Square-Color.png
+blog_logo: /images/Anthony-Square-Color.png
+header_image: /images/imleedh-ali-677414-unsplash.jpg
+bio: Software development and DevOps. Bringing solutions to life.
+post_toc: true
+
+# Keywords
+keywords: hexo, casper, ghost, theme
+
+# Menu
+menu:
+  ABOUT: /about
+  ARCHIVES: /archives
+  # you can add here
+
+# author
+author_image: /images/Anthony-Square-Color.png  # link
+author_bio: 
+author_location: 
+
+# Social Links
+social:
+  weibo: 
+  github: https://github.com/isonaj
+  twitter: https://twitter.com/isonaj
+  facebook: 
+  telegram:
+  bilibili: 
+  youtube: https://www.youtube.com/channel/UC4_sgo322GFudAjSXbyQdmw
+  rss: https://feedly.com/i/subscription/feed/https://isonaj.github.io/atom.xml
+  # You only can use that I have added, I will keep adding
+
+# Footer Links
+footer_text: 
+  # title: link
+  # 粤ICP备xxxxxxx号-x: http://www.miitbeian.gov.cn
+  # 粤公网安备xxxxxxx号: http://www.beian.gov.cn
+
+# Widget
+widgets:
+  recent_posts: true
+  category: true
+  tagcloud: true
+  # This is a simple theme, I think 3 is enough.
+
+# Gallery
+# https://github.com/sachinchoolur/lightgallery.js
+lightgallery: true
+
+# LazyLoad
+# home page has enabled, this value is to post page
+# https://github.com/dinbror/blazy
+lazyload: true
+
+# Local Search
+local_search: true
+
+# Comment
+# https://valine.js.org
+comment: false
+valine:
+  notify: false # mail notifier , https://github.com/xCss/Valine/wiki 
+  verify: false # Verification code
+  appId: # your leancloud application appid
+  appKey: # your leancloud application appkey
+  placeholder: Just go go # comment box placeholder
+  pageSize: 10 # pagination size
+  avatar: mm # gravatar style
+
+# PWA
+# you need create a manifest.json file in hexo's source folder
+manifest: false
+service_workers: false
+
+navColor: '3c484e'
+
+# Baidu Push
+baidu: false
+
+# Google Analytics
+googleAnalytics: true
+GA_TRACKING_ID: UA-131919757-1
