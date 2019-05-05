@@ -13,10 +13,13 @@ What the heck is this HTTPS and certificate stuff? Basically, HTTPS will guarant
 
 As I set out on this adventure, it looks like I need cert-manager and the best way to install this appears to be to use helm, which I installed with Chocolatey.
 
+```
 choco install kubernetes-helm
 helm init
-First steps
-We are going to install cert-manager which will perform all of the magic of fetching certificates and storing them for use in our various services. We need to set up the config for cert-manager, so that we can provide the link to Lets Encrypt. Save the following in a file, say issuer.yaml, and run 'kubectl apply -f issuer.yaml' to apply. (Make sure you update with your email first!)
+```
+
+## First steps
+We are going to install cert-manager which will perform all of the magic of fetching certificates and storing them for use in our various services. We need to set up the config for cert-manager, so that we can provide the link to Lets Encrypt. Save the following in a file, say issuer.yaml, and run `kubectl apply -f issuer.yaml` to apply. (Make sure you update with your email first!)
 
 ```yaml
 apiVersion: certmanager.k8s.io/v1alpha1
@@ -32,7 +35,8 @@ spec:
     http01: {}
 ```
 
-Installing cert manager
+## Installing cert manager
+```
 kubectl apply -f \
     https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
 
@@ -40,21 +44,26 @@ helm install --name cert-manager --namespace ingress \
     --set ingressShim.defaultIssuerName=letsencrypt-prod 
     --set ingressShim.defaultIssuerKind=ClusterIssuer 
     stable/cert-manager
-I ran into issues installing cert-manager with a 'cluster-admin' not found error. I found instructions on this page[4] which helped me create a cluster admin role, create a service account and assign tiller to it.
+```
 
-Installing nginx-ingress
+I ran into issues installing cert-manager with a 'cluster-admin' not found error. I found instructions on [this page](https://docs.bitnami.com/azure/get-started-aks/) which helped me create a cluster admin role, create a service account and assign tiller to it.
+
+## Installing nginx-ingress
 The next step is to configure an Ingress to manage the TLS endpoint, that is to manage my HTTPS endpoint with certificate connected to my domain. Without this step, I found I could set up my Ingress entry, but the address would stay empty.
 
+```
 helm install stable/nginx-ingress \
     --name nginx \
     --set rbac.create=true \
     --namespace ingress
+```
+
 Once installed, I can see a LoadBalancer entry which has my External IP on it.
 
-Update the Service
-In the previous post, we set the service up as a LoadBalancer type. We don't need that any more since we have a new IP on our LoadBalancer nginx-ingress service. Update the service.yaml and change LoadBalancer to a NodePort and run 'kubectl apply -f service.yaml'. This will make sure we can only access our service through our TLS ingress service.
+## Update the Service
+In the previous post, we set the service up as a LoadBalancer type. We don't need that any more since we have a new IP on our LoadBalancer nginx-ingress service. Update the service.yaml and change LoadBalancer to a NodePort and run `kubectl apply -f service.yaml`. This will make sure we can only access our service through our TLS ingress service.
 
-Generate Certificate and Ingress for Service
+## Generate Certificate and Ingress for Service
 Apply the following updates to the kubernetes cluster.
 
 ```yaml
@@ -78,6 +87,9 @@ spec:
         backend:
           serviceName: anthonyison
           servicePort: 80
+```
+
+```yaml
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
@@ -101,14 +113,9 @@ That's it!  Hit your domain and confirm that https is working. You should be abl
 
 So, I started off with some regret that I wasn't running in a Web App. While it took quite a while to work through many of the issues that showed up along the way, it is actually pretty easy once it's set up, and furthermore, I don't have to think about my certificates ever again. I think maybe it's not as bad as I thought. No regrets, right?
 
-References:
-
-[1]: https://itnext.io/automated-tls-with-cert-manager-and-letsencrypt-for-kubernetes-7daaa5e0cae4 "Automated TLS with Cert Manager and Lets Encrypt for Kubernetes"
-
-[2]: https://akomljen.com/get-automatic-https-with-lets-encrypt-and-kubernetes-ingress/ "Get automatic HTTPS with Lets Encrpyt and Kubernetes Ingress"
-
-[3]: https://runnable.com/blog/how-to-use-lets-encrypt-on-kubernetes "How to use Lets Encrypt on Kubernetes (without Cert Manager)"
-
-[4]: https://docs.bitnami.com/azure/get-started-aks/ "Configuring AKS"
-
-[5]: https://dzone.com/articles/secure-your-kubernetes-services-using-cert-manager "Secure your Kubernetes Services using Cert Manager"
+### References:
+1. [Automated TLS with Cert Manager and Lets Encrypt for Kubernetes](https://itnext.io/automated-tls-with-cert-manager-and-letsencrypt-for-kubernetes-7daaa5e0cae4)
+2. [Get automatic HTTPS with Lets Encrpyt and Kubernetes Ingress](https://akomljen.com/get-automatic-https-with-lets-encrypt-and-kubernetes-ingress/)
+3. [How to use Lets Encrypt on Kubernetes (without Cert Manager)](https://runnable.com/blog/how-to-use-lets-encrypt-on-kubernetes)
+4. [Configuring AKS](https://docs.bitnami.com/azure/get-started-aks/)
+5. [Secure your Kubernetes Services using Cert Manager](https://dzone.com/articles/secure-your-kubernetes-services-using-cert-manager)
