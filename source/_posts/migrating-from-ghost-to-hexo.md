@@ -9,8 +9,8 @@ feature_img: harshil-gudka-556417-unsplash.jpg
 date: 2019-05-04 23:12:56
 description:
 keywords:
+identifier: ghost-5c3e7b94f2870c0001c57911
 ---
-
 It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.
 
 ## 1. Install Hexo and create the blog

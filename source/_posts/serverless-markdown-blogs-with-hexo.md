@@ -6,8 +6,8 @@ feature_img: lauren-mancke-60627-unsplash.jpg
 date: 2019-05-03 21:27:32
 description:
 keywords:
+identifier: ghost-5c3e7b94f2870c0001c5791a
 ---
-
 Let me start this by saying I'm loving my ghost blog, and I get a kick out of running it on AKS. The thing is, the content only changes when I post and so I'm thinking about caching and I realise the whole blog can be cached. It's not an API. I don't have changing data. (Ok, TECHNICALLY I have a db, but bear with me) My posts are markdown, and I could just store them in git and publish static pages when I push.
 
 After some searching, I have found there are many static web site generators. The ones that stood out for me were: 
@@ -48,14 +48,16 @@ You can also:
 * Publish a draft with `hexo publish post this-is-a-draft-post`
 * Deploy your site: `hexo deploy`
 
-### Themes
+## Themes
+There are many themes around. Usually, you pull a git repo into your themes/theme-name folder. Themes basically wrap the whole presentation process, which means each theme has specific capabilities. (eg. some have google analytics, some have disqus comments). If you want to mix and match, you quickly find yourself editing your theme.
 
-### Plugins
+## Plugins
+There are different types of plugins. They seem to hook into the build process and provide various services. I haven't looked into them too much yet.
 
-### Migrators
+## Migrators
 There are migrators available and you can pull them in with npm install. I quickly found migrators for Wordpress and Ghost blogs. 
 
-## Summary
+# Summary
 Hexo is node-based and provides a familiar interface for an Angular developer. It is a fantasic tool for getting a blog up and running and has capability to migrate from existing platforms. Since it is git based, it's a bit harder to manage from my phone, however I LOVE that my markdown content is in git so I can review changes and I know it won't be lost in a corrupt database.
 
 What do you think? Would you use Hexo?

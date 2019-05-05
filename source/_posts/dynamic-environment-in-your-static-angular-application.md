@@ -6,6 +6,7 @@ feature_img: mpho-mojapelo-127562-unsplash.jpg
 tags: 
 - dotnet 
 - angular
+identifier: ghost-5cbfbe3b21b29c00018dd251
 ---
 I keep hitting the same problem when building Angular applications. Environment settings! They are easy to set up in development, but as you target different environments, the old "one file per environment" really doesn't cut it. I don't want to rebuild my application just to deploy to production and if it's in a container? Pfft, good luck! I've solved this problem a few different ways in the past and I've just solved it again. But this time, it didn't feel quite so hacky, so I thought I'd post about it.
 

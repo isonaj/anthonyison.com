@@ -7,6 +7,7 @@ tags:
 - ghost 
 - kubernetes 
 - azure
+identifier: ghost-5c3e7b94f2870c0001c5791e
 ---
 In my [previous post](/creating-a-blog-with-ghost/), I was looking into a few options for running my blog. I think at this time, I'm going to keep it on Azure because I can run it for free. I suspect I would make a different choice if not for my bonus credits. I will need some benchmark figures to choose a provider, however kubernetes should give me the platform I need to change in the future if necessary.
 

@@ -4,6 +4,7 @@ date: 2019-01-08
 tags: ghost
 cover_img: creating-a-blog-with-ghost/small_getting_started.jpg
 feature_img: getting_started.jpg
+identifier: ghost-5c33f9dbd959a900010fe7bf
 ---
 There seems to come a time in a software developer's life where you look at creating a blog. It's that time for me. I want a place where I can write up some of my experiments for later reference, and if that can help others along the way, all the better!
 
