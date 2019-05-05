@@ -23,7 +23,7 @@ This is far and away the most popular. It has a thiving community and is well su
 # Hexo
 Hexo is number 2 in popularity (mostly in China) and is growing fast. It also has many themes, and most of the demo sites are in Chinese.
 
-# Installing Hexo
+## Installing Hexo
 Since it's built on node, Hexo is super easy to install (assuming you already have node installed!) We will be using npm to install.
 
 ```
@@ -55,7 +55,7 @@ You can also:
 ### Migrators
 There are migrators available and you can pull them in with npm install. I quickly found migrators for Wordpress and Ghost blogs. 
 
-# Summary
+## Summary
 Hexo is node-based and provides a familiar interface for an Angular developer. It is a fantasic tool for getting a blog up and running and has capability to migrate from existing platforms. Since it is git based, it's a bit harder to manage from my phone, however I LOVE that my markdown content is in git so I can review changes and I know it won't be lost in a corrupt database.
 
 What do you think? Would you use Hexo?
