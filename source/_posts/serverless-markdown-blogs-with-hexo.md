@@ -1,12 +1,11 @@
 ---
 title: Serverless markdown blogs with Hexo
 tags: hexo
-cover_img: serverless-markdown-blogs-with-hexo/small_lauren-mancke-60627-unsplash.jpg
+cover_img: /serverless-markdown-blogs-with-hexo/small_lauren-mancke-60627-unsplash.jpg
 feature_img: lauren-mancke-60627-unsplash.jpg
 date: 2019-05-03 21:27:32
 description:
 keywords:
-identifier: ghost-5c3e7b94f2870c0001c5791a
 ---
 Let me start this by saying I'm loving my ghost blog, and I get a kick out of running it on AKS. The thing is, the content only changes when I post and so I'm thinking about caching and I realise the whole blog can be cached. It's not an API. I don't have changing data. (Ok, TECHNICALLY I have a db, but bear with me) My posts are markdown, and I could just store them in git and publish static pages when I push.
 

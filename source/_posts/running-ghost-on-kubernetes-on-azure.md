@@ -1,7 +1,7 @@
 ---
 title: Running Ghost on Kubernetes on Azure
 date: 2019-01-16
-cover_img: running-ghost-on-kubernetes-on-azure/small_Jenkin-blog-image-2.png
+cover_img: /running-ghost-on-kubernetes-on-azure/small_Jenkin-blog-image-2.png
 feature_img: Jenkin-blog-image-2.png
 tags: 
 - ghost 
