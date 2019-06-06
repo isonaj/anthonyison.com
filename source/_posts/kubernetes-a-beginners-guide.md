@@ -1,13 +1,12 @@
 ---
 title: 'Kubernetes: A Beginner''s Guide'
 tags: kubernetes
-cover_img: /kubernetes-a-beginners-guide/small_joseph-barrientos-93565-unsplash.jpg
+image: /kubernetes-a-beginners-guide/small_joseph-barrientos-93565-unsplash.jpg
 feature_img: joseph-barrientos-93565-unsplash.jpg
 date: 2019-06-04 22:45:13
 description:
 keywords:
 ---
-
 Kubernetes is a container orchestration platform and has been described as "the OS of the cloud". It builds on container-based services by providing many features such as volumes for stateful services, resilience and scaling, monitoring, automated zero-downtime upgrades. It runs on a cluster of nodes (VMs) and allocates services to nodes based on either hard limits (eg. my service must run on linux) and prioritised preferences (eg. put these two services on the same VM). If you are running your services in containers, Kubernetes will likely make your life easier.
 
 # Containers
@@ -44,32 +43,10 @@ Now, run that on the cluster using `kubectl apply -f pod.yaml`. You can check wh
 
 Once you're finished, there's nothing more to see. We won't actually be using this to go further. Nobody expects the spanish inquision and nobody starts a pod on its own. Delete your pod with `kubectl delete pod basiccore-pod`.
 
-## OPTIONAL - Pods (Windows containers) 
-If you've installed a Windows server in your cluster, things can get a little complicated. The thing is Windows ain't Windows. You need to ensure the Host OS is the same version as the Container OS and these are released twice a year.
-So, I ran `kubectl describe node <nodepool>` and saw that my host OS is 10.0.17763.379 (which is 1809). For the container, I start it with `docker run isonaj/basiccorewin -d` and then attach a command prompt with `docker exec -it <containerId> cmd` This shows the container OS version at the top: 10.0.17134.766 (which is version 1803). At this point, I need to upgrade my laptop, because I can't pull an 1809 image. My system is 10.0.17134.766 (1803). I can't run a windows version later than my host.
-
-```yaml
----
-apiVersion: v1
-kind: Pod
-metadata:
-  name: basiccorewin-pod
-  labels:
-    app: basiccorewin
-spec:
-  containers:
-  - name: basiccorewin
-    image: isonaj/basiccorewin
-    ports:
-    - containerPort: 80
-  nodeSelector:
-    beta.kubernetes.io/os: windows
-```
-
 ## Deployments
-So let's start over. Nobody starts a pod by itself, because there's a much better construct for running pods and that is a Deployment.
+So let's start over. Nobody starts a pod by itself, because there's a much better construct for running pods and that is a Deployment. A deployment will provide zero downtime by managing all sorts of things for you. It can be used to automatically rollout new image versions or pod configs (basically anything that could put your uptime at risk). We'll take a closer look in a later post.
 
-Let's jump straight into the yaml:
+Let's jump into the yaml:
 ```yaml
 ---
 apiVersion: extensions/v1beta1
@@ -108,9 +85,11 @@ basiccore-deployment-c46759d6d-f94lk   1/1     Running            0          7s
 ```
 
 ## Services
-We've just spent all of this time starting and stopping pods, but we haven't actually connected to it yet. We need a way to get in, and get directed to the pod. For this, we use a Service component. A service component is basically a load balancer that sits across the nodes and pods and directs the incoming requests where they are supposed to go.
+We've just spent all of this time starting and stopping pods, but we haven't actually connected to it yet. We need a way to get in, and get directed to the pod. For this, we use a Service component. 
 
 > A Kubernetes Service is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods. - kubernetes.io
+
+What's that mean? A service component is basically a load balancer that sits across some pods and directs the incoming requests where they are supposed to go.
 
 ```yaml
 ---

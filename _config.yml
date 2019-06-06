@@ -93,8 +93,8 @@ google_analytics: UA-131919757-1
 disqus_shortname: anthonyison
 
 feed:
-  type: atom
-  path: atom.xml
+  type: rss2 #atom
+  path: rss.xml #atom.xml
   limit: 20
   hub:
   content:

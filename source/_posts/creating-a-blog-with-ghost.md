@@ -2,7 +2,7 @@
 title: Creating a blog with Ghost
 date: 2019-01-08
 tags: ghost
-cover_img: /creating-a-blog-with-ghost/small_getting_started.jpg
+image: /creating-a-blog-with-ghost/small_getting_started.jpg
 feature_img: getting_started.jpg
 identifier: ghost-5c33f9dbd959a900010fe7bf
 ---

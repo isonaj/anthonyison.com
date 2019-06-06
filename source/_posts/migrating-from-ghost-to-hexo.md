@@ -4,7 +4,7 @@ tags:
   - ghost
   - hexo
   - blogging
-cover_img: /migrating-from-ghost-to-hexo/small_harshil-gudka-556417-unsplash.jpg
+image: /migrating-from-ghost-to-hexo/small_harshil-gudka-556417-unsplash.jpg
 feature_img: harshil-gudka-556417-unsplash.jpg
 date: 2019-05-04 23:12:56
 description:
@@ -100,7 +100,7 @@ responsive_images:
 
 To each of the blog post headers, add:
 ```yaml
-cover_img: my-blog-post/small_cover.jpg
+image: my-blog-post/small_cover.jpg
 feature_img: large_cover.jpg
 ```
 where cover.jpg is the original image for the post cover.

@@ -2,7 +2,8 @@
 title: Serverless what? Why do we need it?
 date: 2019-05-20 08:58:24
 tags:
-cover_img: /serverless-what-why-do-we-need-it/small_madhu-shesharam-669293-unsplash.jpg
+- serverless
+image: /serverless-what-why-do-we-need-it/small_madhu-shesharam-669293-unsplash.jpg
 feature_img: madhu-shesharam-669293-unsplash.jpg
 description:
 keywords:

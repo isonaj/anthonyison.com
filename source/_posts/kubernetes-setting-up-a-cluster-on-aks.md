@@ -1,8 +1,9 @@
 ---
 title: 'Kubernetes: Setting up a cluster on AKS'
 tags: kubernetes
-cover_img:
-feature_img:
+date: 2019-06-04 22:45:12
+image: /kubernetes-setting-up-a-cluster-on-aks/small_taylor-vick-1612625-unsplash.jpg
+feature_img: taylor-vick-1612625-unsplash.jpg
 description:
 keywords:
 ---
@@ -28,35 +29,6 @@ az aks create \
     --generate-ssh-keys
 ```
 
-## Create a Cluster to include Windows Nodes (NEW)
-> This requires: `az extension add --name aks-preview` to work.
-
-Create the cluster: 
-NOTE: Password must be min 12 chars, and have Uppercase, Lowercase, numeric and Special chars
-```
-az aks create \
-    --resource-group myResourceGroup \
-    --name myAKSCluster \
-    --node-count 1 \
-    --enable-addons monitoring \
-    --kubernetes-version 1.14.0 \
-    --generate-ssh-keys \
-    --windows-admin-password $PASSWORD_WIN \
-    --windows-admin-username azureuser \
-    --enable-vmss \
-    --network-plugin azure
-```
-### Create Windows nodepool
-```
-az aks nodepool add \
-    --resource-group myResourceGroup \
-    --cluster-name myAKSCluster \
-    --os-type Windows \
-    --name npwin \
-    --node-count 1 \
-    --kubernetes-version 1.14.0
-```
-
 ## Connect kubectl to your cluster
 Install latest kubectl using `az aks install-cli`. (You may need to update your path to find the correct kubectl.exe)
 
@@ -69,12 +41,3 @@ Connect to the Kubernetes Dashboard:
 az aks browse --resource-group myResourceGroup --name myAKSCluster
 ```
 
-# Extras
-## Helm
-choco install helm?
-## Linkerd
-https://channel9.msdn.com/Shows/Azure-Friday/60-seconds-to-a-Linkerd-service-mesh-on-AKS?ocid=AID747781&wt.mc_id=CFID0461
-
-
-# Resources:
-* https://docs.microsoft.com/en-us/azure/aks/kubernetes-walkthrough

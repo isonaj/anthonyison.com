@@ -1,5 +1,5 @@
 # Config
-rss: /atom.xml           # link
+rss: /rss.xml           # link
 favicon: /images/Anthony-Square-Color.png
 blog_logo: /images/Anthony-Square-Color.png
 header_image: /images/imleedh-ali-677414-unsplash.jpg

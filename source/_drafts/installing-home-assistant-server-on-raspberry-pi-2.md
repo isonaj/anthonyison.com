@@ -3,7 +3,7 @@ title: Installing Home Assistant Server on Raspberry Pi 2
 tags:
 - IoT
 - Raspberry Pi
-cover_img:
+image:
 feature_img:
 description:
 keywords: Raspberry Pi, Home assistant server, IoT, Internet of things, Home automation

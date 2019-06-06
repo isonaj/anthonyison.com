@@ -1,7 +1,7 @@
 ---
 title: Speak and they will come
 tags:
-cover_img:
+image:
 feature_img:
 description:
 keywords:

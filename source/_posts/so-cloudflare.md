@@ -1,7 +1,7 @@
 ---
 title: So... Cloudflare...
 tags: CDN
-cover_img: /so-cloudflare/small_jakob-owens-1417197-unsplash.jpg
+image: /so-cloudflare/small_jakob-owens-1417197-unsplash.jpg
 feature_img: jakob-owens-1417197-unsplash.jpg
 date: 2019-05-05 20:40:42
 description:

@@ -1,7 +1,7 @@
 ---
 title: 'Kubernetes: Event Driven Scaling with KEDA'
 tags:
-cover_img:
+image:
 feature_img:
 description:
 keywords:
