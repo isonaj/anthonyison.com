@@ -12,11 +12,13 @@ I keep hitting the same problem when building Angular applications. Environment 
 
 ## Problem
 Angular CLI provides an `environment.ts` for storing your global settings and you can select which environment file to use when you build. I want to build my application once and then deploy to different environments without rebuilding, however I can't change my environment settings on deploy or through environment variables. There are a few reasons I don't want to rebuild.
+
 1. I want to test in staging and then redeploy the artifact to production
 2. I want to run it from a container
 
 ## Solution
 Ok, so this is not a new problem and it has been reasonably solved on server side deployments a few ways:
+
 1. Environment variables / web.config / appsettings.json - config is easily overridden in place and is often used for server config settings.
 2. Rewrite on deploy - the deployment script itself can overwrite settings as it is deployed to configure the environment it is deploying to.
 

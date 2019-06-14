@@ -73,7 +73,7 @@ spec:
 It's a bit bigger than the Pod yaml. Let's work through from the top. Deployments weren't available in v1. It was added in `extensions/v1beta1`. Next, we're creating a `Deployment`, not a `Pod` and giving it a name of `basiccore-deployment`. The `spec` for a deployment consists of the number of replicas and the template. We are starting 2 Pods with this one and the template is the yaml we used to create the Pod earlier.
 
 Let's take a look:
-```
+```bash
 $ kubectl get deployments
 NAME                   READY   UP-TO-DATE   AVAILABLE   AGE
 basiccore-deployment   2/2     2            2           33s
@@ -110,7 +110,7 @@ This service will open up a port in our cluster and load balance any traffic acr
 
 Run `kubectl apply -f basiccore-service.yaml` to apply the service and then `kubectl get services` to see the current state.
 
-```
+```bash
 $ kubectl get services
 NAME                TYPE           CLUSTER-IP   EXTERNAL-IP   PORT(S)        AGE
 basiccore-service   LoadBalancer   10.0.55.65   <pending>     80:30376/TCP   5m52s

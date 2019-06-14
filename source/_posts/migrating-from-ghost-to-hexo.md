@@ -13,14 +13,14 @@ keywords:
 It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.
 
 ## 1. Install Hexo and create the blog
-```
+```bash
 $ npm install hexo-cli -g
 $ hexo init myblog
 $ cd myblog
 ```
 
 ## 2. Install the hexo-casper theme
-```
+```bash
 $ git clone https://github.com/xzhih/hexo-theme-casper.git themes/hexo-casper
 ```
 
@@ -52,13 +52,13 @@ Edit themes/hexo-casper/_config.yaml
 In Ghost:
 Labs > Export content
 
-```
+```bash
 $ npm install hexo-migrator-ghost --save
 $ hexo migrate ghost my-ghost.json
 ```
 *FAILED!*
 
-```
+```bash
 $ npm install hexo-migrator-tryghost --save
 $ hexo migrate ghost my-ghost.json
 ```
@@ -66,7 +66,7 @@ $ hexo migrate ghost my-ghost.json
 
 These probably failed because I was running Ghost 2.x and the export format has changed. If you've got an earlier version, maybe this will work for you.
 
-```
+```bash
 $ docker run -it -v $(pwd):/temp golang
 $ go get -v github.com/jqs7/ghost-hexo-migrator
 $ cd /temp
@@ -80,7 +80,7 @@ This got a little closer, and actually pulled content across, but now I'm out of
 Many of the migration tools will bring content across without images. So afterwards, you will need to copy the images in and link them to posts manually.
 
 Also, it's worth configuring an image optimizer, using:
-```
+```bash
 $ npm i hexo-filter-responsive-images --save
 ```
 
@@ -106,7 +106,7 @@ feature_img: large_cover.jpg
 where cover.jpg is the original image for the post cover.
 
 ## 6. Configure RSS
-```
+```bash
 $ npm install hexo-generator-feed --save
 ```
 
@@ -125,7 +125,7 @@ feed:
 ```
 
 ## 7. Configure deploy
-```
+```bash
 $ npm install hexo-deployer-git --save
 ```
 

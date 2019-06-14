@@ -1,7 +1,7 @@
 ---
 title: 'Kubernetes: AKS and Windows Containers'
 tags:
-  - Kubernetes
+  - kubernetes
 image: >-
   /kubernetes-aks-and-windows-containers/small_vidar-nordli-mathisen-667388-unsplash.jpg
 feature_img: vidar-nordli-mathisen-667388-unsplash.jpg
@@ -9,7 +9,6 @@ date: 2019-06-10 14:52:07
 description:
 keywords:
 ---
-
 When I first heard about Windows containers, I got really excited by the idea of packaging ASP.Net legacy apps and ASP.Net Core apps consistently, without the need to remote into a VM and apply extra libraries. I soon found that Windows containers were quickly followed by a "yeah, but". Windows node support has recently been added to Kubernetes and AKS. I don't think it's quite ready for production, but it sure does look promising.
 
 # Why use Windows Containers?
@@ -30,15 +29,35 @@ I've already said that I don't think Windows containers are quite ready for prod
 To be honest, I'm inclined to start using Windows containers anyway. Windows Server 2019 is out. Hyper-V is coming to Kubernetes. I'm expecting Microsoft to have a migration path available soon. Realistically, it will be a while before the Host OS is upgrading and I'm expecting these issues to be solved by then. Either way, I think it's close enough that I'm prepared to look a lot closer, perhaps even as far as a staging environment.
 
 ## Create a Cluster in AKS
-> This requires: `az extension add --name aks-preview` to work.
+*NOTE:* Do the following to enable the preview features required for multiple nodepools.
+```bash
+$ az extension add --name aks-preview
+$ az feature register \
+    --name MultiAgentpoolPreview \
+    --namespace Microsoft.ContainerService
+
+$ az feature register \
+    --name VMSSPreview \
+    --namespace Microsoft.ContainerService
+```
+
+It takes some time to register the features. Check the progress with:
+```bash
+$ az feature list \
+    -o table \
+    --query "[?contains(name, 'Microsoft.ContainerService/VMSSPreview')].{Name:name,State:properties.state}"
+```
 
 Create the cluster: 
+In order to use multiple nodepools, we need to enable VM Scale Sets (VMSS), so make sure you do that whether you create from command line or through portal.
+
 NOTE: Password must be min 12 chars, and have Uppercase, Lowercase, numeric and Special chars
-```
-az aks create \
+```bash
+$ az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
     --node-count 1 \
+    --node-vm-size Standard_B2s \
     --enable-addons monitoring \
     --kubernetes-version 1.14.0 \
     --generate-ssh-keys \
@@ -47,19 +66,22 @@ az aks create \
     --enable-vmss \
     --network-plugin azure
 ```
+
 ## Create Windows nodepool
-```
-az aks nodepool add \
+Next add the Windows node pool with the following:
+```bash
+$ az aks nodepool add \
     --resource-group myResourceGroup \
     --cluster-name myAKSCluster \
     --os-type Windows \
     --name npwin \
     --node-count 1 \
+    --node-vm-size Standard_B2s \
     --kubernetes-version 1.14.0
 ```
 
-## Pods (Windows containers) 
-Right, let's create a Pod. Of course, normally you would create a pod with a Deployment object, but we're just testing things out.
+## Windows Pods
+I'm assuming you have connected your cluster to your kubectl, so now let's create a Pod. Of course, normally you would create a pod with a Deployment object, but we're just testing things out.
 
 ```yaml
 ---
@@ -85,6 +107,46 @@ The Windows pod has been created and applied, but it won't start correctly. Inst
 > The container operating system does not match the host operating system.
 
 So, I ran `kubectl describe node <nodepool>` and saw that my host OS is 10.0.17763.379 (which is 1809). For the container, run `docker inspect isonaj/basiccorewin:1803` and look for OsVersion. This shows my container OS version to be 10.0.17134.766 (which is version 1803). To resolve this situation, I built a new container with an OS that matches the host I want to run on. (1809)
+
+## Node Taints
+Before I finish up, I should really point out Node Taints. Any way you slice it, Kubernetes really expects to be running Linux under the hood and it's not possible to update ALL of the deployment yamls to specify the os-type. So how do we wrangle this split os-type monster?
+
+Taints are built for this purpose. The idea is that we tell Kubernetes not to run pods on the windows nodepool, unless we explicitly permit it.
+
+```bash
+$ kubectl get nodes
+NAME                                STATUS   ROLES   AGE     VERSION
+aks-nodepool1-16426533-vmss000000   Ready    agent   3h16m   v1.14.0
+akswin000000                        Ready    agent   3h5m    v1.14.0
+
+$ kubectl taint node akswin000000 sku=win:NoSchedule
+node/akswin000000 tainted
+```
+
+And done. Now if you want to run a Pod on the windows node, you need to apply a Toleration to the node, like so:
+
+```yaml
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: basiccorewin-pod
+  labels:
+    app: basiccorewin
+spec:
+  containers:
+  - name: basiccorewin
+    image: isonaj/basiccorewin
+    ports:
+    - containerPort: 80
+  nodeSelector:
+    beta.kubernetes.io/os: windows
+  tolerations:
+  - key: "sku"
+    operator: "Equal"
+    value: "win"
+    effect: "NoSchedule"
+```
 
 # Summary
 I don't think Windows containers are quite production ready, but I think they're getting pretty close to what I need. If you can match the container versions to the version of the host they will be deployed to, they seem to run quite happily. I think it's worth getting used to putting .Net Framework applications into containers and even hosting in staging. I don't think it will be long before they're ready for production.

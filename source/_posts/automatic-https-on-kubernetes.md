@@ -14,9 +14,9 @@ What the heck is this HTTPS and certificate stuff? Basically, HTTPS will guarant
 
 As I set out on this adventure, it looks like I need cert-manager and the best way to install this appears to be to use helm, which I installed with Chocolatey.
 
-```
-choco install kubernetes-helm
-helm init
+```bash
+$ choco install kubernetes-helm
+$ helm init
 ```
 
 ## First steps
@@ -37,11 +37,11 @@ spec:
 ```
 
 ## Installing cert manager
-```
-kubectl apply -f \
+```bash
+$ kubectl apply -f \
     https://raw.githubusercontent.com/jetstack/cert-manager/release-0.6/deploy/manifests/00-crds.yaml
 
-helm install --name cert-manager --namespace ingress \
+$ helm install --name cert-manager --namespace ingress \
     --set ingressShim.defaultIssuerName=letsencrypt-prod 
     --set ingressShim.defaultIssuerKind=ClusterIssuer 
     stable/cert-manager
@@ -52,8 +52,8 @@ I ran into issues installing cert-manager with a 'cluster-admin' not found error
 ## Installing nginx-ingress
 The next step is to configure an Ingress to manage the TLS endpoint, that is to manage my HTTPS endpoint with certificate connected to my domain. Without this step, I found I could set up my Ingress entry, but the address would stay empty.
 
-```
-helm install stable/nginx-ingress \
+```bash
+$ helm install stable/nginx-ingress \
     --name nginx \
     --set rbac.create=true \
     --namespace ingress
