@@ -26,19 +26,19 @@ Hexo is number 2 in popularity (mostly in China) and is growing fast. It also ha
 Since it's built on node, Hexo is super easy to install (assuming you already have node installed!) We will be using npm to install.
 
 ```bash
-// Install Hexo:
+# Install Hexo:
 $ npm install hexo-cli -g
 
-// Create a site:
+# Create a site:
 $ hexo init my-site
 
-// Create a post:
+# Create a post:
 $ hexo new post "This is going to be a great post"
 
-// Serve your site locally:
+# Serve your site locally:
 $ hexo serve
 
-// Generate the static site:
+# Generate the static site:
 $ hexo generate
 ```
 

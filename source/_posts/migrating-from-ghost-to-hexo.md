@@ -25,7 +25,7 @@ $ git clone https://github.com/xzhih/hexo-theme-casper.git themes/hexo-casper
 ```
 
 ## 3. Configure the theme and site
-Edit _config.yaml
+Edit `_config.yaml`
 ```yaml
 # Site
 title: Anthony Ison
@@ -46,7 +46,7 @@ filename_case: 1
 post_asset_folder: true
 ```
 
-Edit themes/hexo-casper/_config.yaml
+Edit `themes/hexo-casper/_config.yaml`
 
 ## 4. Migrate posts from ghost to hexo
 In Ghost:
@@ -84,7 +84,7 @@ Also, it's worth configuring an image optimizer, using:
 $ npm i hexo-filter-responsive-images --save
 ```
 
-Then add to the _config.yaml:
+Then add to the `_config.yaml`:
 ```yaml
 # hexo-filter-responsive-images
 responsive_images:
@@ -103,14 +103,14 @@ To each of the blog post headers, add:
 image: my-blog-post/small_cover.jpg
 feature_img: large_cover.jpg
 ```
-where cover.jpg is the original image for the post cover.
+where `cover.jpg` is the original image for the post cover.
 
 ## 6. Configure RSS
 ```bash
 $ npm install hexo-generator-feed --save
 ```
 
-Add this to your _config.yaml:
+Add this to your `_config.yaml`:
 ```yaml
 feed:
   type: atom
@@ -129,7 +129,7 @@ feed:
 $ npm install hexo-deployer-git --save
 ```
 
-Edit _config.yaml
+Edit `_config.yaml`
 ```yaml
 deploy:
   type: git
