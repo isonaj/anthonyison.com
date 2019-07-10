@@ -1,8 +1,8 @@
 ---
 title: 'Kubernetes: A Beginner''s Guide'
 tags: kubernetes
-image: /kubernetes-a-beginners-guide/small_joseph-barrientos-93565-unsplash.jpg
-feature_img: joseph-barrientos-93565-unsplash.jpg
+image: /kubernetes-a-beginners-guide/small_cover.jpg
+feature_img: cover.jpg
 date: 2019-06-04 22:45:13
 description:
 keywords:

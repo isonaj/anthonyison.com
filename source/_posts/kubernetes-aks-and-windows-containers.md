@@ -3,8 +3,8 @@ title: 'Kubernetes: AKS and Windows Containers'
 tags:
   - kubernetes
 image: >-
-  /kubernetes-aks-and-windows-containers/small_vidar-nordli-mathisen-667388-unsplash.jpg
-feature_img: vidar-nordli-mathisen-667388-unsplash.jpg
+  /kubernetes-aks-and-windows-containers/small_cover.jpg
+feature_img: cover.jpg
 date: 2019-06-10 14:52:07
 description:
 keywords:

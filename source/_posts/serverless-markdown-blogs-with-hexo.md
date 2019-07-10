@@ -1,8 +1,8 @@
 ---
 title: Serverless markdown blogs with Hexo
 tags: hexo
-image: /serverless-markdown-blogs-with-hexo/small_lauren-mancke-60627-unsplash.jpg
-feature_img: lauren-mancke-60627-unsplash.jpg
+image: /serverless-markdown-blogs-with-hexo/small_cover.jpg
+feature_img: cover.jpg
 date: 2019-05-03 21:27:32
 description:
 keywords:

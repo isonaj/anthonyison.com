@@ -2,8 +2,8 @@
 title: Automatic HTTPS on Kubernetes
 date: 2019-02-17
 tags: kubernetes
-image: /automatic-https-on-kubernetes/small_1200px-Rusty_Padlock.jpg
-feature_img: 1200px-Rusty_Padlock.jpg
+image: /automatic-https-on-kubernetes/small_cover.jpg
+feature_img: cover.jpg
 description: 
 keywords: 
 identifier: ghost-5c68a96a21b29c00018dd0fd

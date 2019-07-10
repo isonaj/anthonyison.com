@@ -1,13 +1,13 @@
 ---
 title: So... Cloudflare...
 tags: CDN
-image: /so-cloudflare/small_jakob-owens-1417197-unsplash.jpg
-feature_img: jakob-owens-1417197-unsplash.jpg
+image: /so-cloudflare/small_cover.jpg
+feature_img: cover.jpg
 date: 2019-05-05 20:40:42
 description:
 keywords:
 ---
-I went to a great talk by Troy Hunt in Brisbane a while ago. Well, it was great at the time. It didn't take long before I started to realise that most of the struggles I've had with HTTPS my blog could have actually been side stepped quite nicely by using [Cloudflare](https://www.cloudflare.com/).
+I went to a great talk by Troy Hunt in Brisbane a while ago. Well, it was great at the time. It didn't take long before I started to realise that most of the struggles I've had with HTTPS on my blog could have actually been side stepped quite nicely by using [Cloudflare](https://www.cloudflare.com/).
 
 Let me be clear. This wasn't the first time I heard of Cloudflare. To be honest, I didn't actually know what it was before now though, and Troy has a way of presenting things so that they seem really quite simple. Cloudflare seems to provide a service that just puts a bow on hosted services: Free SSL, CDN/caching, DNS, traffic management. Cloudflare aim to have an edge within 10ms of every client on the planet.
 

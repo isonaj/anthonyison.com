@@ -2,8 +2,8 @@
 title: 'Kubernetes: Setting up a cluster on AKS'
 tags: kubernetes
 date: 2019-06-04 22:45:12
-image: /kubernetes-setting-up-a-cluster-on-aks/small_taylor-vick-1612625-unsplash.jpg
-feature_img: taylor-vick-1612625-unsplash.jpg
+image: /kubernetes-setting-up-a-cluster-on-aks/small_cover.jpg
+feature_img: cover.jpg
 description:
 keywords:
 ---
