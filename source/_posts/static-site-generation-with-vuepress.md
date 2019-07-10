@@ -1,13 +1,15 @@
 ---
 title: Static Site Generation with Vuepress
 tags:
-- blogging
-- vuejs
-image:
-feature_img:
+  - blogging
+  - vuejs
+date: 2019-07-10 22:20:34
+image: /static-site-generation-with-vuepress/small_cover.jpg
+feature_img: cover.jpg
 description:
 keywords:
 ---
+
 When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really like the approach though. It uses the Vue.js server side processing to generate static sites. It's time to have a closer look.
 
 # Creating content
@@ -37,8 +39,8 @@ Here is some more content
 `index.md`:
 ```markdown
 # Index
-* [First post](/post1.md) >> index.md
-* [Second post](/post2.md) >> index.md
+* [First post](/post1.md)
+* [Second post](/post2.md)
 ```
 
 Next, we need to configure npm to run vuepress for us. Edit the newly created `package.json` file in the current folder and change the scripts section to:
@@ -87,9 +89,6 @@ Vuepress has a plugin for doing RSS feeds [here](https://github.com/webmasterish
 
 ## Email subscriptions
 I don't currently do email subscriptions, but I imagine you can easily offload this to an external service like [MailChimp](https://mailchimp.com).
-
-## SEO
-SEO is basically content for search engines.
 
 # Vuepress vs Hexo
 Alright, I would never have looked into Vuepress if this wasn't in the back of my mind. Let's take a look at some of the strengths and weaknesses of the two.
