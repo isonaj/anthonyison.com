@@ -1,8 +1,8 @@
 ---
 title: Static Site Generation with Vuepress
 tags:
-  - blogging
-  - vuejs
+- blogging
+- vuejs
 date: 2019-07-10 22:20:34
 image: /static-site-generation-with-vuepress/small_cover.jpg
 feature_img: cover.jpg
@@ -10,7 +10,7 @@ description:
 keywords:
 ---
 
-When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really like the approach though. It uses the Vue.js server side processing to generate static sites. It's time to have a closer look.
+When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really like the approach though. It uses the [Vue.js](https://vuejs.org/) server side processing to generate static sites. It's time to have a closer look.
 
 # Creating content
 My first measure of a tool is how easy it is to get started. For Vuepress, that means I want to create a couple of posts. It's really easy to create some quick content, like so:
@@ -24,19 +24,19 @@ $ npm init    # Enter through to accept all defaults
 $ npm i vuepress --save
 ```
 Create the following files:
-`post1.md`:
+*post1.md:*
 ```markdown
 # My first post
 Here is some content
 ```
 
-`post2.md`:
+*post2.md:*
 ```markdown
 # My second post
 Here is some more content
 ```
 
-`index.md`:
+*index.md:*
 ```markdown
 # Index
 * [First post](/post1.md)
@@ -88,26 +88,28 @@ I use Disqus for comments. It uses JS to plugin to your page so should be able t
 Vuepress has a plugin for doing RSS feeds [here](https://github.com/webmasterish/vuepress-plugin-feed). I have no idea of the quality of the feed. RSS seems to be a bit of a mashup these days and I've had to hack the one I use with Hexo to get it to work in the places where it's missed a step.
 
 ## Email subscriptions
-I don't currently do email subscriptions, but I imagine you can easily offload this to an external service like [MailChimp](https://mailchimp.com).
+I don't currently do email subscriptions, but I imagine you can easily offload this to an external service like [MailChimp](https://mailchimp.com) or [TinyLetter](https://tinyletter.com/).
 
 # Vuepress vs Hexo
 Alright, I would never have looked into Vuepress if this wasn't in the back of my mind. Let's take a look at some of the strengths and weaknesses of the two.
 
 ## Hexo
-Pros:
+*Pros:*
 * Simple to create new posts
 * Flexible theme options
-Cons: 
+
+*Cons:* 
 * Themes have inconsistent technologies
 * Most of the community seems to be Chinese (different social media stacks, language barriers)
 * Easier for non-developers (slightly?)
 
 ## Vuepress
-Pros:
+*Pros:*
 * Easy to create new posts
 * Themes have consistent Vue.js approach
 * Seems to have a thriving community
-Cons:
+
+*Cons:*
 * Very developer centric
 
 I guess when the chips are down, there is not a whole lot between them. If you're not a developer with an interest in [Vue.js](https://vuejs.org/), you might not be that interested in Vuepress. For me, I like the accessibility provided for creating themes. There seems to be less magic happening in Vuepress than there seems to be with Hexo. If I were starting over, maybe I'd look at Vuepress more seriously, but I'm happy with my current process with Hexo.
@@ -118,3 +120,4 @@ Is Vuepress worth considering for blogs? I think so. There seems to be a thrivin
 Other references:
 * https://willwillems.com/posts/building-a-website-with-vuepress.html
 * https://willwillems.com/posts/write-a-custom-theme-with-vuepress.html
+* https://github.com/bencodezen/vuepress-blog-boilerplate
