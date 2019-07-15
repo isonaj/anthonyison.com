@@ -1,0 +1,3 @@
+[submodule "themes/hexocasper"]
+	path = themes/hexocasper
+	url = https://github.com/isonaj/hexo-theme-casper.git
