@@ -14,7 +14,7 @@ In my [last blog](/static-site-generation-with-vuepress), I looked at Vuepress t
 > You can get the code from this post from [here](https://github.com/isonaj/sample-vuepress-blog).
 
 # Getting started
-To get started, you will need to have [Node](https://nodejs.org/en/download/) installed.
+To get started, you will need to have [Node](https://nodejs.org/en/download/) and [yarn]() installed.
 Create a new folder for the blog and initialise it with:
 ```bash
 $ git init
@@ -188,13 +188,64 @@ themeConfig: {
 The editLinks config items will add a link to each post that redirects to the markdown page on GitHub to allow editing. (assuming the user has access) The `repoLabel` config item puts an entry in the menu that links directly to the main GitHub page.
 
 ## Tags
+To add tags to a post, we need to use the frontmatter. Lets go back to each of our posts and update the frontmatter to:
+```markdown
+---
+type: post
+tags:
+  - tag1
+  - tag2
+---
+```
+You can make the tag1 and tag2 values anything you want.
 
-## Draft / Future Posts
-
-## Google Analytics
-
-## User Comments with Disqus
 
 ## Reading Times on Posts
 
+## Google Analytics
+```bash
+$ npm i @vuepress/plugin-google-analytics --save-dev
+```
 
+*config.js*
+```js
+// ...
+plugins: [
+  [ 
+    '@vuepress/google-analytics',
+    {
+      'ga': 'UA-00000000-0' // Set this to your google analytics ID
+    }
+  ]  
+],
+// ...
+```
+> Note the double square brackets in the plugins config. Make sure the plugins entry is at the base level, not inside the themeConfig object.
+> Also, google anaylytics won't work from the vuepress dev server. It will inject the required code into the `app.js` during the `vuepress build` step. It will work once you host those files.
+
+## User Comments with Disqus
+
+## RSS Feed
+
+## Draft / Future Posts
+
+## PWA
+
+# Deployment & Hosting
+
+## GitHub pages + Azure
+
+## Netlify + Zapier
+
+https://www.netlify.com/
+
+
+Blogging support for Vuepress
+https://github.com/vuejs/vuepress/issues/36
+https://github.com/vuejs/vuepress/projects/1
+
+
+https://v1.vuepress.vuejs.org/plugin/
+https://vuepress-plugin-blog.ulivz.com/guide/getting-started.html#document-classifier
+https://blog.logrocket.com/vuepress-in-all-its-glory-2f682e4f70c0/
+https://books.google.com.au/books?id=OqScDwAAQBAJ&pg=PT288&lpg=PT288&dq=vuepress+google+analytics+doesn%27t+work&source=bl&ots=2lyqpb9ijp&sig=ACfU3U2jwopc87XSLaV37gsdaCAngBmCEA&hl=en&sa=X&ved=2ahUKEwjh-8OjsrPjAhUIbisKHdazCnQQ6AEwA3oECAkQAQ#v=onepage&q=vuepress%20google%20analytics%20doesn't%20work&f=false

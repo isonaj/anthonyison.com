@@ -9,8 +9,7 @@ feature_img: cover.jpg
 description:
 keywords:
 ---
-
-When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really like the approach though. It uses the [Vue.js](https://vuejs.org/) server side processing to generate static sites. It's time to have a closer look.
+When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really like the approach though. It uses the [Vue.js](https://vuejs.org/) server-side processing to generate static sites. It's time to have a closer look.
 
 # Creating content
 My first measure of a tool is how easy it is to get started. For Vuepress, that means I want to create a couple of posts. It's really easy to create some quick content, like so:
@@ -65,18 +64,24 @@ Vuepress provides a clear separation between the content and the theme. The them
 Create the `.vuepress` folder and add a `config.js` file with the following:
 ```js
 module.exports = {
-    title: 'My Vuepress Blog',
-    description: 'Taking Vuepress for a spin'
+  title: 'My Vuepress Blog',
+  description: 'Taking Vuepress for a spin'
 }
 ```
 
 ## Default Layout
 You can easily export the starting default theme by running `node_modules\.bin\vuepress extract`. This will save the default layout in the `.vuepress\theme` folder. I'm not going to open up themes too much just yet. That would be a whole blog post to itself, but if you're interested in digging in, I recommend [this post](https://www.amie-chen.com/blog/20190211-build-a-site-with-vuepress-part2.html).
 
+![Vuepress site with default layout](screenshot1.png)
+*Figure: Vuepress site with default layout*
+
 # Downloading a theme
-If you're like me, you're not interested in the absolute nitty gritty of the theme. You just want to generate content. What I like about Vuepress is that the theme is Vue.js and I can have a good crack at trying to maintain my theme, or tweak the theme as needed.
+If you're like me, you're not interested in the absolute nitty-gritty of the theme. You just want to generate content. What I like about Vuepress is that the theme is Vue.js and I can have a good crack at trying to maintain my theme, or tweak the theme as needed.
 
 As you can see in my blog, I am captivated by the Casper theme and fortunately, Vuepress has a Casper theme [here](https://github.com/alexander-heimbuch/vuepress-theme-casper). In my mind though, this theme leaves a lot to be desired when compared to my current (tweaked) hexo casper theme. This one requires the reading time to be added to the frontmatter, but that could possibly be automated with [this plugin](https://github.com/darrenjennings/vuepress-plugin-reading-time).
+
+![Vuepress site with Casper layout](screenshot2.png)
+*Figure: Vuepress site with Casper layout*
 
 # Blogging support
 In [this post](/blogging-for-consistency), I looked at some of the expectations for a blog. Let's take a look at which parts we can hit with Vuepress.
@@ -105,11 +110,13 @@ Alright, I would never have looked into Vuepress if this wasn't in the back of m
 
 ## Vuepress
 *Pros:*
+* Very easy to get up and going with a basic CMS
 * Easy to create new posts
 * Themes have consistent Vue.js approach
 * Seems to have a thriving community
 
 *Cons:*
+* Not really aimed at blogging just yet (but it's coming)
 * Very developer centric
 
 I guess when the chips are down, there is not a whole lot between them. If you're not a developer with an interest in [Vue.js](https://vuejs.org/), you might not be that interested in Vuepress. For me, I like the accessibility provided for creating themes. There seems to be less magic happening in Vuepress than there seems to be with Hexo. If I were starting over, maybe I'd look at Vuepress more seriously, but I'm happy with my current process with Hexo.
