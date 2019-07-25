@@ -9,13 +9,13 @@ keywords:
 ---
 Kubernetes is a container orchestration platform and has been described as "the OS of the cloud". It builds on container-based services by providing many features such as volumes for stateful services, resilience and scaling, monitoring, automated zero-downtime upgrades. It runs on a cluster of nodes (VMs) and allocates services to nodes based on either hard limits (eg. my service must run on linux) and prioritised preferences (eg. put these two services on the same VM). If you are running your services in containers, Kubernetes will likely make your life easier.
 
-# Containers
+## Containers
 The first important step is to ensure your software is running in a container. A container is a way of packaging your service, along with any dependencies, removing the reliance of specific libraries, etc existing on the OS. I'm mostly assuming you know what a container is, what the benefits are and how to run one in this blog post.
 
-# First steps
+## First steps
 Assuming you have a container already (and if you haven't you can just use one of mine to follow along), the first step is to create your cluster. Sorry, that part is up to you. Come back here when you're done. You can take a look at [this page](/kubernetes-setting-up-a-cluster-on-aks) for assistance with Azure.
 
-## Pods
+### Pods
 Pods are the basic building blocks of a Kubernetes system and it's probably fair to say everything else supports Pods in keeping their services running and available. A Pod runs one or more containers and defines ports, volumes, config settings, etc to expose a container service.
 
 To create a pod, you will need a yaml file that defines its structure. If you're not sure what yaml is, it's like a json file with way fewer characters. It uses file layout to express relationships between properties, so take care of those spaces! Anyway, here's our first yaml file:
@@ -43,7 +43,7 @@ Now, run that on the cluster using `kubectl apply -f pod.yaml`. You can check wh
 
 Once you're finished, there's nothing more to see. We won't actually be using this to go further. Nobody expects the spanish inquision and nobody starts a pod on its own. Delete your pod with `kubectl delete pod basiccore-pod`.
 
-## Deployments
+### Deployments
 So let's start over. Nobody starts a pod by itself, because there's a much better construct for running pods and that is a Deployment. A deployment will provide zero downtime by managing all sorts of things for you. It can be used to automatically rollout new image versions or pod configs (basically anything that could put your uptime at risk). We'll take a closer look in a later post.
 
 Let's jump into the yaml:
@@ -84,7 +84,7 @@ basiccore-deployment-c46759d6d-5qw96   1/1     Running            0          7s
 basiccore-deployment-c46759d6d-f94lk   1/1     Running            0          7s
 ```
 
-## Services
+### Services
 We've just spent all of this time starting and stopping pods, but we haven't actually connected to it yet. We need a way to get in, and get directed to the pod. For this, we use a Service component. 
 
 > A Kubernetes Service is an abstraction layer which defines a logical set of Pods and enables external traffic exposure, load balancing and service discovery for those Pods. - kubernetes.io

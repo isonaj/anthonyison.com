@@ -9,8 +9,8 @@ keywords:
 ---
 Most cloud providers provide a managed Kubernetes cluster at this point. Each time I come back to look at Kubernetes, I feel like I've forgotten something (or everything). This post is a cheat sheet for getting a cluster up and running on Azure (using AKS) with recommended extras.  
 
-# Creating a Cluster
-## Getting ready
+## Creating a Cluster
+### Getting ready
 Firstly, let's install the latest Azure CLI. Check [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest) for the latest version. Run `az --version` to see what version you have if you have it installed already. Next, `az login` and `az account set -s <subscriptionId>` so that you're ready to go.
 
 Create the resource group: (location is important. some areas have no AKS support yet eg. australiasoutheast)
@@ -18,7 +18,7 @@ Create the resource group: (location is important. some areas have no AKS suppor
 $ az group create --name myResourceGroup --location australiaeast
 ```
 
-## Create a Linux-only cluster
+### Create a Linux-only cluster
 Create the AKS cluster:
 ```bash
 $az aks create \
@@ -29,7 +29,7 @@ $az aks create \
     --generate-ssh-keys
 ```
 
-## Connect kubectl to your cluster
+### Connect kubectl to your cluster
 Install latest kubectl using `az aks install-cli`. (You may need to update your path to find the correct kubectl.exe)
 
 ```bash

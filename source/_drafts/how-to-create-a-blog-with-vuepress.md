@@ -13,7 +13,7 @@ In my [last blog](/static-site-generation-with-vuepress), I looked at Vuepress t
 
 > You can get the code from this post from [here](https://github.com/isonaj/sample-vuepress-blog).
 
-# Getting started
+## Getting started
 To get started, you will need to have [Node](https://nodejs.org/en/download/) installed. We will use [yarn](https://yarnpkg.com/en/) to install packages instead on [npm](https://www.npmjs.com/). Without getting too much into the details of yarn vs npm, I've had a few issues with Vuepress and npm that were resolved by using yarn. To install yarn, run `npm i yarn -g` on the command line.
 
 Create a new folder for the blog and initialise it with:
@@ -53,7 +53,7 @@ Furthermore, the `@vuepress/theme-blog` has installed and configured a number of
 
 > You can try out the search plugin now, by typing 'example' into the search box. As you can see, the search will go through the headers within posts, but not the content itself. When a header is found, it can be linked directly though, which I think makes this a powerful feature.
 
-## First steps
+### First steps
 We've generated a whole blog from a couple of commands, but it's not really ours yet. Let's update some of the defaults.
 
 > The `.vuepress` folder is where all of the Vuepress stuff (themes, config, components, etc) lives. This provides a clean separation between content and site generation.
@@ -93,7 +93,7 @@ This is a sample `markdown` code block.
 
 > Take note that we added 'blog' and 'sometag' tags to this post. Tags are pretty much managed straight out of the box. Click on the Tags link to find the new post under the appropriate tags!
 
-## Static Pages
+### Static Pages
 Every blog needs an 'About Me' link, so let's add one now.
 
 **./blog/about-me.md**
@@ -115,10 +115,10 @@ module.exports = {
 }
 ```
 
-## Tags
+### Tags
 You may have noticed that we added tags to our post earlier, specifically 'blob' and 'sometag'. If you browse to the Tags link now, you will see that 'sometag' has been created in the tags list. So tags are pretty much done, straight out of the box. But don't worry, there is still plenty to do!
 
-## Google Analytics
+### Google Analytics
 ```bash
 $ yarn add @vuepress/plugin-google-analytics -D
 ```
@@ -140,7 +140,7 @@ plugins: [
 ```
 > Google anaylytics won't work from the vuepress dev server. It will inject the required code into the `app.js` during the `vuepress build` step and will work once you host those files.
 
-## RSS Feed
+### RSS Feed
 RSS is important for blogs. It notifies your audience that you've posted something new.
 
 Similar to Google Analytics, we need to install the plugin and configure it.
@@ -175,7 +175,7 @@ https://github.com/dacsang97/vuepress-plugin-rss
 
 
 
-## Reading Times on Posts
+### Reading Times on Posts
 There's a great little plugin that calculates the reading time for a post and then attaches some data to the post that looks something like this:
 ```js
 {
@@ -208,28 +208,28 @@ Finally, update the PostList component to show the readingTime.text value next t
   </li>
 ```
 
-## User Comments with Disqus
+### User Comments with Disqus
 
-## Draft / Future Posts
+### Draft / Future Posts
 
-## SEO
+### SEO
 
 https://github.com/lorisleiva/vuepress-plugin-seo
 
 
-## PWA
+### PWA
 
 pwa: true on the themConfig file.
 
-## Responsive Images
+### Responsive Images
 https://github.com/ktquez/vuepress-theme-ktquez
 
 
-# Deployment & Hosting
+## Deployment & Hosting
 
-## GitHub pages + Azure
+### GitHub pages + Azure
 
-## Netlify + Zapier
+### Netlify + Zapier
 
 https://www.netlify.com/
 
@@ -265,7 +265,7 @@ https://alexjover.com/
 
 
 
-## GitHub integration
+### GitHub integration
 The first part of GitHub integration is a 'Last Updated' tag, that can be added to the config. It uses the commits from git to determine when the document was last updated. Update the `config.js` to add a lastUpdated option like so:
 
 ```js
@@ -276,7 +276,7 @@ themeConfig: {
 }
 ```
 
-### Allow Editing
+#### Allow Editing
 This doesn't really apply to a blog, but it really helps with general documentation. Firstly, here's the config changes:
 ```js
 themeConfig: {
