@@ -8813,10 +8813,10 @@ vuepress-plugin-container@^2.0.0:
   dependencies:
     markdown-it-container "^2.0.0"
 
-vuepress-theme-isonaj@^0.0.7:
-  version "0.0.7"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-isonaj/-/vuepress-theme-isonaj-0.0.7.tgz#56e64ac19aae49adee224653bab91a1e82b495e4"
-  integrity sha512-SUVO0zpYrRGJIZLZba1EohcCLsRho3tFTD6d2dtkF5WBQMJ/5+EQpi/TU+SulQwwTalglspzNQv6z/L/wnusUA==
+vuepress-theme-isonaj@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-isonaj/-/vuepress-theme-isonaj-0.0.8.tgz#134d4e5de7e12e393457a1df20959905dd29081b"
+  integrity sha512-CcH0/5QUlCOkmYCgmvv48MJWuqEqbQYJf6oPBZd/QN93Uj+xZ/ANkDwAtliu3l3NDxMO9FE+kobkxLDqav1xHA==
   dependencies:
     "@vuepress/plugin-blog" "^1.2.4"
 
