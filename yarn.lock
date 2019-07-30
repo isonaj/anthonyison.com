@@ -882,6 +882,13 @@
   dependencies:
     lodash.throttle "^4.1.1"
 
+"@vuepress/plugin-blog@^1.2.4":
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.2.4.tgz#3ff97eebb3044991cd0d0f780c02355f64fac4a2"
+  integrity sha512-I6OhDm66QDsRH7er3uYQGTglTQWvdZukqpvMHiMSAqqL6fcPGGxnsQTzhxUZMg1L3PTK2nmaGQL88tiIxYZhmQ==
+  dependencies:
+    vuejs-paginate "^2.1.0"
+
 "@vuepress/plugin-last-updated@^1.0.2":
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.0.2.tgz#c839c5fb585c469a8c2ff70c16204dd72478545a"
@@ -8781,6 +8788,11 @@ vue@^2.5.16:
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
   integrity sha512-ImThpeNU9HbdZL3utgMCq0oiMzAkt1mcgy3/E6zWC/G6AaQoeuFdsl9nDhTDU3X1R6FK7nsIUuRACVcjI+A2GQ==
 
+vuejs-paginate@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/vuejs-paginate/-/vuejs-paginate-2.1.0.tgz#93e1ad1539b713a688c7a2d3080bda60fcc6c77d"
+  integrity sha512-gnwyXlmCiDOu9MLWxN5UJ4PGijKGNOMpHG8ujsrynCzTJljn/rp7Jq0WiDGDAMi5/u0AHuYIHhced+tUW4jblA==
+
 vuepress-html-webpack-plugin@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/vuepress-html-webpack-plugin/-/vuepress-html-webpack-plugin-3.2.0.tgz#219be272ad510faa8750d2d4e70fd028bfd1c16e"
@@ -8800,6 +8812,13 @@ vuepress-plugin-container@^2.0.0:
   integrity sha512-SrGYYT7lkie7xlIlAVhn+9sDW42MytNCoxWL/2uDr+q9wZA4h1uYlQvfc2DVjy+FsM9PPPSslkeo/zCpYVY82g==
   dependencies:
     markdown-it-container "^2.0.0"
+
+vuepress-theme-isonaj@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-isonaj/-/vuepress-theme-isonaj-0.0.7.tgz#56e64ac19aae49adee224653bab91a1e82b495e4"
+  integrity sha512-SUVO0zpYrRGJIZLZba1EohcCLsRho3tFTD6d2dtkF5WBQMJ/5+EQpi/TU+SulQwwTalglspzNQv6z/L/wnusUA==
+  dependencies:
+    "@vuepress/plugin-blog" "^1.2.4"
 
 vuepress@^1.0.2:
   version "1.0.2"

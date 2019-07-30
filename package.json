@@ -5,6 +5,10 @@
   "hexo": {
     "version": "3.8.0"
   },
+  "scripts": {
+    "dev": "vuepress dev source",
+    "build": "vuepress build source"
+  },
   "dependencies": {
     "hexo": "^3.8.0",
     "hexo-auto-excerpt": "^1.1.2",
@@ -25,7 +29,7 @@
     "hexo-server": "^0.3.3"
   },
   "devDependencies": {
-    "@vuepress/plugin-google-analytics": "^1.0.2",
-    "vuepress": "^1.0.2"
+    "vuepress": "^1.0.2",
+    "vuepress-theme-isonaj": "^0.0.7"
   }
 }

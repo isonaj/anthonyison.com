@@ -261,7 +261,8 @@ https://www.amie-chen.com/blog/20190212-build-a-site-with-vuepress-part3.html
 
 https://alexjover.com/
 
-
+https://medium.com/vue-mastery/how-to-create-a-custom-vuepress-theme-with-vuetify-651b7d7e5092
+https://willwillems.com/posts/write-a-custom-theme-with-vuepress.html
 
 
 
@@ -290,3 +291,5 @@ themeConfig: {
 ```
 
 The editLinks config items will add a link to each post that redirects to the markdown page on GitHub to allow editing. (assuming the user has access) The `repoLabel` config item puts an entry in the menu that links directly to the main GitHub page.
+
+
