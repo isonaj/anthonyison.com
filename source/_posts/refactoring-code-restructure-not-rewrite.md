@@ -9,19 +9,23 @@ date: 2019-07-30 15:35:28
 description:
 ---
 
-I see a lot of similarities between software and business structures. If I'm talking about a queuing mechanism, it often helps to describe it as a call centre managing their tickets, or a lock as being like a key for the toilets. Refactoring then, would simply be a restructuring of a business, however developers often mean they want fire everyone and start over.
+I see a lot of similarities between software and business processes. If I'm talking about a queuing mechanism, it often helps to describe it as a call centre managing their tickets, or a lock as being like a key for the toilets. Refactoring then, would simply be a restructuring of a business or to give someone a new title or change teams around, however software developers often use it to mean they want fire everyone and start over.
 
-It's always possible that a business is in a state where this is needed, however small changes to a working system can produce incredible results. Software is expensive. I mean, REALLY expensive. So, let's not burn down the house just because we no longer like the decor.
+When we compare software processes and business processes, it can make it easy to communicate the benefits or drawbacks of a particular solution. Furthermore, when the stakeholders are engaged in the conversation **and they understand what's being discussed** they can guide the process more easily and it becomes a win-win for the software developers and the business. But I digress... 
 
-As a developer, refactoring is a one of your daily chores. The thing about a daily chore is that, when it's not done, it kind of builds up. If you never do your chores, you might find that you have a BIG job to get things neat and tidy again. And then, even if you stay on top of your chores, you might find you need an spring clean now and then just to get to the areas that aren't being kept on a daily basis.
+Let's get back to the dreaded **rewrite**. It's always possible that a business is in a state where this is needed, however small changes to a working system can produce incredible results. Software is expensive. I mean, REALLY expensive. So, let's not burn down the house just because we no longer like the decor.
 
-The problem is, software developers don't seem to agree on what refactoring is. It is often used to mean fixing a bug by writing "clean code" (or code that introduces design patterns) instead of "messy code".
+As a software developer, refactoring is a one of your daily chores. The thing about a daily chore is that, when it's not done, it kind of builds up. If you never do your chores, you might find that you have a BIG job to get things neat and tidy again. And then, even if you stay on top of your chores, you might find you need an spring clean now and then just to get to the areas that aren't being kept on a daily basis.
+
+The problem is, software developers don't seem to agree on what refactoring is. It is often used to mean fixing a bug by writing "clean code" (or code that introduces design patterns) instead of "messy code". That's not refactoring though, and as a community, we need to understand what refactoring is.
 
 ## So what is it?
 
 > I've never seen one before. No one has, but I'm guessing it's a white hole - [Kryten](https://www.youtube.com/watch?v=TxWN8AhNER0)
 
 Refactoring is a change made to the internal structure of **existing software** to make it **easier to understand** and cheaper to modify **without changing its observable behaviour**. It does not mean "cleaning up code". Basically, if you are fixing an issue or adding new behaviour, you are NOT refactoring. It is often an iterative, mechanical process that is practically risk-free. How can it be risk-free? Well, the types of changes we are talking about are renaming methods or variables or extracting a small chunk of code from one method into another.
+
+> WARNING: I'm about to show an example of refactoring some code. If you're not a software developer, focus on the difference between the starting code and the finished product.
 
 Consider the following example:
 ```csharp
@@ -63,6 +67,8 @@ I mentioned earlier that refactoring is a mechanical process. In fact, there are
 
 > Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behaviour - [Martin Fowler](https://refactoring.com/)
 
-The main benefits of refactoring are increased maintainability and extensibility with a low risk of introducing new issues. Like Test Driven Development (TDD), refactoring requires discipline to gain the full benefit from the practice. While each change seems too small to bother with, the cumulative effect of the practice will transform your code. 
+The main benefits of refactoring are increased maintainability and extensibility with a low risk of introducing new issues. Like [Test Driven Development](https://en.wikipedia.org/wiki/Test-driven_development) (TDD), refactoring requires discipline to gain the full benefit from the practice. While each change seems too small to bother with, the cumulative effect of the practice will transform your code. 
 
 If you want to learn more about refactoring techniques, I highly recommend the book, [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html). Originally published in 1999, it's recently had a 2nd edition.
+
+The idea of refactoring has been around for a long time and seems to be largely misunderstood by the software development community. By consistently refactoring before writing new code, software developers are able to improve the code base and improve maintainability and extensibility even to legacy applications.
