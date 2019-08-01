@@ -9,13 +9,15 @@ date: 2019-07-30 15:35:28
 description:
 ---
 
-I see a lot of similarities between software and business processes. If I'm talking about a queuing mechanism, it often helps to describe it as a call centre managing their tickets, or a lock as being like a key for the toilets. Refactoring then, would simply be a restructuring of a business or to give someone a new title or change teams around, however software developers often use it to mean they want fire everyone and start over.
+I see a lot of similarities between software and business processes. If I'm talking about a queuing mechanism, it often helps to describe it as a call centre managing their tickets, or a lock as being like a key for the toilets. Refactoring then, would simply be a restructuring of a business or to give someone a new title or change teams around, however software developers often use it to mean they want to fire everyone and start over.
 
 When we compare software processes and business processes, it can make it easy to communicate the benefits or drawbacks of a particular solution. Furthermore, when the stakeholders are engaged in the conversation **and they understand what's being discussed** they can guide the process more easily and it becomes a win-win for the software developers and the business. But I digress... 
 
 Let's get back to the dreaded **rewrite**. It's always possible that a business is in a state where this is needed, however small changes to a working system can produce incredible results. Software is expensive. I mean, REALLY expensive. So, let's not burn down the house just because we no longer like the decor.
 
-As a software developer, refactoring is a one of your daily chores. The thing about a daily chore is that, when it's not done, it kind of builds up. If you never do your chores, you might find that you have a BIG job to get things neat and tidy again. And then, even if you stay on top of your chores, you might find you need an spring clean now and then just to get to the areas that aren't being kept on a daily basis.
+As a software developer, refactoring is one of your daily chores. The thing about a daily chore is that, when it's not done, it kind of builds up. If you never do your chores, you might find that you have a BIG job to get things neat and tidy again. And then, even if you stay on top of your chores, you might find you need a spring clean now and then just to get to the areas that aren't being kept daily.
+
+> The word "refactoring" should never appear in a schedule. Refactoring is not a story or a backlog item. Refactoring is not a scheduled task. Refactoring is immediate and continuous. It's like washing your hands in the bathroom. You always do it. - [Uncle Bob Martin](https://twitter.com/unclebobmartin/status/1024254121338126336)
 
 The problem is, software developers don't seem to agree on what refactoring is. It is often used to mean fixing a bug by writing "clean code" (or code that introduces design patterns) instead of "messy code". That's not refactoring though, and as a community, we need to understand what refactoring is.
 
@@ -52,7 +54,7 @@ var total = subtotal - discount;
 var gst = Math.Round(total / 11, 2);
 ```
 
-Finally, the tax calculation has a hardcoded tax rate and it's not clear that this is actually calculating Gst, so let's move it to a global Gst calculator. I'm also not sure how often Gst is calculated, but this provides a single location to update all Gst calculation in the case that the rate changes.
+Finally, the tax calculation has a hardcoded tax rate and it's not clear that this is calculating Gst, so let's move it to a global Gst calculator. I'm also not sure how often Gst is calculated, but this provides a single location to update all Gst calculation in the case that the rate changes.
 ```csharp
 var subtotal = this.Items.Sum(i => i.Subtotal);
 var discount = Math.Round(this.Discount * subtotal, 2);
@@ -60,10 +62,10 @@ var total = subtotal - discount;
 var gst = GstCalculator.CalculateTax(total);
 ```
 
-As you can see, the refactored code should produce the same results as the original code and has significant improvements to readability, mostly from renaming variables. It may not be immediately obvious that the extra context from naming helps to document the code without actually adding comments.
+As you can see, the refactored code should produce the same results as the original code and has significant improvements to readability, mostly from renaming variables. It may not be immediately obvious that the extra context from naming helps to document the code without adding comments.
 
 ## Refactoring Techniques
-I mentioned earlier that refactoring is a mechanical process. In fact, there are a list of known [refactoring techniques](https://refactoring.guru/refactoring/techniques) as well as Martin Fowler's [catalog](https://refactoring.com/catalog/). Be aware that for every refactoring, there is an equal and opposite refactoring. There is not really a "best way" to lay out your code. Instead, you need to choose a refactoring that "improves" your code. If the code is overly complex, you might be looking at refactorings that reduce complexity. Alternatively, you might increase complexity to gain flexibility.
+I mentioned earlier that refactoring is a mechanical process. In fact, there are lists of known [refactoring techniques](https://refactoring.guru/refactoring/techniques), the most well-known being Martin Fowler's [catalog](https://refactoring.com/catalog/). Be aware that for every refactoring, there is an equal and opposite refactoring. There is not really a "best way" to layout your code. Instead, you need to choose a refactoring that "improves" your code. If the code is overly complex, you might be looking at refactorings that reduce complexity. Alternatively, you might increase complexity to gain flexibility.
 
 > Refactoring is a disciplined technique for restructuring an existing body of code, altering its internal structure without changing its external behaviour - [Martin Fowler](https://refactoring.com/)
 

@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.8.0"
+    "version": "3.9.0"
   },
   "scripts": {
     "dev": "vuepress dev source",
     "build": "vuepress build source"
   },
   "dependencies": {
+    "@vuepress/plugin-google-analytics": "^1.0.3",
     "hexo": "^3.8.0",
     "hexo-auto-excerpt": "^1.1.2",
     "hexo-deployer-git": "^1.0.0",
@@ -30,6 +31,6 @@
   },
   "devDependencies": {
     "vuepress": "^1.0.2",
-    "vuepress-theme-isonaj": "^0.0.11"
+    "vuepress-theme-isonaj": "^0.0.13"
   }
 }
