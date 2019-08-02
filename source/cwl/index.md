@@ -4,8 +4,8 @@ date: 2019-06-03 18:04:02
 ---
 
 <table><thead><th>Name</th><th>War 1</th><th>War 2</th><th>War 3</th><th>War 4</th><th>War 5</th><th>War 6</th><th>War 7</th><th>Total</th></thead><tbody>
-<tr><td>pugnacious</td><td>1</td><td>1</td><td></td><td>1</td><td></td><td>1</td><td></td><td>4</td></tr>
-<tr><td>torrville</td><td></td><td></td><td>1</td><td></td><td>1</td><td></td><td>1</td><td>3</td></tr>
+<tr><td>pugnacious</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
+<tr><td>torrville</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
 <tr><td>archylles</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
 <tr><td>tonydipinto</td><td>1</td><td>1</td><td></td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>423</td><td>1</td><td>1</td><td>1</td><td></td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
