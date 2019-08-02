@@ -4,7 +4,7 @@ module.exports = {
   theme: 'isonaj',
   dest: './public',
   themeConfig: {
-    disqusShortName: 'anthonyison',
+    disqus_shortname: 'anthonyison',
     feed: {
       canonical_base: 'https://anthonyison.com',
     }
