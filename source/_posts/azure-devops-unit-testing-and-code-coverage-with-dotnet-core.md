@@ -186,7 +186,7 @@ Some of the results you can get from SonarQube are:
 SonarQube looks like a great addition to any project. If you're worried about giving them access to your codebase, they also have local server options that can generate reports without handing over access.
 
 
-Running unit tests during your build process really helps to keep your code running how it's designed to run. These days, there are many other styles of code analysis that can scan for security vulnerabilities and best practices freeing you up to write the code that only you can write. 
+Running unit tests during your build process really helps to keep your code doing what it is designed to do. There are also many static analysis tools that can automatically scan for security vulnerabilities and best practices. By applying these tools automatically in your CI/CD pipeline, you can deploy with confidence. 
 
 **References:**
 * https://www.hanselman.com/blog/AutomaticUnitTestingInNETCorePlusCodeCoverageInVisualStudioCode.aspx
