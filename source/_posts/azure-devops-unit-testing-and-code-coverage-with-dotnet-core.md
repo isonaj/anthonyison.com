@@ -159,6 +159,35 @@ steps:
 ![Code Coverage](./codecoverage.png)
 **Figure: Code Coverage Results**
 
+## SonarQube
+[SonarQube](https://www.sonarqube.io/) is a static analysis tool that will: 
+* highlight bugs and vulnerabilities
+* review security hotspots
+* track technical debt
+* provide code quality metrics 
+* integrate with CI/CD
+* *and that's just in the community edition!* 
+
+Let's hook it up.
+1. Sign up at sonarqube.io and create your project. Use the new Auto Scan feature.
+2. Drop a .sonarcloud.properties file into the root folder of your project.
+3. Commit and push. This will trigger the first analysis run.
+
+Some of the results you can get from SonarQube are:
+![SonarQube Overview](./sonarqube_overview.png)
+**Figure: SonarQube overview**
+
+![SonarQube Issues](./sonarqube_issues.png)
+**Figure: SonarQube review results**
+
+![SonarQube Project Summary](./sonarqube_projects.png)
+**Figure: SonarQube project summary**
+
+SonarQube looks like a great addition to any project. If you're worried about giving them access to your codebase, they also have local server options that can generate reports without handing over access.
+
+
+Running unit tests during your build process really helps to keep your code running how it's designed to run. These days, there are many other styles of code analysis that can scan for security vulnerabilities and best practices freeing you up to write the code that only you can write. 
+
 **References:**
 * https://www.hanselman.com/blog/AutomaticUnitTestingInNETCorePlusCodeCoverageInVisualStudioCode.aspx
 * https://medium.com/bluekiri/code-coverage-in-vsts-with-xunit-coverlet-and-reportgenerator-be2a64cd9c2f
