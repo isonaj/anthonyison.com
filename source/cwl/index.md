@@ -8,22 +8,22 @@ date: 2019-06-03 18:04:02
 <tr><td>archylles</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>lil row</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>tonydipinto</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
-<tr><td>423</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
+<tr><td>423</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>landonville</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>3</td></tr>
-<tr><td>hami</td><td>1</td><td>x</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>5</td></tr>
-<tr><td>geeefro</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>x</td><td>1</td><td>5</td></tr>
-<tr><td>nug</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>x</td><td>5</td></tr>
+<tr><td>hami</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
+<tr><td>geeefro</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
+<tr><td>nug</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>6</td></tr>
 <tr><td>pug</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
-<tr><td>sirlonny</td><td>1</td><td>x</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>5</td></tr>
-<tr><td>binod songven</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>5</td></tr>
-<tr><td>archys</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>5</td></tr>
+<tr><td>sirlonny</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
+<tr><td>binod songven</td><td>x</td><td>1</td><td>1</td><td>x</td><td>x</td><td>x</td><td>x</td><td>2</td></tr>
+<tr><td>archys</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>baldrik</td><td>1</td><td>x</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>5</td></tr>
 <tr><td>nat the brat</td><td>1</td><td>1</td><td>x</td><td>x</td><td>1</td><td>1</td><td>1</td><td>5</td></tr>
 <tr><td>mufarsa</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
 <tr><td>mufelicious</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>3</td></tr>
 <tr><td>nacho</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>1</td><td>1</td><td>5</td></tr>
-<tr><td>trent</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>1</td><td>5</td></tr>
-<tr><td>ye</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>5</td></tr>
-<tr><td>echverion</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>5</td></tr>
+<tr><td>trent</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>5</td></tr>
+<tr><td>ye</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>x</td><td>x</td><td>3</td></tr>
+<tr><td>echeverion</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>5</td></tr>
 <tr><td>Total: </td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td>15</td><td></td></tr>
 </tbody></table>
