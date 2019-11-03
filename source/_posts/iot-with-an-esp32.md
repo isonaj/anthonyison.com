@@ -1,12 +1,14 @@
 ---
 title: IoT with an ESP32
 tags:
-- iot
+  - iot
+date: 2019-11-04 09:50:39
 image:
 feature_img:
 description:
 keywords:
 ---
+
 I've got some roses that haven't been doing so well lately, and I've been thinking it would have been nice to know that they were not doing well before any real harm was done. That got me thinking about IoT and so I bought some toys to see what I could pull together.
 
 For this project, I picked up a Duinotech Soil Moisture Sensor and an ESP32 dev kit for under 50 bucks. The ESP32 is a powerful little processor, including WiFi. Oh, and I already had a DHT11 Temperature and Humidity Sensor laying around so I've added that to the project too. The project code is available [here](https://github.com/isonaj/WeatherStation-esp32), if you want to take a look.
@@ -136,16 +138,15 @@ Create a dashboard in the Blynk app with 3 Value Displays and link up the Virtua
 
 As an experiment, I also added an LED (with resistor! don't just connect a LED between your GPIO pin and GND!) to GPIO16 and 17 on my board and added a button for each, linked to digital gp16 and gp17. These started to work immediately, with no code change. I'm really impressed. It leaves me thinking I can connect an analog pin directly to Blynk and have it just work.
 
-## Soil Moisture Sensor
-
-
-http://www.esp32learning.com/code/esp32-and-soil-moisture-sensor-example.php
-https://www.banggood.com/LILYGO-Higrow-ESP32-WiFi-bluetooth-Battery-DHT11-Soil-Temperature-And-Humidity-Sensor-Module-p-1196250.html
-
 ## Battery Sensor
 When you've got a battery powered unit, it really helps to know the battery level so you can replace the battery before it goes flat. You can calculate this by splitting the battery voltage across 2 resistors and reading the voltage between them through an ADC port.
 
 [This post](https://randomnerdtutorials.com/power-esp32-esp8266-solar-panels-battery-level-monitoring/) has a great overview of a driving an ESP32 or ESP8266 from a battery, including power regulation, recharging from solar and reading the battery power level. 
+
+## Soil Moisture Sensor
+A soil moisture sensor is basically a variable resistor. It consists of two probes and when there is more water, the soil conducts more electricity and so has a lower resistance. As such, you can read the analog voltage between the two resistors to calculate the resistance of the probe resistance, which will provide a range according to the moisture in the soil.
+
+To find out more, check out [this](http://www.esp32learning.com/code/esp32-and-soil-moisture-sensor-example.php) and [this](https://www.banggood.com/LILYGO-Higrow-ESP32-WiFi-bluetooth-Battery-DHT11-Soil-Temperature-And-Humidity-Sensor-Module-p-1196250.html).
 
 ## Sleep Mode
 WiFi sucks up a whole lot of power and we want to get as much battery life as we can. The easiest way to achieve this is to disable WiFi and put the chip into a deep sleep mode. Then we can wake up occassionally to read the values, connect the WiFi and send them to Blynk and then go back to sleep. When we do this, we will lose the ability to react to commands easily. That's ok if we're just reading from sensors but is it really worth it?
