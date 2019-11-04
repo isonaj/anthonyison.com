@@ -3,8 +3,8 @@ title: IoT with an ESP32
 tags:
   - iot
 date: 2019-11-04 09:50:39
-image:
-feature_img:
+image: /iot-with-an-esp32/small_cover.jpg
+feature_img: cover.jpg
 description:
 keywords:
 ---
