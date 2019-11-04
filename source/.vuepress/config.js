@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Anthony Ison',
   description: 'Software development and DevOps. Bringing solutions to life.',
-  header_image: '/images/imleedh-ali-677414-unsplash.jpg',
+  header_image: '/images/imleedh-ali-677414-unsplash.webp',
   theme: 'isonaj',
   dest: './public',
   author: 'Anthony Ison',
