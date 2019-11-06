@@ -7,7 +7,7 @@ date: 2019-06-03 18:04:02
 <tr><td>pugnacious</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
 <tr><td>torrville</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>3</td></tr>
 <tr><td>lil row</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
-<tr><td>tonydipinto</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
+<tr><td>tonydipinto</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>x</td><td>x</td><td>4</td></tr>
 <tr><td>423</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
 <tr><td>hami</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>geefro</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
@@ -17,11 +17,11 @@ date: 2019-06-03 18:04:02
 <tr><td>pug</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
 <tr><td>binod</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>aton</td><td>1</td><td>1</td><td>x</td><td>x</td><td>x</td><td>x</td><td>x</td><td>2</td></tr>
-<tr><td>baldrik</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>1</td><td>6</td></tr>
-<tr><td>nat the brat</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>1</td><td>6</td></tr>
+<tr><td>baldrik</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
+<tr><td>nat the brat</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
 <tr><td>mufarsa</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
 <tr><td>mufelicious</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>3</td></tr>
-<tr><td>nacho</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>x</td><td>5</td></tr>
+<tr><td>nacho</td><td>1</td><td>x</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>6</td></tr>
 <tr><td>trent</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
 <tr><td>echeverion</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>3</td></tr>
 <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0</td></tr>
