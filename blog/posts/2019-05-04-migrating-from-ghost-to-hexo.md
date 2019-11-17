@@ -6,6 +6,7 @@ tags:
 - ghost
 - hexo
 - blogging
+display: home
 ---
 It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.
 

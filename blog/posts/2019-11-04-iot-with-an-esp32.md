@@ -4,6 +4,7 @@ date: 2019-11-04 09:50:39
 image: /iot-with-an-esp32/cover.jpg
 tags:
 - iot
+display: home
 ---
 I've got some roses that haven't been doing so well lately, and I've been thinking it would have been nice to know that they were not doing well before any real harm was done. That got me thinking about IoT and so I bought some toys to see what I could pull together.
 

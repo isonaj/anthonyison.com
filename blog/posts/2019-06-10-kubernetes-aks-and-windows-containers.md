@@ -6,6 +6,7 @@ tags:
 - kubernetes
 - aks
 - azure
+display: home
 ---
 When I first heard about Windows containers, I got really excited by the idea of packaging ASP.Net legacy apps and ASP.Net Core apps consistently, without the need to remote into a VM and apply extra libraries. I soon found that Windows containers were quickly followed by a "yeah, but". Windows node support has recently been added to Kubernetes and AKS. I don't think it's quite ready for production, but it sure does look promising.
 

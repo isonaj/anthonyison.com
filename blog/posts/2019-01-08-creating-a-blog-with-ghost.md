@@ -5,6 +5,7 @@ image: /creating-a-blog-with-ghost/cover.jpg
 tags: 
 - ghost
 - azure
+display: home
 ---
 There seems to come a time in a software developer's life where you look at creating a blog. It's that time for me. I want a place where I can write up some of my experiments for later reference, and if that can help others along the way, all the better!
 

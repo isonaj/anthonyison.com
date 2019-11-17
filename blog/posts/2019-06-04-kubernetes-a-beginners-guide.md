@@ -4,6 +4,7 @@ date: 2019-06-04 22:45:13
 image: /kubernetes-a-beginners-guide/cover.jpg
 tags: 
 - kubernetes
+display: home
 ---
 Kubernetes is a container orchestration platform and has been described as "the OS of the cloud". It builds on container-based services by providing many features such as volumes for stateful services, resilience and scaling, monitoring, automated zero-downtime upgrades. It runs on a cluster of nodes (VMs) and allocates services to nodes based on either hard limits (eg. my service must run on linux) and prioritised preferences (eg. put these two services on the same VM). If you are running your services in containers, Kubernetes will likely make your life easier.
 

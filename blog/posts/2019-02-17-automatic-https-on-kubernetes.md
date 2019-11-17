@@ -4,6 +4,7 @@ date: 2019-02-17
 image: /automatic-https-on-kubernetes/cover.jpg
 tags: 
 - kubernetes
+display: home
 ---
 This post starts with a slight regret that I didn't get Ghost running on a Web App.  One of the brilliant parts of a Web App is that you can force all requests over HTTPS with the click of a button. Of course, I'd still need to organise a certificate for my domain. Hold on, let me stop and back up a minute.
 
