@@ -1,14 +1,10 @@
 ---
 title: 'Refactoring code - restructure, not rewrite'
-tags:
-  - principles
-image: /refactoring-code-restructure-not-rewrite/small_cover.jpg
-feature_img: cover.jpg
-keywords: refactoring
 date: 2019-07-30 15:35:28
-description:
+image: /refactoring-code-restructure-not-rewrite/cover.jpg
+tags:
+- principles
 ---
-
 I see a lot of similarities between software and business processes. If I'm talking about a queuing mechanism, it often helps to describe it as a call centre managing their tickets, or a lock as being like a key for the toilets. Refactoring then, would simply be a restructuring of a business or to give someone a new title or change teams around, however software developers often use it to mean they want to fire everyone and start over.
 
 When we compare software processes and business processes, it can make it easy to communicate the benefits or drawbacks of a particular solution. Furthermore, when the stakeholders are engaged in the conversation **and they understand what's being discussed** they can guide the process more easily and it becomes a win-win for the software developers and the business. But I digress... 

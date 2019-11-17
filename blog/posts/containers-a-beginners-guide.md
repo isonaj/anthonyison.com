@@ -1,11 +1,8 @@
 ---
-title: 'Containers: A Beginner''s Guide'
+title: "Containers: A Beginner's Guide"
+image: /containers-a-beginners-guide/cover.jpg
 tags:
 - containers
-image: /containers-a-beginners-guide/small_cover.jpg
-feature_img: cover.jpg
-description:
-keywords: containers, docker
 ---
 In [a previous post](/kubernetes-a-beginners-guide), I brushed quickly over containers thinking that everyone knows about them by now. I wanted to get into the meat of Kubernetes. After a few discussions, I've realised that containers are still not common knowledge and you need to understand containers before container orchestrators. But first, how did we get here?
 

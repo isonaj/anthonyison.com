@@ -1,12 +1,9 @@
 ---
 title: Blogging for consistency
-tags:
-  - blogging
-image: /blogging-for-consistency/small_cover.jpg
-feature_img: cover.jpg
-keywords: blogging
 date: 2019-06-17 11:25:27
-description:
+image: /blogging-for-consistency/cover.jpg
+tags:
+- blogging
 ---
 I've written a few blog posts now and I try to get feedback each time. The feedback has been great and helps me to improve. I'm building up a list of things to think about as I'm writing. In this blog, I want to focus on the feedback and highlight some of the small things that are really the big things.
 

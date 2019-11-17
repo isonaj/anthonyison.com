@@ -1,11 +1,8 @@
 ---
 title: 'Clean code is Ravioli, not Spaghetti'
-tags:
-  - principles
 image:
-feature_img:
-description:
-keywords:
+tags:
+- principles
 ---
 I'll start by saying, this is not a new idea. Everyone seems to know spaghetti code, even from the outside. Have you had that moment when you asked to change something and that's working just fine, but something else just failed six ways to Sunday? You, my friend, have spaghetti code.
 

@@ -1,16 +1,12 @@
 ---
 title: 'Azure DevOps, unit testing and code coverage with .Net Core'
-tags:
-  - devops
-  - testing
-  - principles
-image: /azure-devops-unit-testing-and-code-coverage-with-dotnet-core/small_cover.jpg
-feature_img: cover.jpg
 date: 2019-08-27 23:30:58
-description:
-keywords:
+image: /azure-devops-unit-testing-and-code-coverage-with-dotnet-core/cover.jpg
+tags:
+- devops
+- testing
+- principles
 ---
-
 Unit testing can be very handy when it's set up correctly. The gold standard is to have regular CI builds, usually run after each commit, that executes all tests to confirm that the application still does what it's been designed to do. It can be tricky to get it all set up so all of the magic just happens and unfortunately that can mean it's never done. Get those tests running and reporting! Future You will thank you. In this post, I will walk through the process of setting up a basic build pipeline with Azure DevOps that executes unit tests and reports on code coverage.
 
 > "The best and most convenient time to set up tests is before you start the project" - [William Liebenberg](https://azuregems.io/)

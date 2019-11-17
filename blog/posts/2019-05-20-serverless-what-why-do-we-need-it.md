@@ -1,12 +1,9 @@
 ---
 title: Serverless what? Why do we need it?
 date: 2019-05-20 08:58:24
+image: /serverless-what-why-do-we-need-it/cover.jpg
 tags:
 - serverless
-image: /serverless-what-why-do-we-need-it/small_cover.jpg
-feature_img: cover.jpg
-description:
-keywords:
 ---
 "Serverless" was one of those terms that left me scratching my head when I first heard it. How on earth do you run a server... without a server??? That's some crazy marketing spin! What I quickly learned is that serverless is referring to how much infrastructure you need to manage. That is, none. Nada.
 

@@ -1,14 +1,11 @@
 ---
 title: Migrating from Ghost to Hexo
-tags:
-  - ghost
-  - hexo
-  - blogging
-image: /migrating-from-ghost-to-hexo/small_cover.jpg
-feature_img: cover.jpg
 date: 2019-05-04 23:12:56
-description:
-keywords: 
+image: /migrating-from-ghost-to-hexo/cover.jpg
+tags:
+- ghost
+- hexo
+- blogging
 ---
 It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.
 

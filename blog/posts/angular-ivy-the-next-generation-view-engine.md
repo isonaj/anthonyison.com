@@ -1,11 +1,8 @@
 ---
 title: Angular Ivy - The Next Generation View Engine
+image:
 tags:
 - angular
-image:
-feature_img:
-description:
-keywords:
 ---
 Each release of Angular brings something new, but not something that rocks my world. With Angular 8, we got a new experimental view engine called Ivy, which will become the default view engine in Angular 9. In this post, I will discuss what Ivy is, why you should be care about Ivy and how to use it.
 

@@ -1,12 +1,8 @@
 ---
 title: Kubernetes Ingress in the wild
-tags:
-- kubernetes
 image:
-feature_img:
-description:
-keywords:
----
+tags:
+- kubernetes---
 
 
 Kubernetes ingress is basically the gatekeeper to your cluster services.

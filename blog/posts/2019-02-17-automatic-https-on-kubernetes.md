@@ -1,13 +1,9 @@
 ---
 title: Automatic HTTPS on Kubernetes
 date: 2019-02-17
+image: /automatic-https-on-kubernetes/cover.jpg
 tags: 
 - kubernetes
-image: /automatic-https-on-kubernetes/small_cover.jpg
-feature_img: cover.jpg
-description: 
-keywords: 
-identifier: ghost-5c68a96a21b29c00018dd0fd
 ---
 This post starts with a slight regret that I didn't get Ghost running on a Web App.  One of the brilliant parts of a Web App is that you can force all requests over HTTPS with the click of a button. Of course, I'd still need to organise a certificate for my domain. Hold on, let me stop and back up a minute.
 

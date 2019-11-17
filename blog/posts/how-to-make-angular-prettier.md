@@ -1,13 +1,10 @@
 ---
 title: How to Make Angular Prettier
+image:
 tags:
 - angular
-image:
-feature_img:
-description:
-keywords:
 ---
-THis post would be about setting up Prettier to format code on save.
+This post would be about setting up Prettier to format code on save.
 
 Why Prettier?
 A lot of effort goes into debates on coding styles. Prettier takes it all off the table. It's very opinionated, but it's easier to let it solve most of your problems.

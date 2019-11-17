@@ -1,11 +1,8 @@
 ---
 title: Host your blog with Netlify
+image:
 tags:
 - blogging
-image:
-feature_img:
-description:
-keywords:
 ---
 I have a confession. I am a scrooge when it comes to my blog. If I can get away with free hosting, I will do it. To that end, I've been looking at GitHub pages, Azure storage, etc (that is, storage, not compute) to keep my hosting costs way down. While recently looking into [Vuepress](https://vuepress.vuejs.org/), I kept hearing about a service called [Netify](https://www.netlify.com/) and it has changed the game for me and my blog.
 

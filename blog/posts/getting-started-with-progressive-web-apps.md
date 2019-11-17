@@ -1,11 +1,8 @@
 ---
 title: Getting Started with Progressive Web Apps
+image:
 tags:
 - pwa
-image:
-feature_img:
-description:
-keywords:
 ---
 This topic has been on my list of things to do for almost 6 months now and one of the great benefits I've found from blogging is that I will get drawn into any topic I start a blog post on. Writing about a topic is a great way to get motivated to learn it.
 

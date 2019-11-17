@@ -1,14 +1,10 @@
 ---
 title: Azure DevOps Build Agents in AKS
+image:
 tags:
 - aks
 - kubernetes
-image:
-feature_img:
-description:
-keywords:
 ---
-
 Had some issues recently with builds on site so tried to go off site.
 
 ## Create the AKS Cluster
