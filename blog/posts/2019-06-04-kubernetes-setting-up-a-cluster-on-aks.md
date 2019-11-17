@@ -5,6 +5,7 @@ image: /kubernetes-setting-up-a-cluster-on-aks/cover.jpg
 tags: 
 - kubernetes
 - aks
+- azure
 ---
 Most cloud providers provide a managed Kubernetes cluster at this point. Each time I come back to look at Kubernetes, I feel like I've forgotten something (or everything). This post is a cheat sheet for getting a cluster up and running on Azure (using AKS) with recommended extras.  
 

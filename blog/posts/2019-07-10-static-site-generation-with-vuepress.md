@@ -4,7 +4,7 @@ date: 2019-07-10 22:20:34
 image: /static-site-generation-with-vuepress/cover.jpg
 tags:
 - blogging
-- vuejs
+- vuepress
 ---
 When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really liked the approach though. It uses the [Vue.js](https://vuejs.org/) server-side processing to generate static sites. It's time to have a closer look.
 

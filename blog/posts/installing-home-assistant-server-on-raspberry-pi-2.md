@@ -3,7 +3,7 @@ title: Installing Home Assistant Server on Raspberry Pi 2
 image:
 tags:
 - iot
-- Raspberry Pi
+- raspberry pi
 ---
 1. Install [Balena Etcher](https://github.com/balena-io/etcher/releases/).
 2. Download the correct image for your device from [here](https://www.home-assistant.io/hassio/installation/). 

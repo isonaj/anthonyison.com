@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Anthony Ison',
   description: 'Software development and DevOps. Bringing solutions to life.',
-  theme: 'ououe',
+  theme: 'isonaj',
   dest: './dist',
   author: 'Anthony Ison',
 
