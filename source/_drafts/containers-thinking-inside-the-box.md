@@ -1,6 +1,7 @@
 ---
 title: 'Containers: Thinking inside the box'
 tags:
+- containers
 image:
 feature_img:
 description:

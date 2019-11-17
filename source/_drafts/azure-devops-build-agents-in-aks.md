@@ -1,6 +1,8 @@
 ---
 title: Azure DevOps Build Agents in AKS
 tags:
+- aks
+- kubernetes
 image:
 feature_img:
 description:

@@ -1,6 +1,7 @@
 ---
 title: Kubernetes Ingress in the wild
 tags:
+- kubernetes
 image:
 feature_img:
 description:

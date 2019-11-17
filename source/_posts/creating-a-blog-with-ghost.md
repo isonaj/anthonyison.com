@@ -1,7 +1,8 @@
 ---
 title: Creating a blog with Ghost
 date: 2019-01-08
-tags: ghost
+tags: 
+- ghost
 image: /creating-a-blog-with-ghost/small_cover.jpg
 feature_img: cover.jpg
 identifier: ghost-5c33f9dbd959a900010fe7bf

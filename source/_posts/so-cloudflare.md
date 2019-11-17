@@ -1,6 +1,7 @@
 ---
 title: So... Cloudflare...
-tags: CDN
+tags: 
+- CDN
 image: /so-cloudflare/small_cover.jpg
 feature_img: cover.jpg
 date: 2019-05-05 20:40:42

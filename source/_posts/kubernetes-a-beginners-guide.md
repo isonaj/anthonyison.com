@@ -1,6 +1,7 @@
 ---
 title: 'Kubernetes: A Beginner''s Guide'
-tags: kubernetes
+tags: 
+- kubernetes
 image: /kubernetes-a-beginners-guide/small_cover.jpg
 feature_img: cover.jpg
 date: 2019-06-04 22:45:13

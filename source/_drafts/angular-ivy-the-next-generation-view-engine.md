@@ -1,6 +1,7 @@
 ---
 title: Angular Ivy - The Next Generation View Engine
 tags:
+- angular
 image:
 feature_img:
 description:

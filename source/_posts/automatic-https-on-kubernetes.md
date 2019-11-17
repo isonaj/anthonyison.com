@@ -1,7 +1,8 @@
 ---
 title: Automatic HTTPS on Kubernetes
 date: 2019-02-17
-tags: kubernetes
+tags: 
+- kubernetes
 image: /automatic-https-on-kubernetes/small_cover.jpg
 feature_img: cover.jpg
 description: 

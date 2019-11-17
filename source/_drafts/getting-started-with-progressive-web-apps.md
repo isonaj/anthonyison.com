@@ -1,7 +1,7 @@
 ---
 title: Getting Started with Progressive Web Apps
 tags:
-- PWA
+- pwa
 image:
 feature_img:
 description:

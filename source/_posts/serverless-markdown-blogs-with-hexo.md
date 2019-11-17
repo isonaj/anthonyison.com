@@ -1,6 +1,7 @@
 ---
 title: Serverless markdown blogs with Hexo
-tags: hexo
+tags: 
+- hexo
 image: /serverless-markdown-blogs-with-hexo/small_cover.jpg
 feature_img: cover.jpg
 date: 2019-05-03 21:27:32

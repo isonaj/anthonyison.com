@@ -1,6 +1,7 @@
 ---
 title: How to Make Angular Prettier
 tags:
+- angular
 image:
 feature_img:
 description:
