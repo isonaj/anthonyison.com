@@ -170,13 +170,13 @@ Let's hook it up.
 3. Commit and push. This will trigger the first analysis run.
 
 Some of the results you can get from SonarQube are:
-![SonarQube Overview](./azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_overview.png)
+![SonarQube Overview](/azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_overview.png)
 **Figure: SonarQube overview**
 
-![SonarQube Issues](./azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_issues.png)
+![SonarQube Issues](/azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_issues.png)
 **Figure: SonarQube review results**
 
-![SonarQube Project Summary](./azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_projects.png)
+![SonarQube Project Summary](/azure-devops-unit-testing-and-code-coverage-with-dotnet-core/sonarqube_projects.png)
 **Figure: SonarQube project summary**
 
 SonarQube looks like a great addition to any project. If you're worried about giving them access to your codebase, they also have local server options that can generate reports without handing over access.
