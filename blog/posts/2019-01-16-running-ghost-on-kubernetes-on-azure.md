@@ -1,6 +1,7 @@
 ---
 title: Running Ghost on Kubernetes on Azure
-date: 2019-01-16
+publish: 2019-01-16
+type: post
 image: /running-ghost-on-kubernetes-on-azure/cover.png
 tags: 
 - ghost 

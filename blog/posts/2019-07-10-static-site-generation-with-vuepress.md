@@ -1,6 +1,7 @@
 ---
 title: Static Site Generation with Vuepress
-date: 2019-07-10 22:20:34
+publish: 2019-07-10 22:20:34
+type: post
 image: /static-site-generation-with-vuepress/cover.jpg
 tags:
 - blogging

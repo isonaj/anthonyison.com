@@ -1,6 +1,7 @@
 ---
 title: Blogging for consistency
-date: 2019-06-17 11:25:27
+publish: 2019-06-17 11:25:27
+type: post
 image: /blogging-for-consistency/cover.jpg
 tags:
 - blogging

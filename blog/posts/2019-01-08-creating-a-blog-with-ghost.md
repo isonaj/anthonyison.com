@@ -1,6 +1,7 @@
 ---
 title: Creating a blog with Ghost
-date: 2019-01-08
+publish: 2019-01-08
+type: post
 image: /creating-a-blog-with-ghost/cover.jpg
 tags: 
 - ghost

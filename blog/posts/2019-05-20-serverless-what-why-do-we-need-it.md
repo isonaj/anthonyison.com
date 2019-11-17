@@ -1,6 +1,7 @@
 ---
 title: Serverless what? Why do we need it?
-date: 2019-05-20 08:58:24
+publish: 2019-05-20 08:58:24
+type: post
 image: /serverless-what-why-do-we-need-it/cover.jpg
 tags:
 - serverless

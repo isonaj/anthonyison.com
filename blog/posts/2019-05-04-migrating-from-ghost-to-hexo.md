@@ -1,6 +1,7 @@
 ---
 title: Migrating from Ghost to Hexo
-date: 2019-05-04 23:12:56
+publish: 2019-05-04 23:12:56
+type: post
 image: /migrating-from-ghost-to-hexo/cover.jpg
 tags:
 - ghost

@@ -1,6 +1,7 @@
 ---
 title: 'Refactoring code - restructure, not rewrite'
-date: 2019-07-30 15:35:28
+publish: 2019-07-30 15:35:28
+type: post
 image: /refactoring-code-restructure-not-rewrite/cover.jpg
 tags:
 - principles

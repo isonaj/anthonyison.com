@@ -1,6 +1,7 @@
 ---
 title: So... Cloudflare...
-date: 2019-05-05 20:40:42
+publish: 2019-05-05 20:40:42
+type: post
 image: /so-cloudflare/cover.jpg
 tags: 
 - cdn

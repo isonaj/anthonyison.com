@@ -1,6 +1,7 @@
 ---
 title: 'Kubernetes: AKS and Windows Containers'
-date: 2019-06-10 14:52:07
+publish: 2019-06-10 14:52:07
+type: post
 image: /kubernetes-aks-and-windows-containers/cover.jpg
 tags:
 - kubernetes
