@@ -2,11 +2,11 @@
 title: IoT with an ESP32
 publish: 2019-11-04 09:50:39
 type: post
-image: /iot-with-an-esp32/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/v1574856436/anthonyison.com/iot-with-an-esp32/cover_tcq7hg.jpg
 tags:
 - iot
 ---
-I've got some roses that haven't been doing so well lately, and I've been thinking it would have been nice to know that they were not doing well before any real harm was done. That got me thinking about IoT and so I bought some toys to see what I could pull together.
+I've got some roses that haven't been doing so well lately, and I've been thinking it would have been nice to know that they were not doing well before any real harm was done.<!-- more --> That got me thinking about IoT and so I bought some toys to see what I could pull together.
 
 For this project, I picked up a Duinotech Soil Moisture Sensor and an ESP32 dev kit for under 50 bucks. The ESP32 is a powerful little processor, including WiFi. Oh, and I already had a DHT11 Temperature and Humidity Sensor laying around so I've added that to the project too. The project code is available [here](https://github.com/isonaj/WeatherStation-esp32) if you want to take a look.
 

@@ -2,11 +2,11 @@
 title: Blogging for consistency
 publish: 2019-06-17 11:25:27
 type: post
-image: /blogging-for-consistency/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/v1574855247/anthonyison.com/blogging-for-consistency/cover_qvthu3.jpg
 tags:
 - blogging
 ---
-I've written a few blog posts now and I try to get feedback each time. The feedback has been great and helps me to improve. I'm building up a list of things to think about as I'm writing. In this blog, I want to focus on the feedback and highlight some of the small things that are really the big things.
+I've written a few blog posts now and I try to get feedback each time. The feedback has been great and helps me to improve. I'm building up a list of things to think about as I'm writing.<!-- more --> In this blog, I want to focus on the feedback and highlight some of the small things that are really the big things.
 
 ## Quality
 It might seem like I should start with content, but I've found the experience of your reader has little to do with the content of the blog. I mean, yes, content IS important, but there are things that will lose you readers before they have even started getting into your content.

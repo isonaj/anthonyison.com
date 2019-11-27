@@ -6,7 +6,7 @@ image: /automatic-https-on-kubernetes/cover.jpg
 tags: 
 - kubernetes
 ---
-This post starts with a slight regret that I didn't get Ghost running on a Web App.  One of the brilliant parts of a Web App is that you can force all requests over HTTPS with the click of a button. Of course, I'd still need to organise a certificate for my domain. Hold on, let me stop and back up a minute.
+This post starts with a slight regret that I didn't get Ghost running on a Web App.  One of the brilliant parts of a Web App is that you can force all requests over HTTPS with the click of a button.<!-- more --> Of course, I'd still need to organise a certificate for my domain. Hold on, let me stop and back up a minute.
 
 What the heck is this HTTPS and certificate stuff? Basically, HTTPS will guarantee that the communication between the client and server can't be read or changed by anyone between the client and server. So, usernames and passwords are safe to send. While that's important, it's probably more important that your pages cannot be changed either. It's a bit like a message written in code with the king's seal. Since the code (HTTPS) is known to you and the king, you know it cannot be read. The seal (certificate) proves the authenticity.
 

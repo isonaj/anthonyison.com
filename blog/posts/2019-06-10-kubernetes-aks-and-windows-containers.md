@@ -2,13 +2,13 @@
 title: 'Kubernetes: AKS and Windows Containers'
 publish: 2019-06-10 14:52:07
 type: post
-image: /kubernetes-aks-and-windows-containers/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/v1574856454/anthonyison.com/kubernetes-aks-and-windows-containers/cover_qmy5lx.jpg
 tags:
 - kubernetes
 - aks
 - azure
 ---
-When I first heard about Windows containers, I got really excited by the idea of packaging ASP.Net legacy apps and ASP.Net Core apps consistently, without the need to remote into a VM and apply extra libraries. I soon found that Windows containers were quickly followed by a "yeah, but". Windows node support has recently been added to Kubernetes and AKS. I don't think it's quite ready for production, but it sure does look promising.
+When I first heard about Windows containers, I got really excited by the idea of packaging ASP.Net legacy apps and ASP.Net Core apps consistently, without the need to remote into a VM and apply extra libraries.<!-- more --> I soon found that Windows containers were quickly followed by a "yeah, but". Windows node support has recently been added to Kubernetes and AKS. I don't think it's quite ready for production, but it sure does look promising.
 
 ## Why use Windows Containers?
 Firstly, we need to realise that Windows ain't Windows. There are 2 types of windows containers: 

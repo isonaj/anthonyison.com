@@ -1,11 +1,12 @@
 ---
 title: How to create a blog with Vuepress
+publish: 2019-11-28
 image: /how-to-create-a-blog-with-vuepress/cover.jpg
 tags:
 - blogging
 - vuepress
 ---
-In [this blog](/static-site-generation-with-vuepress), I looked at Vuepress to see if it was worth moving to, but it was a bit light on the details and was running on the assumption that it didn't have blogging support. Vuepress 1.0 was released a earlier this year and has changed everything. In this post, I will walk you through the process of creating a blog with Vuepress 1.x.
+In [this post](/static-site-generation-with-vuepress), I looked at Vuepress to see if it was worth moving to, but it was a bit light on the details and was running on the assumption that it didn't have blogging support.<!-- more --> Vuepress 1.0 was released a earlier this year and has changed everything. In this post, I will walk you through the process of creating a blog with Vuepress 1.x.
 
 > You can get the code from this post from [here](https://github.com/isonaj/test-blog).
 

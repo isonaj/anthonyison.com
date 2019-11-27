@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Anthony Ison',
   description: 'Software development and DevOps. Bringing solutions to life.',
-  theme: 'casper',
+  //theme: 'casper',
   dest: './dist',
   author: 'Anthony Ison',
 
@@ -23,7 +23,7 @@ module.exports = {
     footer: [
       { text: 'Netlify', link: '/' },
       { text: 'Vuepress', link: '/' },
-      { text: 'Ououe theme', link: '/' }
+      { text: 'Casper theme', link: '/' }
     ],
     social: {
       github: 'https://github.com/isonaj',

@@ -6,7 +6,7 @@ image: /kubernetes-a-beginners-guide/cover.jpg
 tags: 
 - kubernetes
 ---
-Kubernetes is a container orchestration platform and has been described as "the OS of the cloud". It builds on container-based services by providing many features such as volumes for stateful services, resilience and scaling, monitoring, automated zero-downtime upgrades. It runs on a cluster of nodes (VMs) and allocates services to nodes based on either hard limits (eg. my service must run on linux) and prioritised preferences (eg. put these two services on the same VM). If you are running your services in containers, Kubernetes will likely make your life easier.
+Kubernetes is a container orchestration platform and has been described as "the OS of the cloud". It builds on container-based services by providing many features such as volumes for stateful services<!-- more -->, resilience and scaling, monitoring, automated zero-downtime upgrades. It runs on a cluster of nodes (VMs) and allocates services to nodes based on either hard limits (eg. my service must run on linux) and prioritised preferences (eg. put these two services on the same VM). If you are running your services in containers, Kubernetes will likely make your life easier.
 
 ## Containers
 The first important step is to ensure your software is running in a container. A container is a way of packaging your service, along with any dependencies, removing the reliance of specific libraries, etc existing on the OS. I'm mostly assuming you know what a container is, what the benefits are and how to run one in this blog post.

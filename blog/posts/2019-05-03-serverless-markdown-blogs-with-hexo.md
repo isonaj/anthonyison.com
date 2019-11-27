@@ -6,7 +6,7 @@ image: /serverless-markdown-blogs-with-hexo/cover.jpg
 tags: 
 - hexo
 ---
-Let me start this by saying I'm loving my ghost blog, and I get a kick out of running it on AKS. The thing is, the content only changes when I post and so I'm thinking about caching and I realise the whole blog can be cached. It's not an API. I don't have changing data. (Ok, TECHNICALLY I have a db, but bear with me) My posts are markdown, and I could just store them in git and publish static pages when I push.
+Let me start this by saying I'm loving my ghost blog, and I get a kick out of running it on AKS. The thing is, the content only changes when I post and so I'm thinking about caching<!-- more --> and I realise the whole blog can be cached. It's not an API. I don't have changing data. (Ok, TECHNICALLY I have a db, but bear with me) My posts are markdown, and I could just store them in git and publish static pages when I push.
 
 After some searching, I have found there are many static web site generators. The ones that stood out for me were: 
 * [Jekyll](https://jekyllrb.com/) - this is number 1 and the default in [Github Pages](https://pages.github.com/). It runs on Ruby.

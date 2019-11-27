@@ -2,12 +2,12 @@
 title: Static Site Generation with Vuepress
 publish: 2019-07-10 22:20:34
 type: post
-image: /static-site-generation-with-vuepress/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/v1574856572/anthonyison.com/static-site-generation-with-vuepress/cover_laec7r.jpg
 tags:
 - blogging
 - vuepress
 ---
-When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo). I really liked the approach though. It uses the [Vue.js](https://vuejs.org/) server-side processing to generate static sites. It's time to have a closer look.
+When I was reviewing static site generators, [Vuepress](https://vuepress.vuejs.org/) caught my eye but I passed over it quickly because their web site admitted that they [lacked blogging support](https://vuepress.vuejs.org/guide/#todo).<!-- more --> I really liked the approach though. It uses the [Vue.js](https://vuejs.org/) server-side processing to generate static sites. It's time to have a closer look.
 
 > **UPDATE 2019-07-18:** "Vuepress lacks blogging support" is no longer accurate. Vuepress has added A LOT of features in [version 1.0](https://medium.com/@_ulivz/intro-to-vuepress-1-x-7e2b7885f95f) that addresses the issues I experienced while writing this post. Stay tuned for another post on Vuepress soon!
 

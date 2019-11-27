@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
+    "css-prefers-color-scheme": "^4.0.0",
     "vuepress-theme-casper": "^1.1.1"
   },
   "devDependencies": {

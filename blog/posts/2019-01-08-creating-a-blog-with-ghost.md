@@ -7,7 +7,7 @@ tags:
 - ghost
 - azure
 ---
-There seems to come a time in a software developer's life where you look at creating a blog. It's that time for me. I want a place where I can write up some of my experiments for later reference, and if that can help others along the way, all the better!
+There seems to come a time in a software developer's life where you look at creating a blog. It's that time for me. I want a place where I can write up some of my experiments for later reference<!-- more -->, and if that can help others along the way, all the better!
 
 ## Considerations
 1. I don't want to pay anything. I really don't want to break the bank with this project. If I can pay nothing, I will. This puts [Azure](https://azure.com) squarely in the front seat because I have $70 a month to spend there.

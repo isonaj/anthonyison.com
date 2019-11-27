@@ -8,7 +8,7 @@ tags:
 - hexo
 - blogging
 ---
-It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.
+It was surprisingly easy to migrate my blog out of ghost, but there were a few missed steps along the way. Often, I would find a better way after I had done the heavy lifting.<!-- more -->
 
 ## 1. Install Hexo and create the blog
 ```bash

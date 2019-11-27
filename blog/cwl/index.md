@@ -1,6 +1,6 @@
 ---
 title: cwl
-date: 2019-06-03 18:04:02
+type: page
 ---
 <table><thead><th>Name</th><th>War 1</th><th>War 2</th><th>War 3</th><th>War 4</th><th>War 5</th><th>War 6</th><th>War 7</th><th>Total</th></thead><tbody>
 <tr><td>archylles</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
