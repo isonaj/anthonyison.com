@@ -1,3 +1,0 @@
-[submodule "blog/.vuepress/theme"]
-	path = blog/.vuepress/theme
-	url = https://github.com/isonaj/vuepress-theme-casper.git
