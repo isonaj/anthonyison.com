@@ -2,7 +2,7 @@
 title: Blogging for consistency
 publish: 2019-06-17 11:25:27
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/v1574855247/anthonyison.com/blogging-for-consistency/cover_qvthu3.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/blogging-for-consistency/cover_qvthu3.jpg
 tags:
 - blogging
 ---

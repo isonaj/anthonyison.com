@@ -2,7 +2,7 @@
 title: So... Cloudflare...
 publish: 2019-05-05 20:40:42
 type: post
-image: /so-cloudflare/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/so-cloudflare/cover_aab6a4.jpg
 tags: 
 - cdn
 - cloudflare

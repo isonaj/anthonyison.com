@@ -2,7 +2,7 @@
 title: 'Refactoring code - restructure, not rewrite'
 publish: 2019-07-30 15:35:28
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/v1574856509/anthonyison.com/refactoring-code-restructure-not-rewrite/cover_xxxenb.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/refactoring-code-restructure-not-rewrite/cover_xxxenb.jpg
 tags:
 - principles
 ---

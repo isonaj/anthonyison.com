@@ -2,7 +2,7 @@
 title: 'Kubernetes: AKS and Windows Containers'
 publish: 2019-06-10 14:52:07
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/v1574856454/anthonyison.com/kubernetes-aks-and-windows-containers/cover_qmy5lx.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/kubernetes-aks-and-windows-containers/cover_qmy5lx.jpg
 tags:
 - kubernetes
 - aks

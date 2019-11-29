@@ -47,7 +47,8 @@ module.exports = {
     [
       'blog-multidir',
       { 
-        permalink: '/:slug'
+        permalink: '/:slug',
+        postLayout: 'Layout'
       }
     ],
     ['vuepress-plugin-reading-time'],

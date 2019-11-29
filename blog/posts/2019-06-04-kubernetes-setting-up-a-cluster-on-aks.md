@@ -2,7 +2,7 @@
 title: 'Kubernetes: Setting up a cluster on AKS'
 publish: 2019-06-04 22:45:12
 type: post
-image: /kubernetes-setting-up-a-cluster-on-aks/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/kubernetes-setting-up-a-cluster-on-aks/cover_q1p3si.jpg
 tags: 
 - kubernetes
 - aks

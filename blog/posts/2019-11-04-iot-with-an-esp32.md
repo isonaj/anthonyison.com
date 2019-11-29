@@ -2,7 +2,7 @@
 title: IoT with an ESP32
 publish: 2019-11-04 09:50:39
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/v1574856436/anthonyison.com/iot-with-an-esp32/cover_tcq7hg.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/iot-with-an-esp32/cover_tcq7hg.jpg
 tags:
 - iot
 ---

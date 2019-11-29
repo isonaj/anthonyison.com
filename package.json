@@ -9,6 +9,7 @@
   "dependencies": {
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
+    "cloudinary-core": "^2.8.0",
     "css-prefers-color-scheme": "^4.0.0",
     "node-sass": "^4.13.0",
     "sass-loader": "^8.0.0",

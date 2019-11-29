@@ -2,7 +2,7 @@
 title: Automatic HTTPS on Kubernetes
 publish: 2019-02-17
 type: post
-image: /automatic-https-on-kubernetes/cover.jpg
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/automatic-https-on-kubernetes/cover_ww2mvl.jpg
 tags: 
 - kubernetes
 ---
