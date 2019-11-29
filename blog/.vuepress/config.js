@@ -6,8 +6,8 @@ module.exports = {
   author: 'Anthony Ison',
 
   themeConfig: {
-    cover: '/images/cover.jpg',
-    logo: '/images/logo.jpg',
+    cover: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/cover_tesif3.jpg',
+    logo: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/logo_clymv4.jpg',
 
     disqus: 'anthonyison',
     google_analytics: 'UA-131919757-1',

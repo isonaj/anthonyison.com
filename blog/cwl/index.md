@@ -2,6 +2,11 @@
 title: cwl
 type: page
 ---
+| Name | War 1 | War 2 | War 3 | War 4 | War 5 | War 6 | War 7 | Total |
+|---|---|---|---|---|---|---|---|---|---|
+| Archylles | 1 | 1 | 1 | x | 1 | 1 | 1 | 6 |
+
+
 <table><thead><th>Name</th><th>War 1</th><th>War 2</th><th>War 3</th><th>War 4</th><th>War 5</th><th>War 6</th><th>War 7</th><th>Total</th></thead><tbody>
 <tr><td>archylles</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td><td>7</td></tr>
 <tr><td>pugnacious</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>x</td><td>1</td><td>4</td></tr>
