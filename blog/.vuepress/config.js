@@ -8,7 +8,11 @@ module.exports = {
   themeConfig: {
     cover: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/cover_tesif3.jpg',
     logo: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/logo_clymv4.jpg',
-
+    
+    /* For SEO plugin */
+    author: 'Anthony Ison',
+    domain: 'https://anhtonyison.com',
+    
     disqus: 'anthonyison',
     google_analytics: 'UA-131919757-1',
     momentlyId: '1mJ1TwAKARA',
@@ -56,6 +60,10 @@ module.exports = {
     ['container', { type: 'warning' }],
     ['container', { type: 'danger' }],
     ['feed', { canonical_base: 'https://anthonyison.com' }],
-    ['seo']
+    ['sitemap', { hostname: 'https://anthonyison.com' }],
+    ['seo', {
+      image: ($page, $site) => $page.frontmatter.image,
+      publishedAt: $page => $page.frontmatter.publish && new Date($page.frontmatter.publish),
+    }]
   ]
 }  
