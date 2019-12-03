@@ -1,12 +1,12 @@
 <template>
   <main id="site-main" class="site-main outer">
     <div class="inner">
-      <article class="post-full" :class="{ 'no-image': !current.image }">
+      <article class="post-full" :class="{ 'no-image': !image }">
         <header class="post-full-header">
           <h1 class="post-full-title">{{ current.title }}</h1>
         </header>
 
-        <figure v-if="current.image" class="post-full-image" :style="backgroundImage"></figure>
+        <figure v-if="image" class="post-full-image" :style="backgroundImage"></figure>
 
         <section class="post-full-content">
           <Content class="post-content" />
@@ -17,19 +17,22 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
   import { head, kebabCase } from 'lodash'
 
   export default {
     computed: {
-      ...mapGetters(['current']),
-
+      current() {
+        return this.$page;
+      },
+      image() {
+        return this.current.frontmatter.image;
+      },
       datetime () {
-        return new Date(this.current.publish).toISOString()
+        return new Date(this.$frontmatter.publish).toISOString()
       },
 
       localeDate () {
-        return new Date(this.current.publish).toLocaleDateString()
+        return new Date(this.$frontmatter.publish).toLocaleDateString()
       },
 
       primaryTag () {
@@ -42,7 +45,7 @@
 
       backgroundImage () {
         return {
-          'background-image': `url(${this.current.image})`
+          'background-image': `url(${this.image})`
         }
       }
     },

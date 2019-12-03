@@ -22,14 +22,26 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
+  //import { mapGetters } from 'vuex'
 
   import SocialLink from './SocialLink'
 
   export default {
     components: { SocialLink },
     computed: {
-      ...mapGetters(['blog', 'type', 'social', 'nav']),
+    //  ...mapGetters(['blog', 'type', 'social', 'nav']),
+      blog() {
+        return this.$page;
+      },
+      type() {
+        return this.$page.frontmatter.type;
+      },
+      social() {
+        return this.$themeConfig.social;
+      },
+      nav() {
+        return this.$themeConfig.nav;
+      },
       isHome() {
         return this.type === 'home'
       }

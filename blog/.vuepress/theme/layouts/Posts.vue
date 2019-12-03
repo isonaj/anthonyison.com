@@ -9,13 +9,16 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
   import Card from '../partials/Card'
   import Error from '../partials/Error'
 
   export default {
     components: { Card, Error },
-    computed: mapGetters(['posts'])
+    computed: {
+      posts () {
+        return this.$lists.map.posts.posts;
+      }
+    }
   }
 </script>
 

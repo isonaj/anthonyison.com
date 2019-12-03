@@ -16,9 +16,7 @@
 </template>
 
 <script>
-  import { mapGetters } from 'vuex'
-
   export default {
-    computed: mapGetters(['loading'])
+    props: [ 'loading' ]
   }
 </script>
