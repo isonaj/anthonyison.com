@@ -16,18 +16,12 @@
 </template>
 
 <script>
-  //import { mapGetters } from 'vuex'
+  import { mapGetters } from 'vuex'
 
   export default {
     components: { },
     computed: {
-    //  ...mapGetters(['blog', 'footer']),
-      blog() {
-        return this.$page;
-      },
-      footer() {
-        return this.$themeConfig.footer;
-      },
+      ...mapGetters(['blog', 'footer']),
       year () {
         return new Date().getFullYear()
       }

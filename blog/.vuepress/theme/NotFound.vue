@@ -26,7 +26,7 @@
 </template>
 
 <script>
-//import { mapActions, mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 import Card from './partials/Card';
 import SiteHeader from './partials/Header';
@@ -45,24 +45,14 @@ export default {
   },
   components: { SiteHeader, Card, Error },
   methods: {
-  //  ...mapActions(['updateSite', 'updatePage', 'updateParams']),
+    ...mapActions(['updateSite', 'updatePage', 'updateParams']),
     updateLayoutClass() {
       this.$el.parentNode.className = `error-template`;
     }
   },
   computed: {
-    //...mapGetters(['type', 'blog', 'posts'])
-      blog() {
-        return this.$page;
-      },
-      type() {
-        return this.$page.frontmatter.type;
-      },
-      posts () {
-        return this.$lists.map.posts.posts;
-      }
+    ...mapGetters(['type', 'blog', 'posts'])
   },
-  /*
   watch: {
     $page() {
       this.updatePage(this.$page);
@@ -78,7 +68,6 @@ export default {
     this.updateParams(this.$route.params);
     this.updateLayoutClass();
   }
-  */
 };
 </script>
 

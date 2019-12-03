@@ -11,7 +11,6 @@ export default ({
   options,
   router
 }) => {
-  /*
   Vue.use(Vuex)
 
   const store = createStore()
@@ -39,5 +38,4 @@ export default ({
   })
 
   options.store = store
-  */
 }

@@ -1,6 +1,6 @@
 <template>
-  <article class="post-card" :class="{ 'no-image': !image }">
-    <a v-if="image" class="post-card-image-link" :href="$withBase(post.path)" aria-label="link to post">
+  <article class="post-card" :class="{ 'no-image': !post.image }">
+    <a v-if="post.image" class="post-card-image-link" :href="$withBase(post.path)" aria-label="link to post">
       <div class="post-card-image" :style="imageStyle"></div>
       <!--
       <div class="post-card-image">
@@ -12,7 +12,7 @@
     <div class="post-card-content">
         <a class="post-card-content-link" :href="$withBase(post.path)" aria-label="link to post">
           <header class="post-card-header">
-            <span v-if="tags" class="post-card-tags">{{ tags.join(' ') }}</span>
+            <span v-if="post.tags" class="post-card-tags">{{ post.tags.join(' ') }}</span>
             <h2 class="post-card-title">{{ post.title }}</h2>
           </header>
           <section class="post-card-excerpt" v-if="post.excerpt">
@@ -32,15 +32,9 @@
   export default {
     props: ['post'],
     computed: {
-      image() {
-        return this.post.frontmatter.image;
-      },
-      tags () {
-        return this.post.frontmatter.tags;
-      },
       imageStyle () {
         return {
-          'background-image': `url(${this.$withBase(this.image.replace('w_auto', 'w_600'))})`
+          'background-image': `url(${this.$withBase(this.post.image.replace('w_auto', 'w_600'))})`
         }
       }
     },

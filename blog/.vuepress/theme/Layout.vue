@@ -9,7 +9,7 @@
 </template>
 
 <script>
-//import { mapActions, mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 import Post from './layouts/Post'
 import Page from './layouts/Page'
@@ -22,22 +22,13 @@ import SiteNavigation from './partials/Navigation'
 export default {
   components: { Page, Posts, Post, SiteFooter, SiteHeader, SiteNavigation },
   methods: {
-  //  ...mapActions(['updateSite', 'updatePage', 'updateParams']),
+    ...mapActions(['updateSite', 'updatePage', 'updateParams']),
       updateLayoutClass () {
         this.$el.parentNode.className = `${this.type}-template`
       }
     },
   computed: {
-    //...mapGetters(['type', 'blog', 'header']),
-    type() {
-      return this.$page.frontmatter.type;
-    },
-    blog() {
-      return this.$page;
-    },
-    header() {
-      return this.$themeConfig;
-    },
+    ...mapGetters(['type', 'blog', 'header']),
 
     content () {
       switch (this.type) {
@@ -53,7 +44,6 @@ export default {
       }
     },
   },
-  /*
   watch: {
     $page () {
       this.updatePage(this.$page)
@@ -71,7 +61,6 @@ export default {
     this.updateLayoutClass()
 
   }
-  */
 }
 </script>
 
