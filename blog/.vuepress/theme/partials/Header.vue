@@ -3,8 +3,8 @@
     <div class="inner">
       <div class="site-header-content" v-if="header.showCover">
         <h1 class="site-title">
-          <img v-if="header.logo" class="site-logo" :src="$withBase(header.logo)" :alt="header.title" />
-          <span v-else>{{ header.title }}</span>
+          <!--<img v-if="header.logo" class="site-logo" :src="$withBase(header.logo)" :alt="header.title" />-->
+          <span>{{ header.title }}</span>
         </h1>
         <h2 class="site-description" v-if="header.description">{{ header.description }}</h2>
       </div>

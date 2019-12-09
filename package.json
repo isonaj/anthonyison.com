@@ -7,6 +7,7 @@
     "build": "vuepress build blog"
   },
   "dependencies": {
+    "@limdongjin/vuepress-plugin-simple-seo": "^1.0.4-alpha.5",
     "@vuepress/plugin-google-analytics": "^1.2.0",
     "@vuepress/plugin-last-updated": "^1.2.0",
     "cloudinary-core": "^2.8.0",

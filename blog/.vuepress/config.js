@@ -61,9 +61,12 @@ module.exports = {
     ['container', { type: 'danger' }],
     ['feed', { canonical_base: 'https://anthonyison.com' }],
     ['sitemap', { hostname: 'https://anthonyison.com' }],
+    ['@limdongjin/vuepress-plugin-simple-seo', { }]
+    /*
     ['seo', {
       image: ($page, $site) => $page.frontmatter.image,
       publishedAt: $page => $page.frontmatter.publish && new Date($page.frontmatter.publish),
     }]
+    */
   ]
 }  
