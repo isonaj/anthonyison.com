@@ -5,8 +5,10 @@
         <header class="post-full-header">
           <section class="post-full-meta">
             <time class="post-full-meta-date" :datetime="datetime">{{ localeDate }}</time>
-            <span class="date-divider" v-if="primaryTag">/</span>
-            <a :href="$withBase(`/tags/${primaryTag}`)" v-if="primaryTag">{{ primaryTag }}</a>
+            <span v-for="tag in tags">
+              <span class="date-divider">/</span>
+              <a :href="$withBase(`/tags/${tag}`)">{{ tag }}</a>
+            </span>
           </section>
           <h1 class="post-full-title">{{ $frontmatter.title }}</h1>
         </header>
@@ -15,6 +17,15 @@
 
         <section class="post-full-content">
           <Content class="post-content" />
+        </section>
+
+        <section v-if="$themeConfig.disqus" class="post-full-comments">
+          <vue-disqus />
+          <!--
+          <ClientOnly>
+            <disqus :shortname="$themeConfig.disqus" />
+          </ClientOnly>
+          -->
         </section>
       </article>
     </div>
@@ -31,15 +42,15 @@
       },
 
       localeDate () {
-        return new Date(this.$frontmatter.publish).toLocaleDateString()
+        return new Date(this.$frontmatter.publish).toLocaleDateString(this.$themeConfig.locale, { timezone: this.$themeConfig.timezone })
       },
 
-      primaryTag () {
+      tags () {
         if (!this.$frontmatter.tags || this.$frontmatter.tags.length === 0) {
-          return null
+          return [];
         }
 
-        return head(this.$frontmatter.tags)
+        return this.$frontmatter.tags;
       },
 
       backgroundImage () {

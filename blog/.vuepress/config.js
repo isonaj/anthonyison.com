@@ -5,13 +5,21 @@ module.exports = {
   dest: './dist',
   author: 'Anthony Ison',
 
+  markdown: {
+    anchor: {
+      permalink: false
+    }
+  },
   themeConfig: {
     cover: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/cover_tesif3.jpg',
     logo: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/logo_clymv4.jpg',
     
+    locale: 'en-AU',
+    timezone: 'Brisbane/Australia',
+
     /* For SEO plugin */
     author: 'Anthony Ison',
-    domain: 'https://anhtonyison.com',
+    domain: 'https://anthonyison.com',
     
     disqus: 'anthonyison',
     google_analytics: 'UA-131919757-1',
@@ -25,9 +33,9 @@ module.exports = {
       { text: 'About', link: '/about/' }
     ],
     footer: [
-      { text: 'Netlify', link: '/' },
-      { text: 'Vuepress', link: '/' },
-      { text: 'Casper theme', link: '/' }
+      { text: 'Netlify', link: 'https://www.netlify.com/' },
+      { text: 'Vuepress', link: 'https://vuepress.vuejs.org/' },
+      { text: 'isonaj theme', link: 'https://github.com/isonaj/vuepress-theme-isonaj' }
     ],
     social: {
       github: 'https://github.com/isonaj',
@@ -38,16 +46,11 @@ module.exports = {
     },
   },
   head: [
-    ['link', {rel: 'shortcut icon', href: '/images/logo.jpg'}],
-    ['link', {rel: 'apple-touch-icon', href: '/images/logo.jpg'}]
+    ['link', { rel: 'shortcut icon', href: '/images/logo.jpg' }],
+    ['link', { rel: 'apple-touch-icon', href: '/images/logo.jpg' }]
   ],
   plugins: [
-    [ 
-      '@vuepress/google-analytics',
-      {
-        'ga': 'UA-131919757-1'
-      }
-    ], 
+    ['@vuepress/google-analytics', { 'ga': 'UA-131919757-1' }], 
     [
       'blog-multidir',
       { 
@@ -59,6 +62,10 @@ module.exports = {
     ['container', { type: 'tip' }],
     ['container', { type: 'warning' }],
     ['container', { type: 'danger' }],
+    //['vuepress-plugin-disqus'],
+    ['vuepress-plugin-disqus-comment', {
+      shortname: 'anthonyison'
+    }],
     ['feed', { canonical_base: 'https://anthonyison.com' }],
     ['sitemap', { hostname: 'https://anthonyison.com' }],
     ['@limdongjin/vuepress-plugin-simple-seo', { 
