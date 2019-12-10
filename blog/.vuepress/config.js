@@ -61,7 +61,16 @@ module.exports = {
     ['container', { type: 'danger' }],
     ['feed', { canonical_base: 'https://anthonyison.com' }],
     ['sitemap', { hostname: 'https://anthonyison.com' }],
-    ['@limdongjin/vuepress-plugin-simple-seo', { }]
+    ['@limdongjin/vuepress-plugin-simple-seo', { 
+      root_url: 'https://anthonyison.com',
+      default_site_name: 'Anthony Ison',
+      default_image: '/images/logo.jpg',
+      default_image_type: 'image/jpeg',
+      default_image_width: 400,
+      default_image_width: 500,
+      default_twitter_creator: '@isonaj',
+      default_twitter_site: '@isonaj',
+    }]
     /*
     ['seo', {
       image: ($page, $site) => $page.frontmatter.image,
