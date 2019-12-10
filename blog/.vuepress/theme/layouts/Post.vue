@@ -20,12 +20,7 @@
         </section>
 
         <section v-if="$themeConfig.disqus" class="post-full-comments">
-          <vue-disqus />
-          <!--
-          <ClientOnly>
-            <disqus :shortname="$themeConfig.disqus" />
-          </ClientOnly>
-          -->
+          <disqus :shortname="$themeConfig.disqus" />
         </section>
       </article>
     </div>

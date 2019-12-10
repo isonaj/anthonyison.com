@@ -62,10 +62,12 @@ module.exports = {
     ['container', { type: 'tip' }],
     ['container', { type: 'warning' }],
     ['container', { type: 'danger' }],
-    //['vuepress-plugin-disqus'],
+    ['vuepress-plugin-disqus'],
+    /*
     ['vuepress-plugin-disqus-comment', {
       shortname: 'anthonyison'
     }],
+    */
     ['feed', { canonical_base: 'https://anthonyison.com' }],
     ['sitemap', { hostname: 'https://anthonyison.com' }],
     ['@limdongjin/vuepress-plugin-simple-seo', { 
