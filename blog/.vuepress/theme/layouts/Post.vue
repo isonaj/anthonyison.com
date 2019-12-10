@@ -20,7 +20,7 @@
         </section>
 
         <section v-if="$themeConfig.disqus" class="post-full-comments">
-          <disqus :shortname="$themeConfig.disqus" />
+          <disqus :shortname="$themeConfig.disqus" :url="$page.url" />
         </section>
       </article>
     </div>
@@ -28,7 +28,7 @@
 </template>
 
 <script>
-  import { head, kebabCase } from 'lodash'
+  import { kebabCase } from 'lodash'
 
   export default {
     computed: {
@@ -59,6 +59,9 @@
     }
   }
 </script>
+
+<style src="prismjs/themes/prism-okaidia.css"></style>
+<style lang="styl" src='../styles/code'></style>
 
 <style lang="scss">
   @import '../styles/variables';
