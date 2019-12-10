@@ -68,8 +68,8 @@ module.exports = {
       default_image_type: 'image/jpeg',
       default_image_width: 400,
       default_image_width: 500,
-      default_twitter_creator: '@isonaj',
-      default_twitter_site: '@isonaj',
+      //default_twitter_creator: '@isonaj',
+      //default_twitter_site: '@isonaj'
     }]
     /*
     ['seo', {
