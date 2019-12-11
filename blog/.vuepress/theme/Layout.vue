@@ -38,6 +38,7 @@ export default {
         case 'category':
           return 'posts'
         case 'post':
+        case 'draft':
           return 'post'
         case 'page':
           return 'page'

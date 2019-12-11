@@ -1,5 +1,7 @@
 ---
 title: Angular Ivy - The Next Generation View Engine
+publish: 2019-11-12
+type: draft
 image:
 tags:
 - angular
