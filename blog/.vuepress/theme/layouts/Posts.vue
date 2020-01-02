@@ -5,6 +5,7 @@
         <card v-for="(post, index) in posts" :post="post" :key="index" />
       </div>
     </div>
+    <pagination></pagination>
   </main>
 </template>
 
@@ -12,9 +13,10 @@
   import { mapGetters } from 'vuex'
   import Card from '../partials/Card'
   import Error from '../partials/Error'
+  import Pagination from '../partials/Pagination'
 
   export default {
-    components: { Card, Error },
+    components: { Card, Error, Pagination },
     computed: mapGetters(['posts'])
   }
 </script>

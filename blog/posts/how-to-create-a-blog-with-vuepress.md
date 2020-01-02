@@ -1,6 +1,6 @@
 ---
 title: How to create a blog with Vuepress
-publish: 2019-11-28
+publish: 2020-12-31
 image: /how-to-create-a-blog-with-vuepress/cover.jpg
 tags:
 - blogging
@@ -11,7 +11,7 @@ In [this post](/static-site-generation-with-vuepress), I looked at Vuepress to s
 > You can get the code from this post from [here](https://github.com/isonaj/test-blog).
 
 ## Getting started
-To get started, you will need to have [Node](https://nodejs.org/en/download/) installed. We will use [yarn](https://yarnpkg.com/en/) to install packages instead on [npm](https://www.npmjs.com/). Without getting too much into the details of yarn vs npm, I've had a few issues with Vuepress and npm that were resolved by using yarn. To install yarn, run `npm i yarn -g` on the command line.
+To get started, you will need to have [Node](https://nodejs.org/en/download/) installed. We will use [yarn](https://yarnpkg.com/en/) to install packages instead of [npm](https://www.npmjs.com/). Without getting too much into the details of yarn vs npm, I've had a few issues with Vuepress and npm that were resolved by using yarn. To install yarn, run `npm i yarn -g` on the command line.
 
 Create a new folder for the blog and initialise it with:
 ```bash
