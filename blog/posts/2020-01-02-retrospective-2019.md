@@ -1,8 +1,8 @@
 ---
 title: "Retrospective: 2019"
-publish: 2020-01-02
-type: draft
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/retrospective-2019/cover_ehfib2.jpg
+publish: 2020-01-02 17:04
+type: post
+image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/retrospective-2019/cover_ovkzup.jpg
 tags:
 - blogging
 - agile
@@ -32,6 +32,7 @@ It is important to acknowledge what you've done well and what has worked. Allow 
 * I received great feedback from a Kubernetes project, specifically "You exceeded our most wildly optimistic expectations".
 * My son graduated from high school and is preparing to study engineering.
 * I was given responsibility for an intern, who has since joined SSW and is doing great work.
+* My colleagues appreciate, respect and seek out my feedback.
 
 ## What didn't go so well
 It is important to acknowledge what hasn't worked and what you've not done well. Be careful not to shame, judge or defend yourself. Just acknowledge that it didn't go well and the impact of having this not go well.
