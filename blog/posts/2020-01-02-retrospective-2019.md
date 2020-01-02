@@ -44,6 +44,7 @@ It is important to acknowledge what hasn't worked and what you've not done well.
 * I don't feel like I've made any real impact this year. I know myself to be someone who generates significant value through software, and I don't feel like I've been as productive as I'm used to. 
 
 ## What improvements can be carried forward
+The best improvements are incremental and specific, but in the spirit of New Year resolutions I'm going with big bold wishes. :)
 
 * I want to lose 15kg.
 * I want to spend more time with the people I care about.
