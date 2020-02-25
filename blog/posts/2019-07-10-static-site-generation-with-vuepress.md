@@ -2,7 +2,7 @@
 title: Static Site Generation with Vuepress
 publish: 2019-07-10 22:20:34
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/static-site-generation-with-vuepress/cover_laec7r.jpg
+image: /static-site-generation-with-vuepress/cover.jpg
 tags:
 - blogging
 - vuepress

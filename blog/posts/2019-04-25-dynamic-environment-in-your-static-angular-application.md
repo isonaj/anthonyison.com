@@ -2,7 +2,7 @@
 title: Dynamic environment in your static Angular application
 publish: 2019-04-25
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/dynamic-environment-in-your-static-angular-application/cover_sd5nkb.jpg
+image: /dynamic-environment-in-your-static-angular-application/cover.jpg
 tags: 
 - dotnet 
 - angular

@@ -2,7 +2,7 @@
 title: "Retrospective: 2019"
 publish: 2020-01-02 17:04
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/retrospective-2019/cover_ovkzup.jpg
+image: /retrospective-2019/cover.jpg
 tags:
 - blogging
 - agile

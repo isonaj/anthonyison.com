@@ -2,7 +2,7 @@
 title: 'Azure DevOps, unit testing and code coverage with .Net Core'
 publish: 2019-08-27 23:30:58
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/azure-devops-unit-testing-and-code-coverage-with-dotnet-core/cover_cqglbp.jpg
+image: /azure-devops-unit-testing-and-code-coverage-with-dotnet-core/cover.jpg
 tags:
 - devops
 - testing

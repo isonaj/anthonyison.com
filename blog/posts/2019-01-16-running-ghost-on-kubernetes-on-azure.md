@@ -2,7 +2,7 @@
 title: Running Ghost on Kubernetes on Azure
 publish: 2019-01-16
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/running-ghost-on-kubernetes-on-azure/cover_iraxa6.png
+image: /running-ghost-on-kubernetes-on-azure/cover.png
 tags: 
 - ghost 
 - kubernetes 

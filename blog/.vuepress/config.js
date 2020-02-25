@@ -11,8 +11,8 @@ module.exports = {
     }
   },
   themeConfig: {
-    cover: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/cover_tesif3.jpg',
-    logo: 'https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/images/logo_clymv4.jpg',
+    cover: '/images/cover.jpg',
+    logo: '/images/logo.jpg',
     
     locale: 'en-AU',
     timezone: 'Brisbane/Australia',

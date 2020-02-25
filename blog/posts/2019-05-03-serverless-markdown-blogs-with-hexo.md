@@ -2,7 +2,7 @@
 title: Serverless markdown blogs with Hexo
 publish: 2019-05-03 21:27:32
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/serverless-markdown-blogs-with-hexo/cover_ni8jvq.jpg
+image: /serverless-markdown-blogs-with-hexo/cover.jpg
 tags: 
 - hexo
 ---

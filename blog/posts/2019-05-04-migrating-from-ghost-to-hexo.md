@@ -2,7 +2,7 @@
 title: Migrating from Ghost to Hexo
 publish: 2019-05-04 23:12:56
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/migrating-from-ghost-to-hexo/cover_tomjlq.jpg
+image: /migrating-from-ghost-to-hexo/cover.jpg
 tags:
 - ghost
 - hexo

@@ -2,7 +2,7 @@
 title: Creating a blog with Ghost
 publish: 2019-01-08
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/creating-a-blog-with-ghost/cover_rpmtjf.jpg
+image: /creating-a-blog-with-ghost/cover.jpg
 tags: 
 - ghost
 - azure

@@ -2,7 +2,7 @@
 title: Serverless what? Why do we need it?
 publish: 2019-05-20 08:58:24
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/serverless-what-why-do-we-need-it/cover_gq3cqg.jpg
+image: /serverless-what-why-do-we-need-it/cover.jpg
 tags:
 - serverless
 ---

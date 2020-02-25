@@ -2,7 +2,7 @@
 title: 'Kubernetes: A Beginner''s Guide'
 publish: 2019-06-04 22:45:13
 type: post
-image: https://res.cloudinary.com/isonaj/image/upload/f_auto,w_auto,c_scale/anthonyison.com/kubernetes-a-beginners-guide/cover_ackec9.jpg
+image: /kubernetes-a-beginners-guide/cover.jpg
 tags: 
 - kubernetes
 ---
