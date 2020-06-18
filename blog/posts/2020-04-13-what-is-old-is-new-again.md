@@ -1,3 +1,12 @@
+---
+title: What is old is new again
+publish: 2020-04-13 18:00
+type: post
+image: https://images.unsplash.com/photo-1542241834-ab7bb554663f?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ
+tags:
+- blogging
+- ghost
+---
 I really enjoy writing content for my blog. For the last 5 months or so, it's been getting harder to write. That's not because I'm lacking content or the desire to write. It's mostly related to converting my blog to Vuepress.
 
 [Vuepress](https://vuepress.vuejs.org/) is great and I really recommend it. It is brilliant for doing a technical documentation and it is perfectly capable as a blogging engine. I found 2 different themes that were almost good enough for my blog. I wanted to make a few tweaks and release it as a theme, along with a blog post describing how to make a blog using Vuepress. It sounds like a good way to generate content, but it hasn't worked for me. I've been building a Vuepress blog theme instead of writing content.
@@ -28,8 +37,12 @@ The common choices for blogging platforms seem to be:
 |-------------------|---------|------|
 | Wordpress with Bluehost | Managed | $5/mth |
 | Hosted Ghost            | Managed | $30/mth |
-| Self hosted Ghost       | Self hosted | FREE |
+| Self hosted Ghost       | Self hosted | FREE-ish |
 
+## Hosting on Azure
+When I first started out, I wanted to run on Azure Web Apps and I still do. I want to run serverless to reduce running costs, or run containers. Ghost COULD be run in a serverless way (even though it hasn't really been designed for that, but it will be a lot of effort and I've already flagged that as an issue). If not serverless, containers are my next choice. When I first started, I ran Ghost in a container, hit a problem in Web Apps and side stepped it with Kubernetes because it just worked.
+
+The pricing for Kubernetes is just not stable enough for my liking. Yes, you can prepay and get discounts. Yes, it's probably (possibly?) cheaper. But Web Apps are just so nice to work with. No VM + disk + routing + logging, plus, plus, plus. It's one price and does what it says on the box. So, let's run Ghost in a Web App. It's not straight forward, but it can be done (I hope :)). Next time!
 
 ## Final thoughts
 > Coming back to where you started is not the same as never leaving.
