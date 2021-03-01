@@ -1876,9 +1876,9 @@ clean-css@4.2.x:
     source-map "~0.6.0"
 
 clipboard@^2.0.0:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.4.tgz#836dafd66cf0fea5d71ce5d5b0bf6e958009112d"
-  integrity sha512-Vw26VSLRpJfBofiVaFb/I8PVfdI1OxKcYShe6fm0sP/DtmiWQNCjhM/okTvdCo0G+lMMm1rMYbk4IK4x1X+kgQ==
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/clipboard/-/clipboard-2.0.6.tgz#52921296eec0fdf77ead1749421b21c968647376"
+  integrity sha512-g5zbiixBRk/wyKakSwCKd7vQXDjFnAMGHoEyBogG/bw9kTD9GvdAvaoRR1ALcEzt3pVKxZR0pViekPMIS0QyGg==
   dependencies:
     good-listener "^1.2.2"
     select "^1.1.2"
@@ -1910,11 +1910,6 @@ clone-deep@^4.0.1:
     is-plain-object "^2.0.4"
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
-
-cloudinary-core@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.8.0.tgz#c3d2b633b613e5b2652169a89f8af0cbf20c3f59"
-  integrity sha512-hCtLAkRmZsQcr+HejdFgsFU0WxTu216/NMtgLwQ5RqNeReagxZfcCr5h9GBod+QHevg7MUyy6zU5BXw40Aei3A==
 
 coa@^2.0.2:
   version "2.0.2"
@@ -5929,9 +5924,9 @@ pretty-time@^1.1.0:
   integrity sha512-28iF6xPQrP8Oa6uxE6a1biz+lWeTOAPKggvjB8HAs6nVMKZwf5bG++632Dx614hIWgUPkgivRfG+a8uAXGTIbA==
 
 prismjs@^1.13.0:
-  version "1.17.1"
-  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.17.1.tgz#e669fcbd4cdd873c35102881c33b14d0d68519be"
-  integrity sha512-PrEDJAFdUGbOP6xK/UsfkC5ghJsPJviKgnQOoxaDbBjwc8op68Quupwt1DeAFoG8GImPhiKXAvvsH7wDSLsu1Q==
+  version "1.23.0"
+  resolved "https://registry.yarnpkg.com/prismjs/-/prismjs-1.23.0.tgz#d3b3967f7d72440690497652a9d40ff046067f33"
+  integrity sha512-c29LVsqOaLbBHuIbsTxaKENh1N2EQBOHaWv7gkHN4dgRbxSREqDnDbtFJYdpPauS4YCplMSNCABQ6Eeor69bAA==
   optionalDependencies:
     clipboard "^2.0.0"
 
@@ -7641,13 +7636,6 @@ vuepress-plugin-container@^2.0.2:
   integrity sha512-i4p7S1cqYUrg/3pt+xSghZtKSHVI3VXMQNept8ILxA+lMK1XJkdRkjNovZzwpXlrErQssvrUOTWBV0hdBv7eXQ==
   dependencies:
     markdown-it-container "^2.0.0"
-
-vuepress-plugin-disqus-comment@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-disqus-comment/-/vuepress-plugin-disqus-comment-0.2.3.tgz#606c79af48a73ab21af95013154de8c3ddddad30"
-  integrity sha512-M1oBosK3XkXnmFg2MIUI420VRSk7hF0QXXAiyTUVb7tzdzAjKnRLzRAvLcnrLrXq7XklV7wxTa7o6R7NdWlirg==
-  dependencies:
-    vue-disqus "^3.0.5"
 
 vuepress-plugin-disqus@^0.1.1:
   version "0.1.1"
