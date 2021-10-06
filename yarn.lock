@@ -1911,11 +1911,6 @@ clone-deep@^4.0.1:
     kind-of "^6.0.2"
     shallow-clone "^3.0.0"
 
-cloudinary-core@^2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/cloudinary-core/-/cloudinary-core-2.8.0.tgz#c3d2b633b613e5b2652169a89f8af0cbf20c3f59"
-  integrity sha512-hCtLAkRmZsQcr+HejdFgsFU0WxTu216/NMtgLwQ5RqNeReagxZfcCr5h9GBod+QHevg7MUyy6zU5BXw40Aei3A==
-
 coa@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/coa/-/coa-2.0.2.tgz#43f6c21151b4ef2bf57187db0d73de229e3e7ec3"
@@ -6065,9 +6060,9 @@ querystring@0.2.0:
   integrity sha1-sgmEkgO7Jd+CDadW50cAWHhSFiA=
 
 querystringify@^2.1.1:
-  version "2.1.1"
-  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.1.1.tgz#60e5a5fd64a7f8bfa4d2ab2ed6fdf4c85bad154e"
-  integrity sha512-w7fLxIRCRT7U8Qu53jQnJyPkYZIaR4n5151KMfcJlO/A9397Wxb1amJvROTK6TOnp7PfoAmg/qXiNHI+08jRfA==
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/querystringify/-/querystringify-2.2.0.tgz#3345941b4153cb9d082d8eee4cda2016a9aef7f6"
+  integrity sha512-FIqgj2EUvTa7R50u0rGsyTftzjYmv/a3hO345bZNrqabNqjtgiDMgmo4mkUjd+nzU5oF3dClKqFIPUKybUyqoQ==
 
 randombytes@^2.0.0, randombytes@^2.0.1, randombytes@^2.0.5:
   version "2.1.0"
@@ -7455,9 +7450,9 @@ url-loader@^1.0.1:
     schema-utils "^1.0.0"
 
 url-parse@^1.4.3:
-  version "1.4.7"
-  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.4.7.tgz#a8a83535e8c00a316e403a5db4ac1b9b853ae278"
-  integrity sha512-d3uaVyzDB9tQoSXFvuSUNFibTd9zxd2bkVrDRvF5TmvWWQwqE4lgYJ5m+x1DbecWkw+LK4RNl2CU1hHuOKPVlg==
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/url-parse/-/url-parse-1.5.3.tgz#71c1303d38fb6639ade183c2992c8cc0686df862"
+  integrity sha512-IIORyIQD9rvj0A4CLWsHkBBJuNqWpFQe224b6j9t/ABmquIS0qDU2pY6kl6AuOrL5OkCXHMCFNe1jBcuAggjvQ==
   dependencies:
     querystringify "^2.1.1"
     requires-port "^1.0.0"
@@ -7641,13 +7636,6 @@ vuepress-plugin-container@^2.0.2:
   integrity sha512-i4p7S1cqYUrg/3pt+xSghZtKSHVI3VXMQNept8ILxA+lMK1XJkdRkjNovZzwpXlrErQssvrUOTWBV0hdBv7eXQ==
   dependencies:
     markdown-it-container "^2.0.0"
-
-vuepress-plugin-disqus-comment@^0.2.3:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-disqus-comment/-/vuepress-plugin-disqus-comment-0.2.3.tgz#606c79af48a73ab21af95013154de8c3ddddad30"
-  integrity sha512-M1oBosK3XkXnmFg2MIUI420VRSk7hF0QXXAiyTUVb7tzdzAjKnRLzRAvLcnrLrXq7XklV7wxTa7o6R7NdWlirg==
-  dependencies:
-    vue-disqus "^3.0.5"
 
 vuepress-plugin-disqus@^0.1.1:
   version "0.1.1"
