@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "lodash": "^4.17.10",
-    "node-sass": "^4.9.0",
+    "node-sass": "^7.0.0",
     "normalize.css": "^8.0.0",
     "prismjs": "^1.15.0",
     "sass-loader": "^7.0.3",
