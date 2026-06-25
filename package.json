@@ -1,27 +1,19 @@
 {
   "name": "anthonyison.com",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "vuepress dev blog",
-    "build": "vuepress build blog"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "import:ghost": "node scripts/import-ghost.mjs",
+    "test": "node --test tests/import-ghost.test.mjs"
   },
   "dependencies": {
-    "@limdongjin/vuepress-plugin-simple-seo": "^1.0.4-alpha.5",
-    "@vuepress/plugin-google-analytics": "^1.2.0",
-    "@vuepress/plugin-last-updated": "^1.2.0",
-    "css-prefers-color-scheme": "^4.0.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
-    "vuepress-plugin-blog-multidir": "^1.0.5",
-    "vuepress-plugin-disqus": "^0.1.1",
-    "vuepress-plugin-feed": "^0.1.8",
-    "vuepress-plugin-reading-time": "^0.1.1",
-    "vuepress-plugin-sitemap": "^2.3.1",
-    "vuex": "^3.1.2",
-    "vuex-router-sync": "^5.0.0"
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.9.0"
   },
-  "devDependencies": {
-    "vuepress": "^1.2.0"
-  }
+  "devDependencies": {}
 }
