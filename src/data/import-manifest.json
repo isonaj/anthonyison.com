@@ -1,0 +1,244 @@
+{
+  "posts": [
+    {
+      "id": "5f633a456c7e2c0001e4a36f",
+      "sourceSlug": "creating-a-blog-with-ghost",
+      "outputSlug": "creating-a-blog-with-ghost",
+      "type": "post",
+      "status": "published",
+      "title": "Creating a blog with Ghost"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a370",
+      "sourceSlug": "running-ghost-on-kubernetes-on-azure",
+      "outputSlug": "running-ghost-on-kubernetes-on-azure",
+      "type": "post",
+      "status": "published",
+      "title": "Running Ghost on Kubernetes on Azure"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a371",
+      "sourceSlug": "automatic-https-on-kubernetes",
+      "outputSlug": "automatic-https-on-kubernetes",
+      "type": "post",
+      "status": "published",
+      "title": "Automatic HTTPS on Kubernetes"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a372",
+      "sourceSlug": "dynamic-environment-in-your-static-angular-application",
+      "outputSlug": "dynamic-environment-in-your-static-angular-application",
+      "type": "post",
+      "status": "published",
+      "title": "Dynamic environment in your static Angular application"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a373",
+      "sourceSlug": "serverless-markdown-blogs-with-hexo",
+      "outputSlug": "serverless-markdown-blogs-with-hexo",
+      "type": "post",
+      "status": "published",
+      "title": "Serverless markdown blogs with Hexo"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a374",
+      "sourceSlug": "migrating-from-ghost-to-hexo",
+      "outputSlug": "migrating-from-ghost-to-hexo",
+      "type": "post",
+      "status": "published",
+      "title": "Migrating from Ghost to Hexo"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a375",
+      "sourceSlug": "so-cloudflare",
+      "outputSlug": "so-cloudflare",
+      "type": "post",
+      "status": "published",
+      "title": "So... Cloudflare..."
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a376",
+      "sourceSlug": "serverless-what-why-do-we-need-it",
+      "outputSlug": "serverless-what-why-do-we-need-it",
+      "type": "post",
+      "status": "published",
+      "title": "Serverless what? Why do we need it?"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a377",
+      "sourceSlug": "kubernetes-a-beginners-guide",
+      "outputSlug": "kubernetes-a-beginners-guide",
+      "type": "post",
+      "status": "published",
+      "title": "Kubernetes: A Beginner's Guide"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a378",
+      "sourceSlug": "kubernetes-setting-up-a-cluster-on-aks",
+      "outputSlug": "kubernetes-setting-up-a-cluster-on-aks",
+      "type": "post",
+      "status": "published",
+      "title": "Kubernetes: Setting up a cluster on AKS"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a379",
+      "sourceSlug": "kubernetes-aks-and-windows-containers",
+      "outputSlug": "kubernetes-aks-and-windows-containers",
+      "type": "post",
+      "status": "published",
+      "title": "Kubernetes: AKS and Windows Containers"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37a",
+      "sourceSlug": "blogging-for-consistency",
+      "outputSlug": "blogging-for-consistency",
+      "type": "post",
+      "status": "published",
+      "title": "Blogging for consistency"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37b",
+      "sourceSlug": "static-site-generation-with-vuepress",
+      "outputSlug": "static-site-generation-with-vuepress",
+      "type": "post",
+      "status": "published",
+      "title": "Static Site Generation with Vuepress"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37c",
+      "sourceSlug": "refactoring-code-restructure-not-rewrite",
+      "outputSlug": "refactoring-code-restructure-not-rewrite",
+      "type": "post",
+      "status": "published",
+      "title": "Refactoring code - restructure, not rewrite"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37d",
+      "sourceSlug": "azure-devops-unit-testing-and-code-coverage-with-net-core",
+      "outputSlug": "azure-devops-unit-testing-and-code-coverage-with-net-core",
+      "type": "post",
+      "status": "published",
+      "title": "Azure DevOps, unit testing and code coverage with .Net Core"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37e",
+      "sourceSlug": "iot-with-an-esp32",
+      "outputSlug": "iot-with-an-esp32",
+      "type": "post",
+      "status": "published",
+      "title": "IoT with an ESP32"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a37f",
+      "sourceSlug": "retrospective-2019",
+      "outputSlug": "retrospective-2019",
+      "type": "post",
+      "status": "published",
+      "title": "Retrospective: 2019"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a388",
+      "sourceSlug": "about-me",
+      "outputSlug": "about",
+      "type": "page",
+      "status": "published",
+      "title": "About Me"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a38b",
+      "sourceSlug": "containers-vs-serverless-faas",
+      "outputSlug": "containers-vs-serverless-faas",
+      "type": "post",
+      "status": "published",
+      "title": "Containers vs Serverless"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a38c",
+      "sourceSlug": "user-secrets-with-net-core",
+      "outputSlug": "user-secrets-with-net-core",
+      "type": "post",
+      "status": "published",
+      "title": "User Secrets with .Net Core"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a389",
+      "sourceSlug": "what-is-old-is-new-again",
+      "outputSlug": "what-is-old-is-new-again",
+      "type": "post",
+      "status": "published",
+      "title": "What is old is new again"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a38d",
+      "sourceSlug": "ghost-on-a-shoestring",
+      "outputSlug": "ghost-on-a-shoestring",
+      "type": "post",
+      "status": "published",
+      "title": "Ghost on a Shoestring"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a38f",
+      "sourceSlug": "setting-up-a-new-development-machine",
+      "outputSlug": "setting-up-a-new-development-machine",
+      "type": "post",
+      "status": "published",
+      "title": "Setting up a new development machine"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a390",
+      "sourceSlug": "cwl",
+      "outputSlug": "cwl",
+      "type": "page",
+      "status": "published",
+      "title": "CWL"
+    },
+    {
+      "id": "5f633a456c7e2c0001e4a392",
+      "sourceSlug": "getting-started-with-docker-and-wsl2",
+      "outputSlug": "getting-started-with-docker-and-wsl2",
+      "type": "post",
+      "status": "published",
+      "title": "Getting started with Docker and WSL2"
+    },
+    {
+      "id": "5f6408eaaa8dce00016b07ce",
+      "sourceSlug": "ghost-on-digital-ocean-with-docker",
+      "outputSlug": "ghost-on-digital-ocean-with-docker",
+      "type": "post",
+      "status": "published",
+      "title": "Ghost on Digital Ocean with Docker"
+    },
+    {
+      "id": "5f72f955a37cf50001f3efef",
+      "sourceSlug": "improving-containers-with-docker-compose",
+      "outputSlug": "improving-containers-with-docker-compose",
+      "type": "post",
+      "status": "published",
+      "title": "Improving Containers with Docker Compose"
+    },
+    {
+      "id": "5f7a94f3bfa0120001dbd8ef",
+      "sourceSlug": "manually-create-a-kubernetes-cluster-with-kubeadm",
+      "outputSlug": "manually-create-a-kubernetes-cluster-with-kubeadm",
+      "type": "post",
+      "status": "published",
+      "title": "Manually Create a Kubernetes Cluster with Kubeadm"
+    },
+    {
+      "id": "5fc8d617bfa0120001dbdad5",
+      "sourceSlug": "load-testing-with-locust",
+      "outputSlug": "load-testing-with-locust",
+      "type": "post",
+      "status": "published",
+      "title": "Load testing with Locust"
+    },
+    {
+      "id": "5fca1d59bfa0120001dbdc7f",
+      "sourceSlug": "load-testing-with-wrk",
+      "outputSlug": "load-testing-with-wrk",
+      "type": "post",
+      "status": "published",
+      "title": "Load testing with Wrk"
+    }
+  ]
+}
