@@ -8,7 +8,9 @@
     "build": "astro build",
     "preview": "astro preview",
     "import:ghost": "node scripts/import-ghost.mjs",
-    "test": "node --test tests/import-ghost.test.mjs"
+    "test": "node --test tests/import-ghost.test.mjs",
+    "test:output": "node --test tests/migration-output.test.mjs",
+    "verify": "npm test && npm run build && npm run test:output"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
