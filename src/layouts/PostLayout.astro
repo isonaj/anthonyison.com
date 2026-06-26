@@ -1,0 +1,23 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+const { entry } = Astro.props;
+const { title, description, publishedAt, updatedAt, tags, featureImage } = entry.data;
+const pageTitle = `${title} | Anthony Ison`;
+const publishedDate = publishedAt.toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+const updatedDate = updatedAt && updatedAt.getTime() !== publishedAt.getTime()
+  ? updatedAt.toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
+  : undefined;
+---
+
+<BaseLayout title={pageTitle} description={description ?? title}>
+  <article>
+    <p class="muted">
+      {publishedDate}{updatedDate ? ` · Updated ${updatedDate}` : ''}
+    </p>
+    <h1>{title}</h1>
+    {featureImage && <img src={featureImage} alt="" loading="eager" />}
+    {tags.length > 0 && <p class="muted">{tags.join(', ')}</p>}
+    <slot />
+  </article>
+</BaseLayout>

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const posts = (await getCollection('blog'))
+  .filter((entry) => entry.data.type === 'post')
+  .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf())
+  .slice(0, 10);
+---
+
+<BaseLayout>
+  <section>
+    <p class="muted">Software development and DevOps</p>
+    <h1>Anthony Ison</h1>
+    <p>Notes on building, running, testing, and simplifying software.</p>
+  </section>
+
+  <section>
+    <h2>Recent posts</h2>
+    <ul class="post-list">
+      {posts.map((post) => (
+        <li>
+          <a href={`/${post.slug}/`}>{post.data.title}</a>
+          <p class="muted">{post.data.publishedAt.toLocaleDateString('en-AU')}</p>
+          {post.data.description && <p>{post.data.description}</p>}
+        </li>
+      ))}
+    </ul>
+  </section>
+</BaseLayout>
+
