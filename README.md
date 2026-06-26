@@ -1,4 +1,16 @@
 # anthonyison.com
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/bc8abf8a-37f0-49e0-a43d-6557b75c3579/deploy-status)](https://app.netlify.com/sites/suspicious-meninsky-804ed6/deploys)
+Static blog for <https://anthonyison.com>, built with Astro from Markdown content imported from Ghost.
 
+## Commands
+
+```bash
+npm install
+npm run import:ghost
+npm run dev
+npm run build
+```
+
+## Deployment
+
+Use `npm run build` as the build command and `dist` as the output directory on Cloudflare Pages or Netlify.
