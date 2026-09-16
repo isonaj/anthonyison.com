@@ -17,6 +17,11 @@ function read(relativePath) {
   return fs.readFileSync(path.join(distDir, relativePath), 'utf8');
 }
 
+/** The page at a site path, as built. */
+function readPage(sitePath) {
+  return read(path.join(sitePath, 'index.html'));
+}
+
 /** Posts newest first, read from the content files rather than from the built site. */
 function expectedPosts() {
   return fs.readdirSync(blogDir)
@@ -44,12 +49,12 @@ function feedSlugs(html) {
 }
 
 /**
- * The address of the next batch, or '' at the end of the feed. An empty
+ * The address of the next page of the feed, or '' at the end. An empty
  * attribute is rendered without a value, so both spellings have to be read.
  */
-function nextBatch(html) {
-  const match = html.match(/data-next-batch(?:="([^"]*)")?[\s>]/);
-  assert.ok(match, 'expected a feed marker carrying a data-next-batch attribute');
+function nextPage(html) {
+  const match = html.match(/data-next-page(?:="([^"]*)")?[\s>]/);
+  assert.ok(match, 'expected a feed marker carrying a data-next-page attribute');
   return match[1] ?? '';
 }
 
@@ -68,37 +73,52 @@ test('the home page holds exactly the first batch of the feed', () => {
   assert.deepEqual(feedSlugs(read('index.html')), posts.slice(0, BATCH_SIZE).map((p) => p.slug));
 });
 
-test('the batches together hold every post exactly once, newest first', () => {
+test('following the feed from the home page reaches every post exactly once, newest first', () => {
   const posts = expectedPosts();
   let slugs = feedSlugs(read('index.html'));
-  let next = nextBatch(read('index.html'));
+  let next = nextPage(read('index.html'));
   const seen = new Set();
 
   while (next) {
-    assert.equal(seen.has(next), false, `batch ${next} is linked more than once`);
+    assert.equal(seen.has(next), false, `${next} is linked more than once`);
     seen.add(next);
-    const html = read(path.join(next, 'index.html'));
+    const html = readPage(next);
     slugs = slugs.concat(feedSlugs(html));
-    next = nextBatch(html);
+    next = nextPage(html);
   }
 
   assert.deepEqual(slugs, posts.map((p) => p.slug));
 });
 
-test('only the last batch has no next batch', () => {
-  const posts = expectedPosts();
-  const lastBatch = Math.ceil(posts.length / BATCH_SIZE);
-  assert.equal(nextBatch(read(`batches/${lastBatch}/index.html`)), '');
-  assert.notEqual(nextBatch(read('batches/2/index.html')), '');
+test('a numbered page is a whole page a reader can use on its own', () => {
+  const html = readPage('/page/2/');
+  assert.match(html, /<html/i, 'expected a full page, not a fragment');
+  assert.match(html, /href="\/about\/"/, 'expected the site navigation');
+  assert.match(html, /rel="prev"/, 'expected a link back to the newer posts');
+  assert.match(html, /<title>Page 2 \| Anthony Ison<\/title>/);
 });
 
-test('a batch is a fragment, not a whole page', () => {
-  const html = read('batches/2/index.html');
-  assert.equal(/<html|<head|<body/i.test(html), false, 'batch files should contain no page chrome');
+test('page 2 points back to the home page, not to a page 1', () => {
+  const html = readPage('/page/2/');
+  assert.match(html, /<a href="\/" rel="prev"/);
+  assert.equal(exists('dist/page/1/index.html'), false);
+});
+
+test('only the last page of the feed has no older posts', () => {
+  const posts = expectedPosts();
+  const lastBatch = Math.ceil(posts.length / BATCH_SIZE);
+  assert.equal(nextPage(readPage(`/page/${lastBatch}/`)), '');
+  assert.notEqual(nextPage(readPage('/page/2/')), '');
+});
+
+test('the end of the feed is marked for the reader', () => {
+  const posts = expectedPosts();
+  const lastBatch = Math.ceil(posts.length / BATCH_SIZE);
+  assert.match(readPage(`/page/${lastBatch}/`), new RegExp(`That's all ${posts.length} posts`));
 });
 
 test('no post slug collides with the feed or tag routes', () => {
-  const reserved = new Set(['batches', 'tag', 'tags', 'page']);
+  const reserved = new Set(['page', 'tag', 'tags', 'batches']);
   for (const post of expectedPosts()) {
     assert.equal(reserved.has(post.slug), false, `post slug ${post.slug} collides with a site route`);
   }
@@ -118,23 +138,17 @@ test('every tag has a page listing its posts', () => {
   assert.ok(tags.size > 0, 'expected the posts to carry tags');
 
   for (const [tag, count] of tags) {
-    const html = read(path.join('tag', tag, 'index.html'));
+    const html = readPage(path.join('tag', tag));
     const shown = feedSlugs(html).length;
     assert.equal(shown, Math.min(count, BATCH_SIZE), `tag ${tag} shows ${shown} of ${count} posts`);
   }
 });
 
-test('batches are kept out of the sitemap', () => {
+test('numbered pages are offered to search engines', () => {
   const sitemaps = fs.readdirSync(distDir).filter((name) => name.startsWith('sitemap'));
-  for (const name of sitemaps) {
-    assert.equal(read(name).includes('/batches/'), false, `${name} lists batch fragments`);
-  }
-});
-
-test('batches are marked noindex for search engines', () => {
-  const headers = read('_headers');
-  assert.match(headers, /\/batches\/\*/);
-  assert.match(headers, /X-Robots-Tag:\s*noindex/i);
+  const listed = sitemaps.map((name) => read(name)).join('');
+  assert.match(listed, /\/page\/2\//, 'expected the feed pages in the sitemap');
+  assert.equal(exists('dist/_headers'), false, 'no noindex rules are needed any more');
 });
 
 test('known old urls redirect to their current home', () => {
@@ -143,7 +157,7 @@ test('known old urls redirect to their current home', () => {
     ['/about-me/', '/about/'],
     ['/posts/', '/'],
     ['/archives/', '/'],
-    ['/page/2/', '/'],
+    ['/archives/page/2/', '/page/2/'],
     ['/tag/', '/'],
     ['/author/anthony/', '/about/'],
     ['/rss/', '/rss.xml'],
@@ -168,8 +182,12 @@ test('known old urls redirect to their current home', () => {
   }
 });
 
-test('the end of the feed is marked for the reader', () => {
-  const posts = expectedPosts();
-  const lastBatch = Math.ceil(posts.length / BATCH_SIZE);
-  assert.match(read(`batches/${lastBatch}/index.html`), new RegExp(`That's all ${posts.length} posts`));
+test('the feed pages the old site had are served, not redirected', () => {
+  const redirects = read('_redirects');
+  assert.equal(
+    redirects.split('\n').some((line) => line.trim().startsWith('/page/2/ ')),
+    false,
+    '/page/2/ is a real page now, so a redirect would shadow it'
+  );
+  assert.equal(exists('dist/page/2/index.html'), true);
 });

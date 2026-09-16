@@ -1,13 +1,13 @@
 /**
- * Grows the feed as the reader scrolls: each batch is a prebuilt HTML fragment
- * that gets appended to the list. Without this script the reader still sees the
- * first batch and can follow the "Show more posts" link to the next fragment.
+ * Grows the feed as the reader scrolls by lifting the posts out of the next
+ * page and appending them. Without this script those pages are ordinary,
+ * navigable pages reached through the "Older posts" link.
  */
 const feed = document.querySelector<HTMLElement>('[data-feed]');
 const marker = document.querySelector<HTMLElement>('[data-feed-marker]');
 const stateKey = `feed:${location.pathname}`;
 
-/** How far beyond the viewport a batch starts loading. */
+/** How far beyond the viewport the next page starts loading. */
 const LOOKAHEAD_SCREENS = 1;
 
 let loadedBatches = 1;
@@ -20,13 +20,13 @@ function arrivedByBackButton(): boolean {
   return entry?.type === 'back_forward';
 }
 
-function showMoreLink(): HTMLAnchorElement | null {
+function olderPostsLink(): HTMLAnchorElement | null {
   return marker?.querySelector<HTMLAnchorElement>('.show-more') ?? null;
 }
 
-/** The link is only for readers without this script, or when loading failed. */
-function hideShowMore(): void {
-  showMoreLink()?.classList.add('is-hidden');
+/** The link stays for readers without this script, and comes back if loading fails. */
+function hideOlderPostsLink(): void {
+  olderPostsLink()?.classList.add('is-hidden');
 }
 
 function saveState(): void {
@@ -61,33 +61,33 @@ function markerWithinReach(): boolean {
 }
 
 async function loadNextBatch(): Promise<boolean> {
-  const next = marker?.dataset.nextBatch;
+  const next = marker?.dataset.nextPage;
   if (!feed || !marker || !next || loading) return false;
 
   loading = true;
   try {
     const response = await fetch(next);
-    if (!response.ok) throw new Error(`Batch request failed: ${response.status}`);
+    if (!response.ok) throw new Error(`Page request failed: ${response.status}`);
 
-    const fragment = new DOMParser().parseFromString(await response.text(), 'text/html');
-    const nextMarker = fragment.querySelector('[data-feed-marker]');
-    // Without a marker this isn't a batch we understand, so keep the feed as it
-    // is rather than replacing the end of it with nothing.
-    if (!nextMarker) throw new Error('Batch response had no feed marker');
+    const page = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const nextMarker = page.querySelector('[data-feed-marker]');
+    // Without a marker this isn't a feed page we understand, so keep the feed as
+    // it is rather than replacing the end of it with nothing.
+    if (!nextMarker) throw new Error('Feed page had no marker');
 
-    for (const item of fragment.querySelectorAll('.post-item')) {
+    for (const item of page.querySelectorAll('.post-item')) {
       feed.appendChild(document.importNode(item, true));
     }
 
-    marker.dataset.nextBatch = nextMarker.getAttribute('data-next-batch') ?? '';
+    marker.dataset.nextPage = nextMarker.getAttribute('data-next-page') ?? '';
     marker.innerHTML = nextMarker.innerHTML;
 
     loadedBatches += 1;
-    hideShowMore();
+    hideOlderPostsLink();
     if (!restoring) saveState();
     return true;
   } catch {
-    showMoreLink()?.classList.remove('is-hidden');
+    olderPostsLink()?.classList.remove('is-hidden');
     return false;
   } finally {
     loading = false;
@@ -100,7 +100,7 @@ async function loadNextBatch(): Promise<boolean> {
  * it out of view would otherwise leave the feed stalled until the reader moved.
  */
 async function fillToLookahead(): Promise<void> {
-  while (marker?.dataset.nextBatch && markerWithinReach()) {
+  while (marker?.dataset.nextPage && markerWithinReach()) {
     if (!(await loadNextBatch())) return;
   }
 }
@@ -132,7 +132,7 @@ async function restore(state: { loadedBatches: number; scrollY: number }): Promi
 }
 
 if (feed && marker) {
-  hideShowMore();
+  hideOlderPostsLink();
 
   marker.addEventListener('click', (event) => {
     const link = (event.target as HTMLElement).closest('.show-more');

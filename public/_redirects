@@ -11,8 +11,7 @@
 
 /posts/ / 301
 /archives/ / 301
-/archives/page/2/ / 301
-/page/2/ / 301
+/archives/page/2/ /page/2/ 301
 
 /rss/ /rss.xml 301
 /sitemap.xml /sitemap-index.xml 301

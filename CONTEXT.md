@@ -23,5 +23,5 @@ The newest-first list of every Post on the home page, which keeps growing as the
 _Avoid_: Archive, posts list, index
 
 **Batch**:
-A fixed-size, consecutive run of Posts appended to the Feed as one unit.
-_Avoid_: Page, chunk
+A fixed-size, consecutive run of Posts appended to the Feed as one unit, and readable on its own as a numbered page of the Feed.
+_Avoid_: Chunk, block

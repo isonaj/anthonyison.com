@@ -21,6 +21,8 @@ export function readingTime(body: string): string {
   return `${Math.max(1, Math.ceil(words / WORDS_PER_MINUTE))} min read`;
 }
 
-export function batchPath(batch: number, tag?: string): string {
-  return tag ? `/tag/${tag}/batches/${batch}/` : `/batches/${batch}/`;
+/** Where a batch can be read on its own. Batch 1 is the feed's own page. */
+export function pagePath(batch: number, tag?: string): string {
+  const root = tag ? `/tag/${tag}/` : '/';
+  return batch === 1 ? root : `${root}page/${batch}/`;
 }

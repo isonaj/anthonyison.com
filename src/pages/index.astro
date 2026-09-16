@@ -3,11 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import PostItem from '../components/PostItem.astro';
 import FeedMarker from '../components/FeedMarker.astro';
 import { getPosts, batchOf, batchCount } from '../lib/feed';
-import { batchPath } from '../site';
+import { pagePath } from '../site';
 
 const posts = await getPosts();
 const firstBatch = batchOf(posts, 1);
-const nextBatch = batchCount(posts) > 1 ? batchPath(2) : '';
+const next = batchCount(posts) > 1 ? pagePath(2) : '';
 ---
 
 <BaseLayout>
@@ -17,7 +17,7 @@ const nextBatch = batchCount(posts) > 1 ? batchPath(2) : '';
     {firstBatch.map((post) => <PostItem post={post} />)}
   </ul>
 
-  <FeedMarker nextBatch={nextBatch} total={posts.length} />
+  <FeedMarker next={next} total={posts.length} />
 
   <script>
     import '../scripts/feed';

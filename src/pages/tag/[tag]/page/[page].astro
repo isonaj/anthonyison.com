@@ -1,0 +1,48 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+import PostItem from '../../../../components/PostItem.astro';
+import FeedMarker from '../../../../components/FeedMarker.astro';
+import { getPosts, postsByTag, batchOf, batchCount } from '../../../../lib/feed';
+import { pagePath } from '../../../../site';
+
+/** Page 1 of a tag's feed is the tag page itself, so numbering starts at 2. */
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return [...postsByTag(posts)].flatMap(([tag, tagged]) => {
+    const batches = batchCount(tagged);
+    return Array.from({ length: Math.max(0, batches - 1) }, (_, index) => {
+      const batch = index + 2;
+      return {
+        params: { tag, page: String(batch) },
+        props: { batchPosts: batchOf(tagged, batch), batch, batches, total: tagged.length, tag }
+      };
+    });
+  });
+}
+
+const { batchPosts, batch, batches, total, tag } = Astro.props;
+const previous = pagePath(batch - 1, tag);
+const next = batch < batches ? pagePath(batch + 1, tag) : '';
+---
+
+<BaseLayout
+  title={`${tag}, page ${batch} | Anthony Ison`}
+  description={`Page ${batch} of ${batches} of posts tagged ${tag}.`}
+>
+  <h1 class="feed-heading">{tag}</h1>
+  <p class="muted">Page {batch} of {batches}</p>
+
+  <p class="feed-nav">
+    <a href={previous} rel="prev">← Newer posts</a>
+  </p>
+
+  <ul class="post-list" data-feed>
+    {batchPosts.map((post) => <PostItem post={post} />)}
+  </ul>
+
+  <FeedMarker next={next} total={total} tag={tag} />
+
+  <script>
+    import '../../../../scripts/feed';
+  </script>
+</BaseLayout>

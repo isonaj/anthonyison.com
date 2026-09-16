@@ -1,19 +1,19 @@
 ---
 interface Props {
-  /** Address of the next batch, or '' at the end of the feed. */
-  nextBatch: string;
+  /** Address of the page holding the next batch, or '' at the end of the feed. */
+  next: string;
   /** How many posts the whole feed holds. */
   total: number;
   /** Set on a tag feed. */
   tag?: string;
 }
 
-const { nextBatch, total, tag } = Astro.props;
+const { next, total, tag } = Astro.props;
 ---
 
-<div class="feed-marker" data-feed-marker data-next-batch={nextBatch}>
-  {nextBatch ? (
-    <a class="show-more" href={nextBatch}>Show more posts</a>
+<div class="feed-marker" data-feed-marker data-next-page={next}>
+  {next ? (
+    <a class="show-more" href={next} rel="next">Older posts</a>
   ) : (
     <p class="feed-end muted">
       That's all {total} posts{tag ? ' tagged ' + tag : ''}. <a href="/rss.xml">Subscribe by RSS</a>
