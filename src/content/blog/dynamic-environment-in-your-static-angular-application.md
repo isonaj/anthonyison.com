@@ -6,7 +6,7 @@ updatedAt: "2020-01-11T05:24:25.000Z"
 tags:
   - "angular"
   - "dotnet"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-2.jpg"
+featureImage: "/images/ghost/2020/01/cover-2.jpg"
 type: "post"
 ---
 

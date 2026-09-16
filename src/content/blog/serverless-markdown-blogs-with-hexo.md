@@ -6,7 +6,7 @@ updatedAt: "2020-01-11T05:27:34.000Z"
 tags:
   - "blogging"
   - "hexo"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-3.jpg"
+featureImage: "/images/ghost/2020/01/cover-3.jpg"
 type: "post"
 ---
 

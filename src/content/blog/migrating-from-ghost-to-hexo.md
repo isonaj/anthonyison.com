@@ -7,7 +7,7 @@ tags:
   - "blogging"
   - "ghost"
   - "hexo"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-4.jpg"
+featureImage: "/images/ghost/2020/01/cover-4.jpg"
 type: "post"
 ---
 

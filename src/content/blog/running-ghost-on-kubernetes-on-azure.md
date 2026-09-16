@@ -7,7 +7,7 @@ tags:
   - "azure"
   - "ghost"
   - "kubernetes"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover.png"
+featureImage: "/images/ghost/2020/01/cover.png"
 type: "post"
 ---
 

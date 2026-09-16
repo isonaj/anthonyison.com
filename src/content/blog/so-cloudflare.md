@@ -6,7 +6,7 @@ updatedAt: "2020-01-11T05:41:41.000Z"
 tags:
   - "cdn"
   - "cloudflare"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-6.jpg"
+featureImage: "/images/ghost/2020/01/cover-6.jpg"
 type: "post"
 ---
 

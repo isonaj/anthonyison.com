@@ -7,7 +7,7 @@ tags:
   - "azure"
   - "blogging"
   - "ghost"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover.jpg"
+featureImage: "/images/ghost/2020/01/cover.jpg"
 type: "post"
 ---
 

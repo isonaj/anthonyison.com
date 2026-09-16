@@ -5,7 +5,7 @@ publishedAt: "2019-07-30T05:35:00.000Z"
 updatedAt: "2020-01-11T06:20:51.000Z"
 tags:
   - "principles"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover_smaller-2.jpg"
+featureImage: "/images/ghost/2020/01/cover_smaller-2.jpg"
 type: "post"
 ---
 

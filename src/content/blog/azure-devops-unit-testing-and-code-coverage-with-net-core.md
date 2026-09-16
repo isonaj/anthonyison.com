@@ -7,7 +7,7 @@ tags:
   - "devops"
   - "principles"
   - "testing"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover_smaller-3.jpg"
+featureImage: "/images/ghost/2020/01/cover_smaller-3.jpg"
 type: "post"
 ---
 

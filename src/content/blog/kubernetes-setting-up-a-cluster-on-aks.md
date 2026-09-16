@@ -7,7 +7,7 @@ tags:
   - "aks"
   - "azure"
   - "kubernetes"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover_smaller.jpg"
+featureImage: "/images/ghost/2020/01/cover_smaller.jpg"
 type: "post"
 ---
 

@@ -5,7 +5,7 @@ publishedAt: "2019-06-17T01:25:00.000Z"
 updatedAt: "2020-01-11T06:01:37.000Z"
 tags:
   - "blogging"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover_smaller-1.jpg"
+featureImage: "/images/ghost/2020/01/cover_smaller-1.jpg"
 type: "post"
 ---
 

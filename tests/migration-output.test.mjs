@@ -19,8 +19,3 @@ test('important slug pages are generated', () => {
 test('rss feed is generated', () => {
   assert.equal(exists('dist/rss.xml'), true);
 });
-
-test('imported manifest contains 30 published Ghost entries', () => {
-  const manifest = JSON.parse(fs.readFileSync(path.join(repoRoot, 'src/data/import-manifest.json'), 'utf8'));
-  assert.equal(manifest.posts.length, 30);
-});

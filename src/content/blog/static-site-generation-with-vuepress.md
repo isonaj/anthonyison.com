@@ -6,7 +6,7 @@ updatedAt: "2020-01-11T06:17:08.000Z"
 tags:
   - "blogging"
   - "vuepress"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-10.jpg"
+featureImage: "/images/ghost/2020/01/cover-10.jpg"
 type: "post"
 ---
 

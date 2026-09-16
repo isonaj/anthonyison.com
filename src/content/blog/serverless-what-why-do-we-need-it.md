@@ -5,7 +5,7 @@ publishedAt: "2019-05-19T22:58:00.000Z"
 updatedAt: "2020-01-11T05:37:32.000Z"
 tags:
   - "serverless"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-7.jpg"
+featureImage: "/images/ghost/2020/01/cover-7.jpg"
 type: "post"
 ---
 

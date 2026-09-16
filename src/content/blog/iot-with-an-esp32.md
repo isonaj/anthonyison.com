@@ -5,7 +5,7 @@ publishedAt: "2019-11-03T23:50:00.000Z"
 updatedAt: "2020-01-11T06:28:24.000Z"
 tags:
   - "iot"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-11.jpg"
+featureImage: "/images/ghost/2020/01/cover-11.jpg"
 type: "post"
 ---
 
