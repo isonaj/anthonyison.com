@@ -1,5 +1,6 @@
 ---
 title: "Load testing with Locust"
+description: "Why I like Locust for load testing: its charts expose cold boots and unstable latency that bulk statistics hide."
 slug: "load-testing-with-locust"
 publishedAt: "2020-12-04T11:26:30.000Z"
 updatedAt: "2020-12-04T11:26:30.000Z"

@@ -1,5 +1,6 @@
 ---
 title: "User Secrets with .Net Core"
+description: "Keeping each developer's local connection strings out of the repository with User Secrets in .Net Core."
 slug: "user-secrets-with-net-core"
 publishedAt: "2020-03-22T08:00:00.000Z"
 updatedAt: "2020-05-16T11:35:36.000Z"

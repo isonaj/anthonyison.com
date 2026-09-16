@@ -1,5 +1,6 @@
 ---
 title: "Migrating from Ghost to Hexo"
+description: "The steps I took moving my blog from Ghost to Hexo, including the shortcuts I only found after doing the heavy lifting."
 slug: "migrating-from-ghost-to-hexo"
 publishedAt: "2019-05-04T05:27:00.000Z"
 updatedAt: "2020-01-11T05:29:50.000Z"

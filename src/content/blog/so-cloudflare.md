@@ -1,5 +1,6 @@
 ---
 title: "So... Cloudflare..."
+description: "After a Troy Hunt talk, I realised Cloudflare would have side-stepped most of the HTTPS struggles I'd had with my blog."
 slug: "so-cloudflare"
 publishedAt: "2019-05-05T10:40:00.000Z"
 updatedAt: "2020-01-11T05:41:41.000Z"

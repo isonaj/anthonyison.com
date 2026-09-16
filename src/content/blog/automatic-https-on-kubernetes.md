@@ -1,5 +1,6 @@
 ---
 title: "Automatic HTTPS on Kubernetes"
+description: "What HTTPS and certificates actually protect you from, and how I got them working automatically on my Kubernetes-hosted blog."
 slug: "automatic-https-on-kubernetes"
 publishedAt: "2019-02-17T05:19:00.000Z"
 updatedAt: "2020-01-11T05:21:57.000Z"

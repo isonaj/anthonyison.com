@@ -1,5 +1,6 @@
 ---
 title: "Containers vs Serverless"
+description: "How we got from physical servers to containers and serverless, what each one is good at, and how I choose between them."
 slug: "containers-vs-serverless-faas"
 publishedAt: "2020-03-07T05:11:31.000Z"
 updatedAt: "2020-03-07T05:11:31.000Z"

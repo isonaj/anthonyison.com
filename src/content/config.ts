@@ -11,6 +11,14 @@ const blog = defineCollection({
     featureImage: z.string().optional(),
     type: z.enum(['post', 'page']).default('post'),
     canonicalUrl: z.string().optional()
+  }).superRefine((entry, ctx) => {
+    if (entry.type === 'post' && !entry.description) {
+      ctx.addIssue({
+        code: z.ZodIssueCode.custom,
+        path: ['description'],
+        message: 'Every post needs a description: it is used in the feed, the meta description and RSS.'
+      });
+    }
   })
 });
 

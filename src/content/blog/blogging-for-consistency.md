@@ -1,5 +1,6 @@
 ---
 title: "Blogging for consistency"
+description: "The feedback I've had on my writing, and the small consistency details that lose readers before they reach your content."
 slug: "blogging-for-consistency"
 publishedAt: "2019-06-17T01:25:00.000Z"
 updatedAt: "2020-01-11T06:01:37.000Z"

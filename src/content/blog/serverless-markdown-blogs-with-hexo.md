@@ -1,5 +1,6 @@
 ---
 title: "Serverless markdown blogs with Hexo"
+description: "A blog is a perfect fit for static site generation, so I compared Jekyll, Hexo and Vuepress and moved my markdown across."
 slug: "serverless-markdown-blogs-with-hexo"
 publishedAt: "2019-05-03T11:27:00.000Z"
 updatedAt: "2020-01-11T05:27:34.000Z"

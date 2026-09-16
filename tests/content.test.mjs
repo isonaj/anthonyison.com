@@ -27,6 +27,18 @@ test('no content still points at the old Ghost site', () => {
   }
 });
 
+test('every post has a description short enough to read in a list', () => {
+  for (const entry of entries()) {
+    if (field(entry.frontmatter, 'type') === 'page') continue;
+    const description = field(entry.frontmatter, 'description');
+    assert.ok(description, `${entry.slug} has no description`);
+    assert.ok(
+      description.length <= 160,
+      `${entry.slug} has a ${description.length} character description, which is too long for a feed item`
+    );
+  }
+});
+
 test('every local cover image exists', () => {
   for (const entry of entries()) {
     const cover = field(entry.frontmatter, 'featureImage');

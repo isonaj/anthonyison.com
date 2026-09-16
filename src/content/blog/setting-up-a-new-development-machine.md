@@ -1,5 +1,6 @@
 ---
 title: "Setting up a new development machine"
+description: "Scripting the setup of a new development machine with Chocolatey, plus a look at Microsoft's new WinGet installer."
 slug: "setting-up-a-new-development-machine"
 publishedAt: "2020-06-14T13:13:11.000Z"
 updatedAt: "2021-11-25T22:10:35.000Z"

@@ -1,5 +1,6 @@
 ---
 title: "Ghost on a Shoestring"
+description: "Running my blog on AKS kept costing more than I expected and taking it offline, so I went looking for something cheaper."
 slug: "ghost-on-a-shoestring"
 publishedAt: "2020-05-20T11:55:31.000Z"
 updatedAt: "2020-05-20T11:55:31.000Z"

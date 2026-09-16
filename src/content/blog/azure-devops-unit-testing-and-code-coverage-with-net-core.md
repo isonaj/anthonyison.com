@@ -1,5 +1,6 @@
 ---
 title: "Azure DevOps, unit testing and code coverage with .Net Core"
+description: "Setting up an Azure DevOps pipeline for .Net Core that runs your unit tests and reports code coverage on every commit."
 slug: "azure-devops-unit-testing-and-code-coverage-with-net-core"
 publishedAt: "2019-08-27T13:30:00.000Z"
 updatedAt: "2020-01-11T06:26:38.000Z"

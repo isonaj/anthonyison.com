@@ -1,5 +1,6 @@
 ---
 title: "Kubernetes: AKS and Windows Containers"
+description: "What Windows containers can and can't do on Kubernetes and AKS, and whether I think they're ready for production."
 slug: "kubernetes-aks-and-windows-containers"
 publishedAt: "2019-06-10T04:52:00.000Z"
 updatedAt: "2020-01-11T05:56:50.000Z"

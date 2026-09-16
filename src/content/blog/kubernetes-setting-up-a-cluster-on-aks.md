@@ -1,5 +1,6 @@
 ---
 title: "Kubernetes: Setting up a cluster on AKS"
+description: "My cheat sheet for getting a Kubernetes cluster running on Azure with AKS, including the extras worth setting up."
 slug: "kubernetes-setting-up-a-cluster-on-aks"
 publishedAt: "2019-06-04T12:45:00.000Z"
 updatedAt: "2020-01-11T05:51:41.000Z"
