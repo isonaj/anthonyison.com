@@ -12,7 +12,10 @@ function entries() {
     .filter((name) => name.endsWith('.md'))
     .map((name) => ({
       slug: name.replace(/\.md$/, ''),
-      frontmatter: fs.readFileSync(path.join(blogDir, name), 'utf8').split('---')[1] ?? ''
+      // Content files carry a mix of line endings on Windows, so read them flat.
+      frontmatter: fs.readFileSync(path.join(blogDir, name), 'utf8')
+        .replace(/\r\n/g, '\n')
+        .split('---')[1] ?? ''
     }));
 }
 

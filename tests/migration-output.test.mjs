@@ -22,12 +22,16 @@ function expectedPosts() {
   return fs.readdirSync(blogDir)
     .filter((name) => name.endsWith('.md'))
     .map((name) => {
-      const frontmatter = fs.readFileSync(path.join(blogDir, name), 'utf8').split('---')[1] ?? '';
+      // Content files carry a mix of line endings on Windows, so read them flat.
+      const frontmatter = fs.readFileSync(path.join(blogDir, name), 'utf8')
+        .replace(/\r\n/g, '\n')
+        .split('---')[1] ?? '';
       return {
         slug: name.replace(/\.md$/, ''),
         type: frontmatter.match(/^type:\s*"?(\w+)"?$/m)?.[1] ?? 'post',
         publishedAt: new Date(frontmatter.match(/^publishedAt:\s*"?([^"\n]+)"?$/m)?.[1]),
-        tags: [...frontmatter.matchAll(/^\s+-\s*"?([^"\n]+)"?$/gm)].map((m) => m[1])
+        tags: [...(frontmatter.match(/^tags:\n((?:[ \t]+-[^\n]*\n)+)/m)?.[1] ?? '')
+          .matchAll(/^[ \t]+-\s*"?([^"\n]+?)"?\s*$/gm)].map((m) => m[1])
       };
     })
     .filter((entry) => entry.type === 'post')
@@ -39,8 +43,14 @@ function feedSlugs(html) {
   return [...html.matchAll(/<a class="post-title" href="\/([^/"]+)\/"/g)].map((m) => m[1]);
 }
 
+/**
+ * The address of the next batch, or '' at the end of the feed. An empty
+ * attribute is rendered without a value, so both spellings have to be read.
+ */
 function nextBatch(html) {
-  return html.match(/data-next-batch="([^"]*)"/)?.[1] || '';
+  const match = html.match(/data-next-batch(?:="([^"]*)")?[\s>]/);
+  assert.ok(match, 'expected a feed marker carrying a data-next-batch attribute');
+  return match[1] ?? '';
 }
 
 test('important slug pages are generated', () => {

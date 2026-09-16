@@ -7,6 +7,9 @@ const feed = document.querySelector<HTMLElement>('[data-feed]');
 const marker = document.querySelector<HTMLElement>('[data-feed-marker]');
 const stateKey = `feed:${location.pathname}`;
 
+/** How far beyond the viewport a batch starts loading. */
+const LOOKAHEAD_SCREENS = 1;
+
 let loadedBatches = 1;
 let loading = false;
 let restoring = false;
@@ -51,6 +54,12 @@ function readState(): { loadedBatches: number; scrollY: number } | null {
   }
 }
 
+/** The end of the feed is close enough that the next batch should be on its way. */
+function markerWithinReach(): boolean {
+  if (!marker) return false;
+  return marker.getBoundingClientRect().top <= window.innerHeight * (1 + LOOKAHEAD_SCREENS);
+}
+
 async function loadNextBatch(): Promise<boolean> {
   const next = marker?.dataset.nextBatch;
   if (!feed || !marker || !next || loading) return false;
@@ -61,13 +70,17 @@ async function loadNextBatch(): Promise<boolean> {
     if (!response.ok) throw new Error(`Batch request failed: ${response.status}`);
 
     const fragment = new DOMParser().parseFromString(await response.text(), 'text/html');
+    const nextMarker = fragment.querySelector('[data-feed-marker]');
+    // Without a marker this isn't a batch we understand, so keep the feed as it
+    // is rather than replacing the end of it with nothing.
+    if (!nextMarker) throw new Error('Batch response had no feed marker');
+
     for (const item of fragment.querySelectorAll('.post-item')) {
       feed.appendChild(document.importNode(item, true));
     }
 
-    const nextMarker = fragment.querySelector('[data-feed-marker]');
-    marker.dataset.nextBatch = nextMarker?.getAttribute('data-next-batch') ?? '';
-    marker.innerHTML = nextMarker?.innerHTML ?? '';
+    marker.dataset.nextBatch = nextMarker.getAttribute('data-next-batch') ?? '';
+    marker.innerHTML = nextMarker.innerHTML;
 
     loadedBatches += 1;
     hideShowMore();
@@ -78,6 +91,17 @@ async function loadNextBatch(): Promise<boolean> {
     return false;
   } finally {
     loading = false;
+  }
+}
+
+/**
+ * Keeps loading while the end of the feed is in reach. The observer only fires
+ * when the marker crosses the boundary, so appending a batch that doesn't push
+ * it out of view would otherwise leave the feed stalled until the reader moved.
+ */
+async function fillToLookahead(): Promise<void> {
+  while (marker?.dataset.nextBatch && markerWithinReach()) {
+    if (!(await loadNextBatch())) return;
   }
 }
 
@@ -93,12 +117,18 @@ async function restore(state: { loadedBatches: number; scrollY: number }): Promi
     while (loadedBatches < state.loadedBatches) {
       if (!(await loadNextBatch())) break;
     }
-    window.scrollTo(0, state.scrollY);
+    // Only return the reader to their old position if the feed reached its old
+    // length; otherwise that position is further down than the feed now goes.
+    if (loadedBatches >= state.loadedBatches) {
+      window.scrollTo(0, state.scrollY);
+    }
   } finally {
     restoring = false;
     history.scrollRestoration = previousBehaviour;
     saveState();
   }
+
+  await fillToLookahead();
 }
 
 if (feed && marker) {
@@ -111,13 +141,12 @@ if (feed && marker) {
     void loadNextBatch();
   });
 
-  // Start loading about one screen before the reader reaches the end.
   const observer = new IntersectionObserver(
     (entries) => {
       if (restoring) return;
-      if (entries.some((entry) => entry.isIntersecting)) void loadNextBatch();
+      if (entries.some((entry) => entry.isIntersecting)) void fillToLookahead();
     },
-    { rootMargin: `0px 0px ${Math.round(window.innerHeight)}px 0px` }
+    { rootMargin: `0px 0px ${Math.round(window.innerHeight * LOOKAHEAD_SCREENS)}px 0px` }
   );
   observer.observe(marker);
 
