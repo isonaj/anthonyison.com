@@ -1,0 +1,5 @@
+/batches/*
+  X-Robots-Tag: noindex
+
+/tag/*/batches/*
+  X-Robots-Tag: noindex

@@ -1,0 +1,30 @@
+---
+import PostItem from '../../components/PostItem.astro';
+import FeedMarker from '../../components/FeedMarker.astro';
+import { getPosts, batchOf, batchCount } from '../../lib/feed';
+import { batchPath } from '../../site';
+
+/** Batches are fragments the feed appends, not whole pages. */
+export const partial = true;
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const total = batchCount(posts);
+  return Array.from({ length: Math.max(0, total - 1) }, (_, index) => {
+    const batch = index + 2;
+    return {
+      params: { batch: String(batch) },
+      props: {
+        batchPosts: batchOf(posts, batch),
+        nextBatch: batch < total ? batchPath(batch + 1) : '',
+        total: posts.length
+      }
+    };
+  });
+}
+
+const { batchPosts, nextBatch, total } = Astro.props;
+---
+
+{batchPosts.map((post) => <PostItem post={post} />)}
+<FeedMarker nextBatch={nextBatch} total={total} />

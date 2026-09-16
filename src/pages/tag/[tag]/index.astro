@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostItem from '../../../components/PostItem.astro';
+import FeedMarker from '../../../components/FeedMarker.astro';
+import { getPosts, postsByTag, batchOf, batchCount } from '../../../lib/feed';
+import { batchPath } from '../../../site';
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  return [...postsByTag(posts)].map(([tag, tagged]) => ({
+    params: { tag },
+    props: { tag, tagged }
+  }));
+}
+
+const { tag, tagged } = Astro.props;
+const firstBatch = batchOf(tagged, 1);
+const nextBatch = batchCount(tagged) > 1 ? batchPath(2, tag) : '';
+const title = `${tag} | Anthony Ison`;
+const description = `Posts tagged ${tag}.`;
+---
+
+<BaseLayout title={title} description={description}>
+  <h1 class="tag-heading">{tag}</h1>
+  <p class="muted">{tagged.length} {tagged.length === 1 ? 'post' : 'posts'}</p>
+
+  <ul class="post-list" data-feed>
+    {firstBatch.map((post) => <PostItem post={post} />)}
+  </ul>
+
+  <FeedMarker nextBatch={nextBatch} total={tagged.length} tag={tag} />
+
+  <script>
+    import '../../../scripts/feed';
+  </script>
+</BaseLayout>

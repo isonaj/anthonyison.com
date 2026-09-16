@@ -18,7 +18,6 @@ const {
     <header class="site-header">
       <a class="brand" href="/">Anthony Ison</a>
       <nav aria-label="Main navigation">
-        <a href="/posts/">Posts</a>
         <a href="/about/">About</a>
         <a href="/rss.xml">RSS</a>
       </nav>
@@ -149,18 +148,103 @@ const {
     color: var(--muted);
   }
 
+  .intro {
+    margin: 0 0 2.5rem;
+    color: var(--muted);
+  }
+
+  .tag-heading {
+    font-size: clamp(1.9rem, 5vw, 2.8rem);
+    margin-bottom: 0.25rem;
+  }
+
   .post-list {
     display: grid;
-    gap: 1.4rem;
+    gap: 0;
     padding: 0;
+    margin: 0;
     list-style: none;
   }
 
-  .post-list a {
+  .post-item {
+    padding-block: 1.75rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .post-item:first-child {
+    border-top: 0;
+  }
+
+  .post-meta {
+    margin: 0 0 0.35rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+  }
+
+  .post-title {
+    display: inline-block;
     color: var(--text);
-    font-size: 1.25rem;
+    font-size: 1.45rem;
     font-weight: 700;
+    line-height: 1.25;
     text-decoration: none;
+  }
+
+  .post-title:hover,
+  .post-title:focus-visible {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
+
+  .post-description {
+    margin: 0.45rem 0 0;
+  }
+
+  .post-tags {
+    margin: 0.6rem 0 0;
+    font-size: 0.85rem;
+  }
+
+  .post-tags a {
+    text-decoration: none;
+  }
+
+  .post-tags a:hover,
+  .post-tags a:focus-visible {
+    text-decoration: underline;
+  }
+
+  .feed-marker {
+    display: flex;
+    justify-content: center;
+    padding-block: 2rem 1rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .show-more {
+    padding: 0.6rem 1.4rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .show-more:hover,
+  .show-more:focus-visible {
+    border-color: var(--link);
+    color: var(--link);
+  }
+
+  .feed-end {
+    margin: 0;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .is-hidden {
+    display: none;
   }
 
   .site-footer {
