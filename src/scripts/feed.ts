@@ -9,6 +9,13 @@ const stateKey = `feed:${location.pathname}`;
 
 let loadedBatches = 1;
 let loading = false;
+let restoring = false;
+
+/** True only when the reader came back to this page, rather than opening it afresh. */
+function arrivedByBackButton(): boolean {
+  const entry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming | undefined;
+  return entry?.type === 'back_forward';
+}
 
 function showMoreLink(): HTMLAnchorElement | null {
   return marker?.querySelector<HTMLAnchorElement>('.show-more') ?? null;
@@ -24,6 +31,14 @@ function saveState(): void {
     sessionStorage.setItem(stateKey, JSON.stringify({ loadedBatches, scrollY: window.scrollY }));
   } catch {
     // A browser with storage turned off just loses its place: not worth breaking the feed over.
+  }
+}
+
+function clearState(): void {
+  try {
+    sessionStorage.removeItem(stateKey);
+  } catch {
+    // Nothing to clear if storage is unavailable.
   }
 }
 
@@ -56,7 +71,7 @@ async function loadNextBatch(): Promise<boolean> {
 
     loadedBatches += 1;
     hideShowMore();
-    saveState();
+    if (!restoring) saveState();
     return true;
   } catch {
     showMoreLink()?.classList.remove('is-hidden');
@@ -67,14 +82,23 @@ async function loadNextBatch(): Promise<boolean> {
 }
 
 /** Puts the reader back where they were when they return from a post. */
-async function restore(): Promise<void> {
-  const state = readState();
-  if (!state || state.loadedBatches <= 1) return;
+async function restore(state: { loadedBatches: number; scrollY: number }): Promise<void> {
+  restoring = true;
+  // The browser would otherwise restore the scroll position against a feed that
+  // is still one batch long, which lands the reader in the wrong place.
+  const previousBehaviour = history.scrollRestoration;
+  history.scrollRestoration = 'manual';
 
-  while (loadedBatches < state.loadedBatches) {
-    if (!(await loadNextBatch())) break;
+  try {
+    while (loadedBatches < state.loadedBatches) {
+      if (!(await loadNextBatch())) break;
+    }
+    window.scrollTo(0, state.scrollY);
+  } finally {
+    restoring = false;
+    history.scrollRestoration = previousBehaviour;
+    saveState();
   }
-  window.scrollTo(0, state.scrollY);
 }
 
 if (feed && marker) {
@@ -90,6 +114,7 @@ if (feed && marker) {
   // Start loading about one screen before the reader reaches the end.
   const observer = new IntersectionObserver(
     (entries) => {
+      if (restoring) return;
       if (entries.some((entry) => entry.isIntersecting)) void loadNextBatch();
     },
     { rootMargin: `0px 0px ${Math.round(window.innerHeight)}px 0px` }
@@ -97,5 +122,12 @@ if (feed && marker) {
   observer.observe(marker);
 
   window.addEventListener('pagehide', saveState);
-  void restore();
+
+  const state = readState();
+  if (state && state.loadedBatches > 1 && arrivedByBackButton()) {
+    void restore(state);
+  } else {
+    // A fresh visit starts at the top with one batch, however far the reader got last time.
+    clearState();
+  }
 }
