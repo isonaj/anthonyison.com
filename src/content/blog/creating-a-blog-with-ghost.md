@@ -1,5 +1,6 @@
 ---
 title: "Creating a blog with Ghost"
+description: "Choosing a blogging platform on a tight budget: what I wanted from it, and why I landed on Ghost running in Azure."
 slug: "creating-a-blog-with-ghost"
 publishedAt: "2019-01-08T05:13:00.000Z"
 updatedAt: "2020-01-11T05:16:13.000Z"
@@ -7,7 +8,7 @@ tags:
   - "azure"
   - "blogging"
   - "ghost"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover.jpg"
+featureImage: "/images/ghost/2020/01/cover.jpg"
 type: "post"
 ---
 

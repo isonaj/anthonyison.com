@@ -1,11 +1,12 @@
 ---
 title: "Refactoring code - restructure, not rewrite"
+description: "Refactoring means restructuring, not firing everyone and starting over. Comparing software to business processes to show why."
 slug: "refactoring-code-restructure-not-rewrite"
 publishedAt: "2019-07-30T05:35:00.000Z"
 updatedAt: "2020-01-11T06:20:51.000Z"
 tags:
   - "principles"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover_smaller-2.jpg"
+featureImage: "/images/ghost/2020/01/cover_smaller-2.jpg"
 type: "post"
 ---
 

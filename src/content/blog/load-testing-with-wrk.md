@@ -1,5 +1,6 @@
 ---
 title: "Load testing with Wrk"
+description: "When you just want one number to compare two similar services, Wrk is the short, sharp load testing tool to reach for."
 slug: "load-testing-with-wrk"
 publishedAt: "2020-12-11T12:51:00.000Z"
 updatedAt: "2020-12-15T02:01:51.000Z"

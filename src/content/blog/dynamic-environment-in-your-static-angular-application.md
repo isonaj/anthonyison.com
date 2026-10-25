@@ -1,12 +1,13 @@
 ---
 title: "Dynamic environment in your static Angular application"
+description: "Build an Angular app once and deploy it to any environment by loading settings at runtime instead of baking them in."
 slug: "dynamic-environment-in-your-static-angular-application"
 publishedAt: "2019-04-25T05:22:00.000Z"
 updatedAt: "2020-01-11T05:24:25.000Z"
 tags:
   - "angular"
   - "dotnet"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-2.jpg"
+featureImage: "/images/ghost/2020/01/cover-2.jpg"
 type: "post"
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Getting started with Docker and WSL2"
+description: "What WSL2 changes for Docker on Windows, and how I set it up once my machine was finally allowed to install it."
 slug: "getting-started-with-docker-and-wsl2"
 publishedAt: "2020-09-16T22:49:56.000Z"
 updatedAt: "2020-09-16T22:49:56.000Z"

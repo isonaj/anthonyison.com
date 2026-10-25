@@ -1,5 +1,6 @@
 ---
 title: "Running Ghost on Kubernetes on Azure"
+description: "Running Ghost on Kubernetes in Azure with persistent storage, and why free credits made the decision for me."
 slug: "running-ghost-on-kubernetes-on-azure"
 publishedAt: "2019-01-16T05:16:00.000Z"
 updatedAt: "2020-01-11T05:18:31.000Z"
@@ -7,7 +8,7 @@ tags:
   - "azure"
   - "ghost"
   - "kubernetes"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover.png"
+featureImage: "/images/ghost/2020/01/cover.png"
 type: "post"
 ---
 

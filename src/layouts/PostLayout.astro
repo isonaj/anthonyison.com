@@ -1,23 +1,33 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import { formatDate, readingTime } from '../site';
 
 const { entry } = Astro.props;
 const { title, description, publishedAt, updatedAt, tags, featureImage } = entry.data;
 const pageTitle = `${title} | Anthony Ison`;
-const publishedDate = publishedAt.toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' });
+const publishedDate = formatDate(publishedAt);
 const updatedDate = updatedAt && updatedAt.getTime() !== publishedAt.getTime()
-  ? updatedAt.toLocaleDateString('en-AU', { year: 'numeric', month: 'long', day: 'numeric' })
+  ? formatDate(updatedAt)
   : undefined;
 ---
 
 <BaseLayout title={pageTitle} description={description ?? title}>
   <article>
     <p class="muted">
-      {publishedDate}{updatedDate ? ` · Updated ${updatedDate}` : ''}
+      {publishedDate} · {readingTime(entry.body)}{updatedDate ? ` · Updated ${updatedDate}` : ''}
     </p>
     <h1>{title}</h1>
     {featureImage && <img src={featureImage} alt="" loading="eager" />}
-    {tags.length > 0 && <p class="muted">{tags.join(', ')}</p>}
+    {tags.length > 0 && (
+      <p class="post-tags muted">
+        {tags.map((tag, index) => (
+          <>
+            {index > 0 && <span aria-hidden="true"> · </span>}
+            <a href={`/tag/${tag}/`}>{tag}</a>
+          </>
+        ))}
+      </p>
+    )}
     <slot />
   </article>
 </BaseLayout>

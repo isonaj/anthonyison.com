@@ -1,5 +1,6 @@
 ---
 title: "Ghost on Digital Ocean with Docker"
+description: "Moving my blog off Azure credits and onto a cheap Digital Ocean VM, with Ghost running in a Docker container."
 slug: "ghost-on-digital-ocean-with-docker"
 publishedAt: "2020-09-22T12:10:47.000Z"
 updatedAt: "2020-09-22T12:10:47.000Z"

@@ -1,5 +1,6 @@
 ---
 title: "Improving Containers with Docker Compose"
+description: "Replacing a long, easily mistyped docker run command with Docker Compose, so my blog container starts the same way every time."
 slug: "improving-containers-with-docker-compose"
 publishedAt: "2020-09-29T11:28:57.000Z"
 updatedAt: "2020-09-29T11:28:57.000Z"

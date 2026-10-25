@@ -1,11 +1,12 @@
 ---
 title: "Kubernetes: A Beginner's Guide"
+description: "An introduction to Kubernetes: what containers, nodes and orchestration give you, and why they make running services easier."
 slug: "kubernetes-a-beginners-guide"
 publishedAt: "2019-06-04T12:45:00.000Z"
 updatedAt: "2020-01-11T05:45:47.000Z"
 tags:
   - "kubernetes"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-8.jpg"
+featureImage: "/images/ghost/2020/01/cover-8.jpg"
 type: "post"
 ---
 

@@ -1,5 +1,6 @@
 ---
 title: "Retrospective: 2019"
+description: "Running a proper retrospective on my own year: celebrating what went well, learning from what didn't, and moving on."
 slug: "retrospective-2019"
 publishedAt: "2020-01-02T07:04:00.000Z"
 updatedAt: "2020-01-11T06:31:13.000Z"

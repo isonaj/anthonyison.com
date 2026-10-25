@@ -1,2 +1,23 @@
 /about-me/ /about/ 301
 /about-me /about/ 301
+/author/anthony/ /about/ 301
+
+/azure-devops-unit-testing-and-code-coverage-with-dotnet-core/ /azure-devops-unit-testing-and-code-coverage-with-net-core/ 301
+/static-angular-applications-and-dynamic-environment-settings/ /dynamic-environment-in-your-static-angular-application/ 301
+
+/tag/ghost-tag/ /tag/ghost/ 301
+/tags/:name/ /tag/:name/ 301
+/tag/ / 301
+
+/posts/ / 301
+/archives/ / 301
+/archives/page/2/ /page/2/ 301
+
+/rss/ /rss.xml 301
+/sitemap.xml /sitemap-index.xml 301
+/sitemap-posts.xml /sitemap-index.xml 301
+/sitemap-pages.xml /sitemap-index.xml 301
+/sitemap-tags.xml /sitemap-index.xml 301
+/sitemap-authors.xml /sitemap-index.xml 301
+
+/:slug/amp/ /:slug/ 301

@@ -7,15 +7,18 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "import:ghost": "node scripts/import-ghost.mjs",
-    "test": "node --test tests/import-ghost.test.mjs",
+    "test": "node --test tests/content.test.mjs",
     "test:output": "node --test tests/migration-output.test.mjs",
-    "verify": "npm test && npm run build && npm run test:output"
+    "verify": "npm test && npm run build && npm run test:output",
+    "preview:worker": "astro build && wrangler dev",
+    "deploy": "npm run verify && wrangler deploy"
   },
   "dependencies": {
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.2.1",
     "astro": "^5.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "wrangler": "^4.152.0"
+  }
 }

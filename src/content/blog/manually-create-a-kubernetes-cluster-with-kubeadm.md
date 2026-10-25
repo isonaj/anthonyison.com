@@ -1,5 +1,6 @@
 ---
 title: "Manually Create a Kubernetes Cluster with Kubeadm"
+description: "Building a Kubernetes cluster by hand with kubeadm on a couple of Ubuntu VMs, to see how all the pieces fit together."
 slug: "manually-create-a-kubernetes-cluster-with-kubeadm"
 publishedAt: "2020-10-05T12:07:19.000Z"
 updatedAt: "2020-10-26T03:30:08.000Z"

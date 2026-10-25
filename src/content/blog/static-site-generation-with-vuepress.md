@@ -1,12 +1,13 @@
 ---
 title: "Static Site Generation with Vuepress"
+description: "A closer look at Vuepress for blogging: how quickly you can create content, and where it fell short when I tried it."
 slug: "static-site-generation-with-vuepress"
 publishedAt: "2019-07-10T06:10:00.000Z"
 updatedAt: "2020-01-11T06:17:08.000Z"
 tags:
   - "blogging"
   - "vuepress"
-featureImage: "__GHOST_URL__/content/images/2020/01/cover-10.jpg"
+featureImage: "/images/ghost/2020/01/cover-10.jpg"
 type: "post"
 ---
 

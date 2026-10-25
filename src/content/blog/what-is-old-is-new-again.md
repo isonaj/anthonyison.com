@@ -1,5 +1,6 @@
 ---
 title: "What is old is new again"
+description: "Building a Vuepress blog theme stopped me writing the posts I actually wanted to write, so I changed course."
 slug: "what-is-old-is-new-again"
 publishedAt: "2020-04-13T08:00:00.000Z"
 updatedAt: "2020-04-14T11:49:10.000Z"
