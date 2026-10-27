@@ -8,5 +8,8 @@
     "directory": "./dist",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "none"
-  }
+  },
+  // Lets branch builds run `wrangler preview`. Empty: previews inherit the
+  // settings above.
+  "previews": {}
 }

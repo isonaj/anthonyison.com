@@ -1,26 +1,35 @@
 ---
-import { formatDate, readingTime } from '../site';
-import type { Post } from '../lib/feed';
+import { formatDay, readingTime, yearOf } from '../site';
+import type { Post, YearMark } from '../lib/feed';
 
 interface Props {
   post: Post;
+  year?: YearMark;
 }
 
-const { post } = Astro.props;
+const { post, year } = Astro.props;
+const postYear = yearOf(post.data.publishedAt);
 ---
 
-<li class="post-item">
-  <p class="muted post-meta">{formatDate(post.data.publishedAt)} · {readingTime(post.body)}</p>
-  <a class="post-title" href={`/${post.slug}/`}>{post.data.title}</a>
-  {post.data.description && <p class="post-description">{post.data.description}</p>}
-  {post.data.tags.length > 0 && (
-    <p class="post-tags muted">
-      {post.data.tags.map((tag, index) => (
-        <>
-          {index > 0 && <span aria-hidden="true"> · </span>}
-          <a href={`/tag/${tag}/`}>{tag}</a>
-        </>
-      ))}
-    </p>
-  )}
+<li class:list={['post-item', year && `year-${year}`]} data-year={postYear}>
+  {year && <h2 class="post-year">{postYear}</h2>}
+  <time class="post-date" datetime={post.data.publishedAt.toISOString()}>{formatDay(post.data.publishedAt)}</time>
+  <div>
+    <a class="post-title" href={`/${post.slug}/`}>{post.data.title}</a>
+    <div class="post-more">
+      <div>
+        {post.data.description && <p class="post-description">{post.data.description}</p>}
+        <p class="post-tags muted">
+          {readingTime(post.body)}
+          {post.data.tags.map((tag) => (
+            <>
+              <span aria-hidden="true"> · </span>
+              <a href={`/tag/${tag}/`}>#{tag}</a>
+            </>
+          ))}
+        </p>
+      </div>
+    </div>
+  </div>
+  {post.data.featureImage && <img class="post-cover" src={post.data.featureImage} alt="" loading="lazy" />}
 </li>

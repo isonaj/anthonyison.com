@@ -2,7 +2,7 @@
 import BaseLayout from '../../../../layouts/BaseLayout.astro';
 import PostItem from '../../../../components/PostItem.astro';
 import FeedMarker from '../../../../components/FeedMarker.astro';
-import { getPosts, postsByTag, batchOf, batchCount } from '../../../../lib/feed';
+import { getPosts, postsByTag, batchWithYears, batchCount } from '../../../../lib/feed';
 import { pagePath } from '../../../../site';
 
 /** Page 1 of a tag's feed is the tag page itself, so numbering starts at 2. */
@@ -14,7 +14,7 @@ export async function getStaticPaths() {
       const batch = index + 2;
       return {
         params: { tag, page: String(batch) },
-        props: { batchPosts: batchOf(tagged, batch), batch, batches, total: tagged.length, tag }
+        props: { batchPosts: batchWithYears(tagged, batch), batch, batches, total: tagged.length, tag }
       };
     });
   });
@@ -29,7 +29,8 @@ const next = batch < batches ? pagePath(batch + 1, tag) : '';
   title={`${tag}, page ${batch} | Anthony Ison`}
   description={`Page ${batch} of ${batches} of posts tagged ${tag}.`}
 >
-  <h1 class="feed-heading">{tag}</h1>
+  <p class="feed-label">Posts tagged</p>
+  <h1 class="feed-heading">#{tag}</h1>
   <p class="muted">Page {batch} of {batches}</p>
 
   <p class="feed-nav">
@@ -37,7 +38,7 @@ const next = batch < batches ? pagePath(batch + 1, tag) : '';
   </p>
 
   <ul class="post-list" data-feed>
-    {batchPosts.map((post) => <PostItem post={post} />)}
+    {batchPosts.map(({ post, year }) => <PostItem post={post} year={year} />)}
   </ul>
 
   <FeedMarker next={next} total={total} tag={tag} />

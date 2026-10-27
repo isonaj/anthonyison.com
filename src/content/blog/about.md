@@ -2,9 +2,9 @@
 title: "About Me"
 slug: "about"
 publishedAt: "2020-01-11T11:29:12.000Z"
-updatedAt: "2020-05-17T00:29:06.000Z"
+updatedAt: "2026-10-27T00:00:00.000Z"
 type: "page"
 ---
 
-<p>Anthony has over 20 years of development experience across many industries including stockbroking, microfinance and retail/point of sale. He has a keen interest in software and database performance, reducing running costs and reducing problems through simple solutions. His experience in team lead and agile coaching roles contributes to his ability to produce great outcomes for clients.</p>
-<p>In his spare time, he loves learning new technologies and development techniques and blogging about these adventures. He is strongly motivated to give back to the community as a token of gratitude to all of the great mentors he's had throughout his career. He would escape to a hobby farm in the country, given half a chance, even though his horticultural skills leave much to be desired.</p>
+<p>I've been developing software since 1999, in industries including stockbroking, microfinance and retail/point of sale. I'm most interested in software and database performance, keeping running costs down, and solving problems with simple solutions. I've also worked as a team lead and agile coach, and that shapes how I help teams produce great outcomes for their clients.</p>
+<p>In my spare time, I love learning new technologies and development techniques, and blogging about those adventures. I'm strongly motivated to give back to the community, as thanks to all the great mentors I've had throughout my career. I've escaped to a 40-acre farm in the country with my in-laws, even though my horticultural skills still leave much to be desired.</p>
