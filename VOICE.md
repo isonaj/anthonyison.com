@@ -8,7 +8,7 @@ A 90s software engineer: I started in 1999, when one person did the analysis, ar
 
 What I'm learning is how to do more through people, and my view of that has changed. As a team lead around 2010 I found code easier to fix than people: a bug stays fixed, but people change over time and go back to old habits. As a tech lead I've learned people are far more interesting and varied than that, and the job isn't fixing them. It's introducing people and making opportunities for them, like the host of a party.
 
-Describe me as a software engineer or tech lead, not a "developer" or "DevOps engineer". Those are slices of the job, not the whole of it.
+When I started, "software developer" or "application developer" was the whole deal: UX, analysis, build, infrastructure and ops were all part of building apps. So "developing software since 1999" is accurate, and fine to use. Today "developer" and "DevOps engineer" usually mean slices of the job, so for what I do now, describe me as a software engineer or tech lead.
 
 ## What the blog is for
 
