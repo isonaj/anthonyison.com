@@ -3,12 +3,16 @@ import { BATCH_SIZE, yearOf } from '../site';
 
 export type Post = CollectionEntry<'blog'>;
 
-/** Every post, newest first. Pages are never part of a feed. */
+/**
+ * Every post, newest first. Pages are never part of a feed. Posts published at
+ * the same moment fall back to slug order, so the feed doesn't depend on the
+ * order the build happens to read the files in.
+ */
 export async function getPosts(): Promise<Post[]> {
   const entries = await getCollection('blog');
   return entries
     .filter((entry) => entry.data.type === 'post')
-    .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf());
+    .sort((a, b) => b.data.publishedAt.valueOf() - a.data.publishedAt.valueOf() || a.slug.localeCompare(b.slug));
 }
 
 export function batchCount(posts: Post[]): number {

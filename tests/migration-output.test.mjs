@@ -40,7 +40,7 @@ function expectedPosts() {
       };
     })
     .filter((entry) => entry.type === 'post')
-    .sort((a, b) => b.publishedAt - a.publishedAt);
+    .sort((a, b) => b.publishedAt - a.publishedAt || a.slug.localeCompare(b.slug));
 }
 
 /** The slugs a feed page links to, in the order they appear. */
