@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PostItem from '../../components/PostItem.astro';
 import FeedMarker from '../../components/FeedMarker.astro';
-import { getPosts, batchOf, batchCount } from '../../lib/feed';
+import { getPosts, batchWithYears, batchCount } from '../../lib/feed';
 import { pagePath } from '../../site';
 
 /** Page 1 of the feed is the home page, so numbering starts at 2. */
@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     const batch = index + 2;
     return {
       params: { page: String(batch) },
-      props: { batchPosts: batchOf(posts, batch), batch, batches, total: posts.length }
+      props: { batchPosts: batchWithYears(posts, batch), batch, batches, total: posts.length }
     };
   });
 }
@@ -27,6 +27,7 @@ const next = batch < batches ? pagePath(batch + 1) : '';
   title={`Page ${batch} | Anthony Ison`}
   description={`Page ${batch} of ${batches} of posts by Anthony Ison.`}
 >
+  <p class="feed-label">All posts</p>
   <h1 class="feed-heading">Page {batch} of {batches}</h1>
 
   <p class="feed-nav">
@@ -34,7 +35,7 @@ const next = batch < batches ? pagePath(batch + 1) : '';
   </p>
 
   <ul class="post-list" data-feed>
-    {batchPosts.map((post) => <PostItem post={post} />)}
+    {batchPosts.map(({ post, year }) => <PostItem post={post} year={year} />)}
   </ul>
 
   <FeedMarker next={next} total={total} />

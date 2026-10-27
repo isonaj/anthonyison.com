@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { BATCH_SIZE } from '../site';
+import { BATCH_SIZE, yearOf } from '../site';
 
 export type Post = CollectionEntry<'blog'>;
 
@@ -17,6 +17,28 @@ export function batchCount(posts: Post[]): number {
 
 export function batchOf(posts: Post[], batch: number): Post[] {
   return posts.slice((batch - 1) * BATCH_SIZE, batch * BATCH_SIZE);
+}
+
+/**
+ * How a post relates to the year headings: 'start' when it is the first of its
+ * year in the whole feed, 'continued' when it only opens a batch partway
+ * through a year, and undefined otherwise.
+ */
+export type YearMark = 'start' | 'continued' | undefined;
+
+/** A batch's posts, each with its year mark, judged against the whole feed so batches agree. */
+export function batchWithYears(posts: Post[], batch: number): { post: Post; year: YearMark }[] {
+  const offset = (batch - 1) * BATCH_SIZE;
+  return batchOf(posts, batch).map((post, index) => {
+    const previous = posts[offset + index - 1];
+    const year: YearMark =
+      !previous || yearOf(previous.data.publishedAt) !== yearOf(post.data.publishedAt)
+        ? 'start'
+        : index === 0
+          ? 'continued'
+          : undefined;
+    return { post, year };
+  });
 }
 
 /** Tag name to its posts, newest first. */

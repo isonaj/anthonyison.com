@@ -1,8 +1,28 @@
 ---
+import '@fontsource/ibm-plex-sans/400.css';
+import '@fontsource/ibm-plex-sans/400-italic.css';
+import '@fontsource/ibm-plex-sans/600.css';
+import '@fontsource/ibm-plex-sans/700.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/ibm-plex-mono/600.css';
+import { LINKEDIN_URL } from '../site';
+
 const {
   title = 'Anthony Ison',
-  description = 'Software development and DevOps. Bringing solutions to life.'
+  description = 'Software development and DevOps. Bringing solutions to life.',
+  /** The title on a share card, without the site name the browser tab carries. */
+  shareTitle = title,
+  /** A cover for the share card, as a site path or an absolute address. */
+  image,
+  type = 'website'
 } = Astro.props;
+
+/** Where the reader is, written as the prompt's working directory: `~` at home, `~/about` on the About page. */
+const cwd = '~' + Astro.url.pathname.replace(/\/$/, '');
+
+// Share cards are read by other sites, so every address in them has to be absolute.
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href;
+const imageUrl = image ? new URL(image, Astro.site).href : undefined;
 ---
 
 <!doctype html>
@@ -12,13 +32,24 @@ const {
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title}</title>
+    <link rel="canonical" href={pageUrl} />
     <link rel="alternate" type="application/rss+xml" title="Anthony Ison" href="/rss.xml" />
+    <meta property="og:site_name" content="Anthony Ison" />
+    <meta property="og:title" content={shareTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:type" content={type} />
+    {imageUrl && <meta property="og:image" content={imageUrl} />}
+    <meta name="twitter:card" content={imageUrl ? 'summary_large_image' : 'summary'} />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/">Anthony Ison</a>
+      <a class="brand" href="/" aria-label="Anthony Ison, home">
+        <span class="prompt-user">anthony@ison</span>:<span class="prompt-path">{cwd}</span>$<span class="cursor" aria-hidden="true"></span>
+      </a>
       <nav aria-label="Main navigation">
         <a href="/about/">About</a>
+        <a href={LINKEDIN_URL} rel="me">LinkedIn</a>
         <a href="/rss.xml">RSS</a>
       </nav>
     </header>
@@ -26,6 +57,7 @@ const {
       <slot />
     </main>
     <footer class="site-footer">
+      <p><span class="prompt-user">anthony@ison</span>:~$ exit</p>
       <p>Software development and DevOps. Bringing solutions to life.</p>
     </footer>
   </body>
@@ -34,23 +66,29 @@ const {
 <style is:global>
   :root {
     color-scheme: light dark;
-    --bg: #f8f7f3;
-    --text: #1f2328;
-    --muted: #5f6b76;
-    --link: #1b6675;
-    --border: #d9d6ce;
-    --surface: #ffffff;
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --bg: #fbfbf8;
+    --text: #1c1f1d;
+    --muted: #646a66;
+    --link: #0f7b4b;
+    --link-soft: #0f7b4b14;
+    --path: #2563eb;
+    --border: #e4e4dd;
+    --surface: #f2f2ed;
+    --sans: 'IBM Plex Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-family: var(--sans);
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --bg: #161718;
-      --text: #ece7de;
-      --muted: #b8b1a6;
-      --link: #7fc7d4;
-      --border: #34383b;
-      --surface: #1f2123;
+      --bg: #121413;
+      --text: #e6e9e7;
+      --muted: #949b96;
+      --link: #4ade80;
+      --link-soft: #4ade8014;
+      --path: #60a5fa;
+      --border: #262a28;
+      --surface: #1a1d1b;
     }
   }
 
@@ -80,17 +118,19 @@ const {
     overflow-x: auto;
     padding: 1rem;
     border: 1px solid var(--border);
+    border-radius: 6px;
     background: var(--surface);
   }
 
   code {
-    font-size: 0.92em;
+    font-family: var(--mono);
+    font-size: 0.88em;
   }
 
   blockquote {
     margin-inline: 0;
     padding-left: 1rem;
-    border-left: 4px solid var(--border);
+    border-left: 3px solid var(--link);
     color: var(--muted);
   }
 
@@ -106,23 +146,65 @@ const {
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
-    padding-block: 1.25rem;
+    padding-block: 1.5rem;
+    font-family: var(--mono);
+    font-size: 0.9rem;
   }
 
+  /* The prompt is the site's signature: the user, then the page as a working directory. */
   .brand {
-    color: var(--text);
-    font-weight: 700;
+    overflow: hidden;
+    color: var(--muted);
     text-decoration: none;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .prompt-user {
+    color: var(--link);
+    font-weight: 600;
+  }
+
+  .prompt-path {
+    color: var(--path);
+  }
+
+  .cursor {
+    display: inline-block;
+    width: 0.55em;
+    height: 1.05em;
+    margin-left: 0.35em;
+    vertical-align: text-bottom;
+    background: var(--link);
+    animation: blink 1.1s steps(1) infinite;
+  }
+
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor {
+      animation: none;
+    }
   }
 
   nav {
     display: flex;
-    gap: 0.85rem;
-    flex-wrap: wrap;
+    flex-shrink: 0;
+    gap: 1.25rem;
   }
 
   nav a {
+    color: var(--text);
     text-decoration: none;
+  }
+
+  nav a:hover,
+  nav a:focus-visible {
+    color: var(--link);
   }
 
   main {
@@ -133,38 +215,79 @@ const {
   h2,
   h3 {
     line-height: 1.2;
+    letter-spacing: -0.01em;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 7vw, 4.4rem);
+    font-size: clamp(2.2rem, 6vw, 3.4rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
     margin: 0 0 1rem;
-  }
-
-  article {
-    max-width: 760px;
   }
 
   .muted {
     color: var(--muted);
   }
 
-  /* The page's heading, kept at reading size so the feed starts straight away. */
-  .intro {
-    margin: 0 0 2.5rem;
+  /* Home page introduction. */
+  .hero {
+    margin-bottom: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.6rem, 7vw, 4rem);
+    line-height: 1;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-lede {
+    max-width: 40rem;
+    margin: 0 0 1.25rem;
     color: var(--muted);
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.65;
+    font-size: 1.15rem;
+    line-height: 1.55;
+  }
+
+  .hero-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0;
+  }
+
+  .button {
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .button:hover,
+  .button:focus-visible {
+    border-color: var(--link);
+    background: var(--link-soft);
+    color: var(--link);
+  }
+
+  /* Feed and tag page headings. */
+  .feed-label {
+    margin: 0 0 0.25rem;
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.85rem;
   }
 
   .feed-heading {
-    font-size: clamp(1.9rem, 5vw, 2.8rem);
     margin-bottom: 0.25rem;
   }
 
   .feed-nav {
     margin: 0 0 1.5rem;
-    font-size: 0.95rem;
+    font-family: var(--mono);
+    font-size: 0.9rem;
   }
 
   .feed-nav a {
@@ -177,51 +300,85 @@ const {
   }
 
   .post-list {
-    display: grid;
-    gap: 0;
     padding: 0;
-    margin: 0;
+    margin: 1.5rem 0 0;
     list-style: none;
   }
 
   .post-item {
-    padding-block: 1.75rem;
-    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 6ch minmax(0, 1fr) 0;
+    column-gap: 1.25rem;
+    margin-inline: -0.75rem;
+    padding: 0.85rem 0.75rem;
+    border-radius: 8px;
+    transition: background 0.15s, grid-template-columns 0.25s;
   }
 
-  .post-item:first-child {
-    border-top: 0;
+  /*
+   * A post opening a year carries that year's heading. One that only opens a
+   * batch shows it while it heads its page, and hides it once it has been
+   * appended to the feed below the rest of its year.
+   */
+  .post-year {
+    display: none;
+    grid-column: 1 / -1;
+    margin: 2rem 0 0.75rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0;
   }
 
-  .post-meta {
-    margin: 0 0 0.35rem;
+  .year-start .post-year,
+  .year-continued:first-child .post-year {
+    display: block;
+  }
+
+  .post-item:first-child .post-year {
+    margin-top: 0;
+  }
+
+  .post-date {
+    padding-top: 0.2rem;
+    color: var(--muted);
+    font-family: var(--mono);
     font-size: 0.85rem;
-    letter-spacing: 0.02em;
+    white-space: nowrap;
   }
 
   .post-title {
-    display: inline-block;
     color: var(--text);
-    font-size: 1.45rem;
-    font-weight: 700;
-    line-height: 1.25;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
     text-decoration: none;
   }
 
-  .post-title:hover,
-  .post-title:focus-visible {
-    color: var(--link);
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
+  /* The summary sits folded under the title until the reader points at, or tabs to, the post. */
+  .post-more {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s;
+  }
+
+  .post-more > div {
+    overflow: hidden;
   }
 
   .post-description {
-    margin: 0.45rem 0 0;
+    margin: 0.35rem 0 0;
+    color: var(--muted);
+    line-height: 1.5;
   }
 
   .post-tags {
-    margin: 0.6rem 0 0;
-    font-size: 0.85rem;
+    margin: 0.35rem 0 0;
+    font-family: var(--mono);
+    font-size: 0.8rem;
   }
 
   .post-tags a {
@@ -233,31 +390,103 @@ const {
     text-decoration: underline;
   }
 
+  .post-cover {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 6px;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  .post-item:hover,
+  .post-item:focus-within {
+    background: var(--link-soft);
+    grid-template-columns: 6ch minmax(0, 1fr) 160px;
+  }
+
+  .post-item:hover .post-title,
+  .post-item:focus-within .post-title {
+    color: var(--link);
+  }
+
+  .post-item:hover .post-more,
+  .post-item:focus-within .post-more {
+    grid-template-rows: 1fr;
+  }
+
+  .post-item:hover .post-cover,
+  .post-item:focus-within .post-cover {
+    opacity: 1;
+  }
+
+  /* Without a pointer that hovers there is nothing to reveal, so show the summary outright. */
+  @media (hover: none), (max-width: 640px) {
+    .post-item,
+    .post-item:hover,
+    .post-item:focus-within {
+      grid-template-columns: 6ch minmax(0, 1fr);
+    }
+
+    .post-more {
+      grid-template-rows: 1fr;
+    }
+
+    .post-cover {
+      display: none;
+    }
+  }
+
+  /* A phone has no room for a date column, so the date sits above the title. */
+  @media (max-width: 640px) {
+    .post-item,
+    .post-item:hover,
+    .post-item:focus-within {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    .post-date {
+      padding-top: 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-item,
+    .post-more,
+    .post-cover {
+      transition: none;
+    }
+  }
+
   .feed-marker {
     display: flex;
     justify-content: center;
+    margin-top: 1.5rem;
     padding-block: 2rem 1rem;
     border-top: 1px solid var(--border);
   }
 
   .show-more {
-    padding: 0.6rem 1.4rem;
+    padding: 0.5rem 1.2rem;
     border: 1px solid var(--border);
-    border-radius: 999px;
-    background: var(--surface);
+    border-radius: 6px;
     color: var(--text);
+    font-family: var(--mono);
+    font-size: 0.9rem;
     text-decoration: none;
   }
 
   .show-more:hover,
   .show-more:focus-visible {
     border-color: var(--link);
+    background: var(--link-soft);
     color: var(--link);
   }
 
   .feed-end {
     margin: 0;
-    font-size: 0.95rem;
+    font-family: var(--mono);
+    font-size: 0.9rem;
     text-align: center;
   }
 
@@ -265,10 +494,92 @@ const {
     display: none;
   }
 
+  /* A post or page. */
+  article {
+    max-width: 720px;
+  }
+
+  .article-meta {
+    margin: 0 0 0.75rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+  }
+
+  .article-cover {
+    width: 100%;
+    margin-block: 1.5rem;
+    border-radius: 8px;
+  }
+
+  .article-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin: 0 0 2rem;
+    padding: 0;
+    list-style: none;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+  }
+
+  .article-tags a {
+    display: block;
+    padding: 0.1rem 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    text-decoration: none;
+  }
+
+  .article-tags a:hover,
+  .article-tags a:focus-visible {
+    border-color: var(--link);
+    background: var(--link-soft);
+  }
+
+  article h2 {
+    margin-top: 2.5rem;
+    font-size: 1.6rem;
+  }
+
+  article h3 {
+    margin-top: 2rem;
+    font-size: 1.25rem;
+  }
+
+  article :not(pre) > code {
+    padding: 0.1em 0.35em;
+    border-radius: 4px;
+    background: var(--surface);
+  }
+
+  .article-back {
+    margin: 3rem 0 0;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.9rem;
+  }
+
+  .article-back a {
+    text-decoration: none;
+  }
+
   .site-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.5rem;
+    justify-content: space-between;
     border-top: 1px solid var(--border);
     padding-block: 1.5rem;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .site-footer p {
+    margin: 0;
+  }
+
+  .site-footer p:first-child {
+    font-family: var(--mono);
   }
 </style>

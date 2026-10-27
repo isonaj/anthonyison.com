@@ -1,6 +1,9 @@
 /** Posts appended to the feed as one unit. See CONTEXT.md. */
 export const BATCH_SIZE = 10;
 
+/** How readers reach me. It names my employer, so see VOICE.md before writing about work. */
+export const LINKEDIN_URL = 'https://www.linkedin.com/in/anthony-ison-4a759a28/';
+
 /** Dates are written for an Australian reader, wherever the site happens to be built. */
 export const TIME_ZONE = 'Australia/Brisbane';
 
@@ -14,6 +17,15 @@ export function formatDate(date: Date): string {
     month: 'long',
     year: 'numeric'
   });
+}
+
+/** Day and month only, for a list that is already grouped under its year. */
+export function formatDay(date: Date): string {
+  return date.toLocaleDateString('en-AU', { timeZone: TIME_ZONE, day: 'numeric', month: 'short' });
+}
+
+export function yearOf(date: Date): number {
+  return Number(date.toLocaleDateString('en-AU', { timeZone: TIME_ZONE, year: 'numeric' }));
 }
 
 export function readingTime(body: string): string {

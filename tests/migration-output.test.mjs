@@ -90,6 +90,48 @@ test('following the feed from the home page reaches every post exactly once, new
   assert.deepEqual(slugs, posts.map((p) => p.slug));
 });
 
+test('following the feed, each year is headed once, where its first post appears', () => {
+  const posts = expectedPosts();
+  const yearOf = (date) => Number(date.toLocaleDateString('en-AU', { timeZone: 'Australia/Brisbane', year: 'numeric' }));
+  const expected = [...new Set(posts.map((p) => yearOf(p.publishedAt)))];
+
+  const headed = [];
+  let html = read('index.html');
+  for (;;) {
+    headed.push(...[...html.matchAll(/class="post-item year-start" data-year="(\d+)"/g)].map((m) => Number(m[1])));
+    const next = nextPage(html);
+    if (!next) break;
+    html = readPage(next);
+  }
+
+  assert.deepEqual(headed, expected);
+});
+
+test('a numbered page that opens mid-year still names its year', () => {
+  const html = readPage('/page/2/');
+  assert.match(html, /<li class="post-item year-(start|continued)" data-year="\d+">\s*<h2 class="post-year">/);
+});
+
+test('a shared post shows its title, summary and cover as a preview card', () => {
+  const html = readPage('/load-testing-with-wrk/');
+  assert.match(html, /<meta property="og:title" content="Load testing with Wrk"/);
+  assert.match(html, /<meta property="og:description" content="[^"]+"/);
+  assert.match(html, /<meta property="og:image" content="https:\/\/[^"]+"/, 'the cover needs an absolute address');
+  assert.match(html, /<meta property="og:url" content="https:\/\/anthonyison\.com\/load-testing-with-wrk\/"/);
+  assert.match(html, /<meta property="og:type" content="article"/);
+  assert.match(html, /<meta name="twitter:card" content="summary_large_image"/);
+});
+
+test('every page links to LinkedIn as the way to reach me', () => {
+  for (const sitePath of ['/', '/about/', '/load-testing-with-wrk/']) {
+    assert.match(readPage(sitePath), /<a[^>]+href="https:\/\/www\.linkedin\.com\/in\/anthony-ison-4a759a28\/"[^>]*rel="me"/);
+  }
+});
+
+test('fonts are served from the site itself, not Google', () => {
+  assert.equal(read('index.html').includes('fonts.googleapis.com'), false);
+});
+
 test('a numbered page is a whole page a reader can use on its own', () => {
   const html = readPage('/page/2/');
   assert.match(html, /<html/i, 'expected a full page, not a fragment');

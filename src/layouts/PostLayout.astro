@@ -3,31 +3,36 @@ import BaseLayout from './BaseLayout.astro';
 import { formatDate, readingTime } from '../site';
 
 const { entry } = Astro.props;
-const { title, description, publishedAt, updatedAt, tags, featureImage } = entry.data;
+const { title, description, publishedAt, updatedAt, tags, featureImage, type } = entry.data;
 const pageTitle = `${title} | Anthony Ison`;
+const isPost = type === 'post';
 const publishedDate = formatDate(publishedAt);
 const updatedDate = updatedAt && updatedAt.getTime() !== publishedAt.getTime()
   ? formatDate(updatedAt)
   : undefined;
 ---
 
-<BaseLayout title={pageTitle} description={description ?? title}>
+<BaseLayout
+  title={pageTitle}
+  description={description ?? title}
+  shareTitle={title}
+  image={featureImage}
+  type={isPost ? 'article' : 'website'}
+>
   <article>
-    <p class="muted">
-      {publishedDate} · {readingTime(entry.body)}{updatedDate ? ` · Updated ${updatedDate}` : ''}
-    </p>
-    <h1>{title}</h1>
-    {featureImage && <img src={featureImage} alt="" loading="eager" />}
-    {tags.length > 0 && (
-      <p class="post-tags muted">
-        {tags.map((tag, index) => (
-          <>
-            {index > 0 && <span aria-hidden="true"> · </span>}
-            <a href={`/tag/${tag}/`}>{tag}</a>
-          </>
-        ))}
+    {isPost && (
+      <p class="article-meta muted">
+        {publishedDate} · {readingTime(entry.body)}{updatedDate ? ` · Updated ${updatedDate}` : ''}
       </p>
     )}
+    <h1>{title}</h1>
+    {tags.length > 0 && (
+      <ul class="article-tags" aria-label="Tags">
+        {tags.map((tag) => <li><a href={`/tag/${tag}/`}>#{tag}</a></li>)}
+      </ul>
+    )}
+    {featureImage && <img class="article-cover" src={featureImage} alt="" loading="eager" />}
     <slot />
+    <p class="article-back"><a href="/">← All posts</a></p>
   </article>
 </BaseLayout>
