@@ -4,7 +4,9 @@ Static blog for <https://anthonyison.com>, built with Astro.
 
 The Markdown in `src/content/blog/` is the source of truth for all content: see
 [ADR 0001](docs/adr/0001-markdown-is-the-source-of-truth.md). `CONTEXT.md` defines the terms used
-throughout the site.
+throughout the site, and `VOICE.md` sets how its writing should sound.
+Unfinished posts live in `drafts/`, which git ignores so they never reach the public repo; move one into
+`src/content/blog/` to publish it.
 
 ## Commands
 
