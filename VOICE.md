@@ -20,17 +20,21 @@ The site has to look alive: a reader who sees years without a post assumes I've 
 
 ## Who is reading
 
-Other engineers and tech leads who want to get better at the craft, me in a year's time looking something up, and the employers, recruiters and event organisers who find either. Write so a non-specialist can follow the point, and a specialist doesn't feel talked down to.
+Other engineers and tech leads who want to get better at the craft, me in a year's time looking something up, and the employers, recruiters and event organisers who find either. Some posts should also work for the business people affected by the software decisions being discussed. Write so a non-specialist can follow the point, and a specialist doesn't feel talked down to.
 
 ## How it sounds
 
 - **First person, talking to one reader.** "I", "you", "we". Not "Anthony has…" or "the author".
 - **Conversational, not corporate.** Write it the way I'd say it across a table. Contractions are fine. So is the odd aside ("But I digress…") or a joke at my own expense.
 - **Plain analogies over jargon.** A queue is a call centre working through its tickets; a lock is the key to the toilets. When a technical term is the right word, use it, then say what it does.
+- **Speak to the business and the engineer in the same post.** Don't remove technical detail to make a post accessible. Explain why the detail matters, show the real thing, and give less-technical readers a way through it. Code should prove the argument, not be a prerequisite for understanding it.
+- **Concrete before abstract.** Where practical, use specific code, before-and-after examples, commands to run, or a real scenario. Explain the idea in plain language first, then name the technical principle. Don't make the reader invent an example to understand what I mean.
 - **Honest about what went wrong.** Say what didn't work and what I'd do differently. That earns more trust than a polished success story.
 - **Opinionated, with a reason.** "Let's not burn down the house" beats "there are tradeoffs to consider". Say what I'd pick and why.
 - **Short and sharp where it counts.** Most sentences can run normally, but land the point in a short one. "Software is expensive. I mean, REALLY expensive."
 - **Practical.** A post should leave the reader able to do something: a command to run, a question to ask, a mistake to avoid.
+
+[Refactoring code - restructure, not rewrite](src/content/blog/refactoring-code-restructure-not-rewrite.md) is the reference for the intended technical/business balance: explain the business value in plain language, keep the technical detail, and give non-technical readers enough guidance to follow what the code demonstrates without needing to understand every line.
 
 ## Evergreen
 
