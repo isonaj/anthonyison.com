@@ -54,7 +54,8 @@ The site links to my LinkedIn, which names my current employer, so every post ca
 
 - Never name my current employer, and don't hint at it (its industry, its locations, its projects).
 - My own career moves are mine to tell, including a role that changed in a restructure years ago.
-- Nothing internal that's current: no restructures or org changes in motion, team counts or headcount plans, hiring targets, budgets or funding, delivery pressure, deadlines, systems, vendors or incidents.
+- Nothing internal that's current: no restructures or org changes in motion, headcount plans, hiring targets, budgets or funding, delivery pressure, deadlines, systems, vendors or incidents.
+- How I like teams shaped, and the general shape of teams I work with, is fair game: "I prefer three developers on a stream; one- and two-developer teams are common" is fine. Plans to change them are not.
 - People on my teams stay anonymous and unidentifiable. A story about someone should be one they'd be happy to read.
 - When a real situation makes the point, generalise it: "imagine you had to double your teams" rather than "my boss wants to double my four teams".
 - Past employers and clients may be named when the story is positive and already public, like SSW.

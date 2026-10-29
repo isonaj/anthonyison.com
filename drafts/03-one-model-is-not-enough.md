@@ -41,10 +41,22 @@ The classic alternative is database → generated/entity model → API → UI. O
 
 A useful question: why should a table designer get to decide what an Equipment looks like to a user, or what an Equipment means inside a bounded context?
 
+## APIs are view models too
+
+A REST API or an MCP server is mostly a view model. It should match what the client expects, not the data model. The domain model, and what needs to be described underneath it, sits below.
+
+Some people present REST as resources to GET and POST against. That can work, but it tends to be chatty and detailed: the client fetches paddocks, mobs and movements, then works out the answer itself. Compare that with `get_grazing_decision` or `record_weaning` in the Farm API, which are shaped around what the client wants to do.
+
+Those operations wrap domain requests, so the same application logic should serve every API: REST, MCP, a UI's BFF. That's one of the ways logic stays in one place. Each transport is a thin adapter over the shared use case. If two APIs disagree about how weaning works, someone has put logic in an adapter.
+
+An agent is just another client, with its own view model.
+
+Possible test: could you add an MCP server tomorrow without copying a business rule?
+
 ## TODO / open questions
 
 - Develop an example where a view model combines or reshapes several domain concepts for one screen.
 - Show the reverse: one domain concept represented differently for persistence.
-- Clarify what work belongs in the API/application layer when translating between models.
+- Clarify what work belongs in the API/application layer when translating between models. Working answer: adapters translate only; rules live in the domain and shared use cases. When a client genuinely needs a different shape, add a use case or projection rather than a smarter adapter.
 - Explore when mapping becomes pointless ceremony versus valuable boundary protection.
 - Connect to bounded contexts without turning this into a DDD explainer.

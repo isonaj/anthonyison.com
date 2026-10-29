@@ -54,7 +54,7 @@ Instead of adding features to a loose record, transitions and capabilities start
 
 The model is not just a defensive wall. It is a way of discovering the system.
 
-TODO: find a real example where improving the model unexpectedly exposed useful capability rather than merely preventing a bug.
+Candidate example (Wattle Farm App): stock events came to carry a stock line's value (and DSE) over time. That wasn't a feature anyone asked for. It came out of modelling the stock line properly. Once the model knows what the animals are worth at each point, the internal journals stop being figures someone typed in. The model can derive them, check them and keep them stable. It could even force internal journals to match, but it never changes what hit the bank.
 
 ## Trust starts at the bottom
 
