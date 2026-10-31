@@ -50,16 +50,17 @@ Posts are dated, so they may speak from their moment ("For the last 5 months…"
 
 ## My employer
 
-The site links to my LinkedIn, which names my current employer, so every post can be read as a post about them. Write about the craft and about people, never about the company.
+My LinkedIn names my current employer, so readers can work out where I work and what industry it's in. That's fine. The care here is for the people I work with, not for hiding the company.
 
-- Never name my current employer, and don't hint at it (its industry, its locations, its projects).
+- Don't name my current employer in a post. It's rarely relevant, and posts are about the craft, not the company.
+- Examples from the industry I work in are fine when they make the point.
 - My own career moves are mine to tell, including a role that changed in a restructure years ago.
+- People on my teams stay anonymous and unidentifiable. A story about someone should be one they'd be happy to read, and so should any description of a team they'd recognise as theirs.
 - Nothing internal that's current: no restructures or org changes in motion, headcount plans, hiring targets, budgets or funding, delivery pressure, deadlines, systems, vendors or incidents.
 - How I like teams shaped, and the general shape of teams I work with, is fair game: "I prefer three developers on a stream; one- and two-developer teams are common" is fine. Plans to change them are not.
-- People on my teams stay anonymous and unidentifiable. A story about someone should be one they'd be happy to read.
 - When a real situation makes the point, generalise it: "imagine you had to double your teams" rather than "my boss wants to double my four teams".
 - Past employers and clients may be named when the story is positive and already public, like SSW.
-- If in doubt, leave it out, or ask whether it would be fine on the company's own blog.
+- If in doubt, ask whether the people involved would be happy to read it.
 
 ## Spelling and style
 
