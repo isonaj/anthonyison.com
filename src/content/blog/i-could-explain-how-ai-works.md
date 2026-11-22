@@ -5,6 +5,7 @@ slug: "i-could-explain-how-ai-works"
 publishedAt: "2026-11-22T09:00:00.000+10:00"
 tags:
   - "ai"
+featureImage: "https://images.unsplash.com/photo-1553481187-be93c21490a9?cs=tinysrgb&fit=crop&fm=jpg&q=80&w=2000&h=1250"
 type: "post"
 ---
 
